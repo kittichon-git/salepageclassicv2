@@ -3,6 +3,9 @@ import { Hero } from "@/components/sections/Hero";
 import { Relevance } from "@/components/sections/Relevance";
 import { Mechanism } from "@/components/sections/Mechanism";
 import { Outcome } from "@/components/sections/Outcome";
+import { Fit } from "@/components/sections/Fit";
+import { Curriculum } from "@/components/sections/Curriculum";
+import { Instructor } from "@/components/sections/Instructor";
 
 export default function Page() {
   return (
@@ -13,7 +16,10 @@ export default function Page() {
         <Relevance />
         <Mechanism />
         <Outcome />
-        {/* R-4+ sections */}
+        <Fit />
+        <Curriculum />
+        <Instructor />
+        {/* R-5+ sections */}
       </main>
     </>
   );
