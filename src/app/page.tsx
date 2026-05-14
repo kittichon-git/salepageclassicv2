@@ -1,5 +1,8 @@
 import { TopNav } from "@/components/sections/TopNav";
 import { Hero } from "@/components/sections/Hero";
+import { Relevance } from "@/components/sections/Relevance";
+import { Mechanism } from "@/components/sections/Mechanism";
+import { Outcome } from "@/components/sections/Outcome";
 
 export default function Page() {
   return (
@@ -7,7 +10,10 @@ export default function Page() {
       <TopNav />
       <main>
         <Hero />
-        {/* R-3 จะเพิ่ม section อื่น ๆ */}
+        <Relevance />
+        <Mechanism />
+        <Outcome />
+        {/* R-4+ sections */}
       </main>
     </>
   );
