@@ -1,0 +1,535 @@
+0 verbose cli C:\Program Files\nodejs\node.exe C:\Program Files\nodejs\node_modules\npm\bin\npm-cli.js
+1 info using npm@10.9.2
+2 info using node@v22.14.0
+3 silly config load:file:C:\Program Files\nodejs\node_modules\npm\npmrc
+4 silly config load:file:D:\salepageclassicv2\.npmrc
+5 silly config load:file:C:\Users\kittichon\.npmrc
+6 silly config load:file:C:\Users\kittichon\AppData\Roaming\npm\etc\npmrc
+7 verbose title npm install @next/bundle-analyzer
+8 verbose argv "install" "--save-dev" "@next/bundle-analyzer"
+9 verbose logfile logs-max:10 dir:D:\salepageclassicv2\npm-cache\_logs\2026-05-14T05_15_02_390Z-
+10 verbose logfile D:\salepageclassicv2\npm-cache\_logs\2026-05-14T05_15_02_390Z-debug-0.log
+11 silly logfile start cleaning logs, removing 1 files
+12 silly packumentCache heap:4345298944 maxSize:1086324736 maxEntrySize:543162368
+13 silly logfile done cleaning log files
+14 silly idealTree buildDeps
+15 silly fetch manifest @next/bundle-analyzer@*
+16 silly packumentCache full:https://registry.npmjs.org/@next%2fbundle-analyzer cache-miss
+17 http fetch GET 200 https://registry.npmjs.org/@next%2fbundle-analyzer 897ms (cache miss)
+18 silly packumentCache full:https://registry.npmjs.org/@next%2fbundle-analyzer set size:undefined disposed:false
+19 silly placeDep ROOT @next/bundle-analyzer@16.2.6 OK for: salepageclassicv2@0.1.0 want: *
+20 silly fetch manifest webpack-bundle-analyzer@4.10.1
+21 silly packumentCache full:https://registry.npmjs.org/webpack-bundle-analyzer cache-miss
+22 http fetch GET 200 https://registry.npmjs.org/webpack-bundle-analyzer 78ms (cache miss)
+23 silly packumentCache full:https://registry.npmjs.org/webpack-bundle-analyzer set size:undefined disposed:false
+24 silly placeDep ROOT webpack-bundle-analyzer@4.10.1 OK for: @next/bundle-analyzer@16.2.6 want: 4.10.1
+25 silly fetch manifest ws@^7.3.1
+26 silly packumentCache full:https://registry.npmjs.org/ws cache-miss
+27 silly fetch manifest sirv@^2.0.3
+28 silly packumentCache full:https://registry.npmjs.org/sirv cache-miss
+29 silly fetch manifest acorn@^8.0.4
+30 silly packumentCache full:https://registry.npmjs.org/acorn cache-miss
+31 silly fetch manifest opener@^1.5.2
+32 silly packumentCache full:https://registry.npmjs.org/opener cache-miss
+33 silly fetch manifest debounce@^1.2.1
+34 silly packumentCache full:https://registry.npmjs.org/debounce cache-miss
+35 silly fetch manifest commander@^7.2.0
+36 silly packumentCache full:https://registry.npmjs.org/commander cache-miss
+37 silly fetch manifest gzip-size@^6.0.0
+38 silly packumentCache full:https://registry.npmjs.org/gzip-size cache-miss
+39 silly fetch manifest acorn-walk@^8.0.0
+40 silly packumentCache full:https://registry.npmjs.org/acorn-walk cache-miss
+41 silly fetch manifest html-escaper@^2.0.2
+42 silly packumentCache full:https://registry.npmjs.org/html-escaper cache-miss
+43 silly fetch manifest is-plain-object@^5.0.0
+44 silly packumentCache full:https://registry.npmjs.org/is-plain-object cache-miss
+45 silly fetch manifest escape-string-regexp@^4.0.0
+46 silly packumentCache full:https://registry.npmjs.org/escape-string-regexp cache-miss
+47 silly fetch manifest @discoveryjs/json-ext@0.5.7
+48 silly packumentCache full:https://registry.npmjs.org/@discoveryjs%2fjson-ext cache-miss
+49 http fetch GET 200 https://registry.npmjs.org/ws 104ms (cache miss)
+50 silly packumentCache full:https://registry.npmjs.org/ws set size:undefined disposed:false
+51 http fetch GET 200 https://registry.npmjs.org/debounce 187ms (cache miss)
+52 silly packumentCache full:https://registry.npmjs.org/debounce set size:undefined disposed:false
+53 http fetch GET 200 https://registry.npmjs.org/gzip-size 186ms (cache miss)
+54 silly packumentCache full:https://registry.npmjs.org/gzip-size set size:undefined disposed:false
+55 http fetch GET 200 https://registry.npmjs.org/opener 202ms (cache miss)
+56 silly packumentCache full:https://registry.npmjs.org/opener set size:undefined disposed:false
+57 http fetch GET 200 https://registry.npmjs.org/acorn-walk 204ms (cache miss)
+58 silly packumentCache full:https://registry.npmjs.org/acorn-walk set size:undefined disposed:false
+59 http fetch GET 200 https://registry.npmjs.org/escape-string-regexp 205ms (cache miss)
+60 silly packumentCache full:https://registry.npmjs.org/escape-string-regexp set size:undefined disposed:false
+61 http fetch GET 200 https://registry.npmjs.org/sirv 212ms (cache miss)
+62 silly packumentCache full:https://registry.npmjs.org/sirv set size:undefined disposed:false
+63 http fetch GET 200 https://registry.npmjs.org/is-plain-object 212ms (cache miss)
+64 silly packumentCache full:https://registry.npmjs.org/is-plain-object set size:undefined disposed:false
+65 http fetch GET 200 https://registry.npmjs.org/html-escaper 219ms (cache miss)
+66 silly packumentCache full:https://registry.npmjs.org/html-escaper set size:undefined disposed:false
+67 http fetch GET 200 https://registry.npmjs.org/@discoveryjs%2fjson-ext 220ms (cache miss)
+68 silly packumentCache full:https://registry.npmjs.org/@discoveryjs%2fjson-ext set size:undefined disposed:false
+69 http fetch GET 200 https://registry.npmjs.org/commander 230ms (cache miss)
+70 silly packumentCache full:https://registry.npmjs.org/commander set size:undefined disposed:false
+71 http fetch GET 200 https://registry.npmjs.org/acorn 253ms (cache miss)
+72 silly packumentCache full:https://registry.npmjs.org/acorn set size:undefined disposed:false
+73 silly fetch manifest bufferutil@^4.0.1
+74 silly packumentCache full:https://registry.npmjs.org/bufferutil cache-miss
+75 http fetch GET 200 https://registry.npmjs.org/bufferutil 63ms (cache miss)
+76 silly packumentCache full:https://registry.npmjs.org/bufferutil set size:undefined disposed:false
+77 silly fetch manifest utf-8-validate@^5.0.2
+78 silly packumentCache full:https://registry.npmjs.org/utf-8-validate cache-miss
+79 http fetch GET 200 https://registry.npmjs.org/utf-8-validate 65ms (cache miss)
+80 silly packumentCache full:https://registry.npmjs.org/utf-8-validate set size:undefined disposed:false
+81 silly placeDep ROOT @discoveryjs/json-ext@0.5.7 OK for: webpack-bundle-analyzer@4.10.1 want: 0.5.7
+82 silly placeDep ROOT acorn@8.16.0 OK for: webpack-bundle-analyzer@4.10.1 want: ^8.0.4
+83 silly placeDep ROOT acorn-walk@8.3.5 OK for: webpack-bundle-analyzer@4.10.1 want: ^8.0.0
+84 silly placeDep ROOT commander@7.2.0 OK for: webpack-bundle-analyzer@4.10.1 want: ^7.2.0
+85 silly placeDep ROOT debounce@1.2.1 OK for: webpack-bundle-analyzer@4.10.1 want: ^1.2.1
+86 silly placeDep ROOT escape-string-regexp@4.0.0 OK for: webpack-bundle-analyzer@4.10.1 want: ^4.0.0
+87 silly placeDep ROOT gzip-size@6.0.0 OK for: webpack-bundle-analyzer@4.10.1 want: ^6.0.0
+88 silly placeDep ROOT html-escaper@2.0.2 OK for: webpack-bundle-analyzer@4.10.1 want: ^2.0.2
+89 silly placeDep ROOT is-plain-object@5.0.0 OK for: webpack-bundle-analyzer@4.10.1 want: ^5.0.0
+90 silly placeDep ROOT opener@1.5.2 OK for: webpack-bundle-analyzer@4.10.1 want: ^1.5.2
+91 silly placeDep ROOT sirv@2.0.4 OK for: webpack-bundle-analyzer@4.10.1 want: ^2.0.3
+92 silly placeDep ROOT ws@7.5.10 OK for: webpack-bundle-analyzer@4.10.1 want: ^7.3.1
+93 silly fetch manifest duplexer@^0.1.2
+94 silly packumentCache full:https://registry.npmjs.org/duplexer cache-miss
+95 silly fetch manifest mrmime@^2.0.0
+96 silly packumentCache full:https://registry.npmjs.org/mrmime cache-miss
+97 silly fetch manifest totalist@^3.0.0
+98 silly packumentCache full:https://registry.npmjs.org/totalist cache-miss
+99 silly fetch manifest @polka/url@^1.0.0-next.24
+100 silly packumentCache full:https://registry.npmjs.org/@polka%2furl cache-miss
+101 http fetch GET 200 https://registry.npmjs.org/duplexer 59ms (cache miss)
+102 silly packumentCache full:https://registry.npmjs.org/duplexer set size:undefined disposed:false
+103 http fetch GET 200 https://registry.npmjs.org/mrmime 64ms (cache miss)
+104 silly packumentCache full:https://registry.npmjs.org/mrmime set size:undefined disposed:false
+105 http fetch GET 200 https://registry.npmjs.org/totalist 64ms (cache miss)
+106 silly packumentCache full:https://registry.npmjs.org/totalist set size:undefined disposed:false
+107 http fetch GET 200 https://registry.npmjs.org/@polka%2furl 108ms (cache miss)
+108 silly packumentCache full:https://registry.npmjs.org/@polka%2furl set size:undefined disposed:false
+109 silly placeDep ROOT duplexer@0.1.2 OK for: gzip-size@6.0.0 want: ^0.1.2
+110 silly placeDep ROOT @polka/url@1.0.0-next.29 OK for: sirv@2.0.4 want: ^1.0.0-next.24
+111 silly placeDep ROOT mrmime@2.0.1 OK for: sirv@2.0.4 want: ^2.0.0
+112 silly placeDep ROOT totalist@3.0.1 OK for: sirv@2.0.4 want: ^3.0.0
+113 silly reify moves {}
+114 verbose reify failed optional dependency D:\salepageclassicv2\node_modules\@tailwindcss\oxide-wasm32-wasi
+115 silly reify mark deleted [
+115 silly reify   'D:\\salepageclassicv2\\node_modules\\@tailwindcss\\oxide-wasm32-wasi'
+115 silly reify ]
+116 silly audit bulk request {
+116 silly audit   '@alloc/quick-lru': [ '5.2.0' ],
+116 silly audit   '@emnapi/runtime': [ '1.10.0' ],
+116 silly audit   '@img/colour': [ '1.1.0' ],
+116 silly audit   '@img/sharp-darwin-arm64': [ '0.34.5' ],
+116 silly audit   '@img/sharp-darwin-x64': [ '0.34.5' ],
+116 silly audit   '@img/sharp-libvips-darwin-arm64': [ '1.2.4' ],
+116 silly audit   '@img/sharp-libvips-darwin-x64': [ '1.2.4' ],
+116 silly audit   '@img/sharp-libvips-linux-arm': [ '1.2.4' ],
+116 silly audit   '@img/sharp-libvips-linux-arm64': [ '1.2.4' ],
+116 silly audit   '@img/sharp-libvips-linux-ppc64': [ '1.2.4' ],
+116 silly audit   '@img/sharp-libvips-linux-riscv64': [ '1.2.4' ],
+116 silly audit   '@img/sharp-libvips-linux-s390x': [ '1.2.4' ],
+116 silly audit   '@img/sharp-libvips-linux-x64': [ '1.2.4' ],
+116 silly audit   '@img/sharp-libvips-linuxmusl-arm64': [ '1.2.4' ],
+116 silly audit   '@img/sharp-libvips-linuxmusl-x64': [ '1.2.4' ],
+116 silly audit   '@img/sharp-linux-arm': [ '0.34.5' ],
+116 silly audit   '@img/sharp-linux-arm64': [ '0.34.5' ],
+116 silly audit   '@img/sharp-linux-ppc64': [ '0.34.5' ],
+116 silly audit   '@img/sharp-linux-riscv64': [ '0.34.5' ],
+116 silly audit   '@img/sharp-linux-s390x': [ '0.34.5' ],
+116 silly audit   '@img/sharp-linux-x64': [ '0.34.5' ],
+116 silly audit   '@img/sharp-linuxmusl-arm64': [ '0.34.5' ],
+116 silly audit   '@img/sharp-linuxmusl-x64': [ '0.34.5' ],
+116 silly audit   '@img/sharp-wasm32': [ '0.34.5' ],
+116 silly audit   '@img/sharp-win32-arm64': [ '0.34.5' ],
+116 silly audit   '@img/sharp-win32-ia32': [ '0.34.5' ],
+116 silly audit   '@img/sharp-win32-x64': [ '0.34.5' ],
+116 silly audit   '@jridgewell/gen-mapping': [ '0.3.13' ],
+116 silly audit   '@jridgewell/remapping': [ '2.3.5' ],
+116 silly audit   '@jridgewell/resolve-uri': [ '3.1.2' ],
+116 silly audit   '@jridgewell/sourcemap-codec': [ '1.5.5' ],
+116 silly audit   '@jridgewell/trace-mapping': [ '0.3.31' ],
+116 silly audit   '@next/env': [ '16.2.6' ],
+116 silly audit   '@next/swc-darwin-arm64': [ '16.2.6' ],
+116 silly audit   '@next/swc-darwin-x64': [ '16.2.6' ],
+116 silly audit   '@next/swc-linux-arm64-gnu': [ '16.2.6' ],
+116 silly audit   '@next/swc-linux-arm64-musl': [ '16.2.6' ],
+116 silly audit   '@next/swc-linux-x64-gnu': [ '16.2.6' ],
+116 silly audit   '@next/swc-linux-x64-musl': [ '16.2.6' ],
+116 silly audit   '@next/swc-win32-arm64-msvc': [ '16.2.6' ],
+116 silly audit   '@next/swc-win32-x64-msvc': [ '16.2.6' ],
+116 silly audit   '@swc/helpers': [ '0.5.15' ],
+116 silly audit   '@tailwindcss/node': [ '4.3.0' ],
+116 silly audit   '@tailwindcss/oxide': [ '4.3.0' ],
+116 silly audit   '@tailwindcss/oxide-android-arm64': [ '4.3.0' ],
+116 silly audit   '@tailwindcss/oxide-darwin-arm64': [ '4.3.0' ],
+116 silly audit   '@tailwindcss/oxide-darwin-x64': [ '4.3.0' ],
+116 silly audit   '@tailwindcss/oxide-freebsd-x64': [ '4.3.0' ],
+116 silly audit   '@tailwindcss/oxide-linux-arm-gnueabihf': [ '4.3.0' ],
+116 silly audit   '@tailwindcss/oxide-linux-arm64-gnu': [ '4.3.0' ],
+116 silly audit   '@tailwindcss/oxide-linux-arm64-musl': [ '4.3.0' ],
+116 silly audit   '@tailwindcss/oxide-linux-x64-gnu': [ '4.3.0' ],
+116 silly audit   '@tailwindcss/oxide-linux-x64-musl': [ '4.3.0' ],
+116 silly audit   '@tailwindcss/oxide-win32-arm64-msvc': [ '4.3.0' ],
+116 silly audit   '@tailwindcss/oxide-win32-x64-msvc': [ '4.3.0' ],
+116 silly audit   '@tailwindcss/postcss': [ '4.3.0' ],
+116 silly audit   postcss: [ '8.5.14', '8.4.31' ],
+116 silly audit   '@types/node': [ '25.7.0' ],
+116 silly audit   '@types/react': [ '19.2.14' ],
+116 silly audit   '@types/react-dom': [ '19.2.3' ],
+116 silly audit   'baseline-browser-mapping': [ '2.10.29' ],
+116 silly audit   'caniuse-lite': [ '1.0.30001792' ],
+116 silly audit   'client-only': [ '0.0.1' ],
+116 silly audit   clsx: [ '2.1.1' ],
+116 silly audit   csstype: [ '3.2.3' ],
+116 silly audit   'detect-libc': [ '2.1.2' ],
+116 silly audit   'enhanced-resolve': [ '5.21.3' ],
+116 silly audit   'framer-motion': [ '12.38.0' ],
+116 silly audit   'graceful-fs': [ '4.2.11' ],
+116 silly audit   jiti: [ '2.7.0' ],
+116 silly audit   lightningcss: [ '1.32.0' ],
+116 silly audit   'lightningcss-android-arm64': [ '1.32.0' ],
+116 silly audit   'lightningcss-darwin-arm64': [ '1.32.0' ],
+116 silly audit   'lightningcss-darwin-x64': [ '1.32.0' ],
+116 silly audit   'lightningcss-freebsd-x64': [ '1.32.0' ],
+116 silly audit   'lightningcss-linux-arm-gnueabihf': [ '1.32.0' ],
+116 silly audit   'lightningcss-linux-arm64-gnu': [ '1.32.0' ],
+116 silly audit   'lightningcss-linux-arm64-musl': [ '1.32.0' ],
+116 silly audit   'lightningcss-linux-x64-gnu': [ '1.32.0' ],
+116 silly audit   'lightningcss-linux-x64-musl': [ '1.32.0' ],
+116 silly audit   'lightningcss-win32-arm64-msvc': [ '1.32.0' ],
+116 silly audit   'lightningcss-win32-x64-msvc': [ '1.32.0' ],
+116 silly audit   'lucide-react': [ '1.14.0' ],
+116 silly audit   'magic-string': [ '0.30.21' ],
+116 silly audit   'motion-dom': [ '12.38.0' ],
+116 silly audit   'motion-utils': [ '12.36.0' ],
+116 silly audit   nanoid: [ '3.3.12' ],
+116 silly audit   next: [ '16.2.6' ],
+116 silly audit   picocolors: [ '1.1.1' ],
+116 silly audit   react: [ '19.2.4' ],
+116 silly audit   'react-dom': [ '19.2.4' ],
+116 silly audit   scheduler: [ '0.27.0' ],
+116 silly audit   semver: [ '7.8.0' ],
+116 silly audit   sharp: [ '0.34.5' ],
+116 silly audit   'source-map-js': [ '1.2.1' ],
+116 silly audit   'styled-jsx': [ '5.1.6' ],
+116 silly audit   tailwindcss: [ '4.3.0' ],
+116 silly audit   tapable: [ '2.3.3' ],
+116 silly audit   tslib: [ '2.8.1' ],
+116 silly audit   typescript: [ '6.0.3' ],
+116 silly audit   'undici-types': [ '7.21.0' ],
+116 silly audit   '@next/bundle-analyzer': [ '16.2.6' ],
+116 silly audit   'webpack-bundle-analyzer': [ '4.10.1' ],
+116 silly audit   '@discoveryjs/json-ext': [ '0.5.7' ],
+116 silly audit   acorn: [ '8.16.0' ],
+116 silly audit   'acorn-walk': [ '8.3.5' ],
+116 silly audit   commander: [ '7.2.0' ],
+116 silly audit   debounce: [ '1.2.1' ],
+116 silly audit   'escape-string-regexp': [ '4.0.0' ],
+116 silly audit   'gzip-size': [ '6.0.0' ],
+116 silly audit   'html-escaper': [ '2.0.2' ],
+116 silly audit   'is-plain-object': [ '5.0.0' ],
+116 silly audit   opener: [ '1.5.2' ],
+116 silly audit   sirv: [ '2.0.4' ],
+116 silly audit   ws: [ '7.5.10' ],
+116 silly audit   duplexer: [ '0.1.2' ],
+116 silly audit   '@polka/url': [ '1.0.0-next.29' ],
+116 silly audit   mrmime: [ '2.0.1' ],
+116 silly audit   totalist: [ '3.0.1' ],
+116 silly audit   '@tailwindcss/oxide-wasm32-wasi': [ '4.3.0' ]
+116 silly audit }
+117 verbose reify failed optional dependency D:\salepageclassicv2\node_modules\lightningcss-win32-arm64-msvc
+118 silly reify mark deleted [
+118 silly reify   'D:\\salepageclassicv2\\node_modules\\lightningcss-win32-arm64-msvc'
+118 silly reify ]
+119 verbose reify failed optional dependency D:\salepageclassicv2\node_modules\lightningcss-linux-x64-musl
+120 silly reify mark deleted [ 'D:\\salepageclassicv2\\node_modules\\lightningcss-linux-x64-musl' ]
+121 verbose reify failed optional dependency D:\salepageclassicv2\node_modules\lightningcss-linux-x64-gnu
+122 silly reify mark deleted [ 'D:\\salepageclassicv2\\node_modules\\lightningcss-linux-x64-gnu' ]
+123 verbose reify failed optional dependency D:\salepageclassicv2\node_modules\lightningcss-linux-arm64-musl
+124 silly reify mark deleted [
+124 silly reify   'D:\\salepageclassicv2\\node_modules\\lightningcss-linux-arm64-musl'
+124 silly reify ]
+125 verbose reify failed optional dependency D:\salepageclassicv2\node_modules\lightningcss-linux-arm64-gnu
+126 silly reify mark deleted [ 'D:\\salepageclassicv2\\node_modules\\lightningcss-linux-arm64-gnu' ]
+127 verbose reify failed optional dependency D:\salepageclassicv2\node_modules\lightningcss-linux-arm-gnueabihf
+128 silly reify mark deleted [
+128 silly reify   'D:\\salepageclassicv2\\node_modules\\lightningcss-linux-arm-gnueabihf'
+128 silly reify ]
+129 verbose reify failed optional dependency D:\salepageclassicv2\node_modules\lightningcss-freebsd-x64
+130 silly reify mark deleted [ 'D:\\salepageclassicv2\\node_modules\\lightningcss-freebsd-x64' ]
+131 verbose reify failed optional dependency D:\salepageclassicv2\node_modules\lightningcss-darwin-x64
+132 silly reify mark deleted [ 'D:\\salepageclassicv2\\node_modules\\lightningcss-darwin-x64' ]
+133 verbose reify failed optional dependency D:\salepageclassicv2\node_modules\lightningcss-darwin-arm64
+134 silly reify mark deleted [ 'D:\\salepageclassicv2\\node_modules\\lightningcss-darwin-arm64' ]
+135 verbose reify failed optional dependency D:\salepageclassicv2\node_modules\lightningcss-android-arm64
+136 silly reify mark deleted [ 'D:\\salepageclassicv2\\node_modules\\lightningcss-android-arm64' ]
+137 verbose reify failed optional dependency D:\salepageclassicv2\node_modules\@tailwindcss\oxide-win32-arm64-msvc
+138 silly reify mark deleted [
+138 silly reify   'D:\\salepageclassicv2\\node_modules\\@tailwindcss\\oxide-win32-arm64-msvc'
+138 silly reify ]
+139 verbose reify failed optional dependency D:\salepageclassicv2\node_modules\@tailwindcss\oxide-linux-x64-musl
+140 silly reify mark deleted [
+140 silly reify   'D:\\salepageclassicv2\\node_modules\\@tailwindcss\\oxide-linux-x64-musl'
+140 silly reify ]
+141 verbose reify failed optional dependency D:\salepageclassicv2\node_modules\@tailwindcss\oxide-linux-x64-gnu
+142 silly reify mark deleted [
+142 silly reify   'D:\\salepageclassicv2\\node_modules\\@tailwindcss\\oxide-linux-x64-gnu'
+142 silly reify ]
+143 verbose reify failed optional dependency D:\salepageclassicv2\node_modules\@tailwindcss\oxide-linux-arm64-musl
+144 silly reify mark deleted [
+144 silly reify   'D:\\salepageclassicv2\\node_modules\\@tailwindcss\\oxide-linux-arm64-musl'
+144 silly reify ]
+145 verbose reify failed optional dependency D:\salepageclassicv2\node_modules\@tailwindcss\oxide-linux-arm64-gnu
+146 silly reify mark deleted [
+146 silly reify   'D:\\salepageclassicv2\\node_modules\\@tailwindcss\\oxide-linux-arm64-gnu'
+146 silly reify ]
+147 verbose reify failed optional dependency D:\salepageclassicv2\node_modules\@tailwindcss\oxide-linux-arm-gnueabihf
+148 silly reify mark deleted [
+148 silly reify   'D:\\salepageclassicv2\\node_modules\\@tailwindcss\\oxide-linux-arm-gnueabihf'
+148 silly reify ]
+149 verbose reify failed optional dependency D:\salepageclassicv2\node_modules\@tailwindcss\oxide-freebsd-x64
+150 silly reify mark deleted [
+150 silly reify   'D:\\salepageclassicv2\\node_modules\\@tailwindcss\\oxide-freebsd-x64'
+150 silly reify ]
+151 verbose reify failed optional dependency D:\salepageclassicv2\node_modules\@tailwindcss\oxide-darwin-x64
+152 silly reify mark deleted [
+152 silly reify   'D:\\salepageclassicv2\\node_modules\\@tailwindcss\\oxide-darwin-x64'
+152 silly reify ]
+153 verbose reify failed optional dependency D:\salepageclassicv2\node_modules\@tailwindcss\oxide-darwin-arm64
+154 silly reify mark deleted [
+154 silly reify   'D:\\salepageclassicv2\\node_modules\\@tailwindcss\\oxide-darwin-arm64'
+154 silly reify ]
+155 verbose reify failed optional dependency D:\salepageclassicv2\node_modules\@tailwindcss\oxide-android-arm64
+156 silly reify mark deleted [
+156 silly reify   'D:\\salepageclassicv2\\node_modules\\@tailwindcss\\oxide-android-arm64'
+156 silly reify ]
+157 verbose reify failed optional dependency D:\salepageclassicv2\node_modules\@next\swc-win32-arm64-msvc
+158 silly reify mark deleted [ 'D:\\salepageclassicv2\\node_modules\\@next\\swc-win32-arm64-msvc' ]
+159 verbose reify failed optional dependency D:\salepageclassicv2\node_modules\@next\swc-linux-x64-musl
+160 silly reify mark deleted [ 'D:\\salepageclassicv2\\node_modules\\@next\\swc-linux-x64-musl' ]
+161 verbose reify failed optional dependency D:\salepageclassicv2\node_modules\@next\swc-linux-x64-gnu
+162 silly reify mark deleted [ 'D:\\salepageclassicv2\\node_modules\\@next\\swc-linux-x64-gnu' ]
+163 verbose reify failed optional dependency D:\salepageclassicv2\node_modules\@next\swc-linux-arm64-musl
+164 silly reify mark deleted [ 'D:\\salepageclassicv2\\node_modules\\@next\\swc-linux-arm64-musl' ]
+165 verbose reify failed optional dependency D:\salepageclassicv2\node_modules\@next\swc-linux-arm64-gnu
+166 silly reify mark deleted [ 'D:\\salepageclassicv2\\node_modules\\@next\\swc-linux-arm64-gnu' ]
+167 verbose reify failed optional dependency D:\salepageclassicv2\node_modules\@next\swc-darwin-x64
+168 silly reify mark deleted [ 'D:\\salepageclassicv2\\node_modules\\@next\\swc-darwin-x64' ]
+169 verbose reify failed optional dependency D:\salepageclassicv2\node_modules\@next\swc-darwin-arm64
+170 silly reify mark deleted [ 'D:\\salepageclassicv2\\node_modules\\@next\\swc-darwin-arm64' ]
+171 verbose reify failed optional dependency D:\salepageclassicv2\node_modules\@img\sharp-win32-ia32
+172 silly reify mark deleted [ 'D:\\salepageclassicv2\\node_modules\\@img\\sharp-win32-ia32' ]
+173 verbose reify failed optional dependency D:\salepageclassicv2\node_modules\@img\sharp-win32-arm64
+174 silly reify mark deleted [ 'D:\\salepageclassicv2\\node_modules\\@img\\sharp-win32-arm64' ]
+175 verbose reify failed optional dependency D:\salepageclassicv2\node_modules\@img\sharp-wasm32
+176 silly reify mark deleted [ 'D:\\salepageclassicv2\\node_modules\\@img\\sharp-wasm32' ]
+177 verbose reify failed optional dependency D:\salepageclassicv2\node_modules\@img\sharp-linuxmusl-x64
+178 silly reify mark deleted [ 'D:\\salepageclassicv2\\node_modules\\@img\\sharp-linuxmusl-x64' ]
+179 verbose reify failed optional dependency D:\salepageclassicv2\node_modules\@img\sharp-linuxmusl-arm64
+180 silly reify mark deleted [ 'D:\\salepageclassicv2\\node_modules\\@img\\sharp-linuxmusl-arm64' ]
+181 verbose reify failed optional dependency D:\salepageclassicv2\node_modules\@img\sharp-linux-x64
+182 silly reify mark deleted [ 'D:\\salepageclassicv2\\node_modules\\@img\\sharp-linux-x64' ]
+183 verbose reify failed optional dependency D:\salepageclassicv2\node_modules\@img\sharp-linux-s390x
+184 silly reify mark deleted [ 'D:\\salepageclassicv2\\node_modules\\@img\\sharp-linux-s390x' ]
+185 verbose reify failed optional dependency D:\salepageclassicv2\node_modules\@img\sharp-linux-riscv64
+186 silly reify mark deleted [ 'D:\\salepageclassicv2\\node_modules\\@img\\sharp-linux-riscv64' ]
+187 verbose reify failed optional dependency D:\salepageclassicv2\node_modules\@img\sharp-linux-ppc64
+188 silly reify mark deleted [ 'D:\\salepageclassicv2\\node_modules\\@img\\sharp-linux-ppc64' ]
+189 verbose reify failed optional dependency D:\salepageclassicv2\node_modules\@img\sharp-linux-arm64
+190 silly reify mark deleted [ 'D:\\salepageclassicv2\\node_modules\\@img\\sharp-linux-arm64' ]
+191 verbose reify failed optional dependency D:\salepageclassicv2\node_modules\@img\sharp-linux-arm
+192 silly reify mark deleted [ 'D:\\salepageclassicv2\\node_modules\\@img\\sharp-linux-arm' ]
+193 verbose reify failed optional dependency D:\salepageclassicv2\node_modules\@img\sharp-libvips-linuxmusl-x64
+194 silly reify mark deleted [
+194 silly reify   'D:\\salepageclassicv2\\node_modules\\@img\\sharp-libvips-linuxmusl-x64'
+194 silly reify ]
+195 verbose reify failed optional dependency D:\salepageclassicv2\node_modules\@img\sharp-libvips-linuxmusl-arm64
+196 silly reify mark deleted [
+196 silly reify   'D:\\salepageclassicv2\\node_modules\\@img\\sharp-libvips-linuxmusl-arm64'
+196 silly reify ]
+197 verbose reify failed optional dependency D:\salepageclassicv2\node_modules\@img\sharp-libvips-linux-x64
+198 silly reify mark deleted [
+198 silly reify   'D:\\salepageclassicv2\\node_modules\\@img\\sharp-libvips-linux-x64'
+198 silly reify ]
+199 verbose reify failed optional dependency D:\salepageclassicv2\node_modules\@img\sharp-libvips-linux-s390x
+200 silly reify mark deleted [
+200 silly reify   'D:\\salepageclassicv2\\node_modules\\@img\\sharp-libvips-linux-s390x'
+200 silly reify ]
+201 verbose reify failed optional dependency D:\salepageclassicv2\node_modules\@img\sharp-libvips-linux-riscv64
+202 silly reify mark deleted [
+202 silly reify   'D:\\salepageclassicv2\\node_modules\\@img\\sharp-libvips-linux-riscv64'
+202 silly reify ]
+203 verbose reify failed optional dependency D:\salepageclassicv2\node_modules\@img\sharp-libvips-linux-ppc64
+204 silly reify mark deleted [
+204 silly reify   'D:\\salepageclassicv2\\node_modules\\@img\\sharp-libvips-linux-ppc64'
+204 silly reify ]
+205 verbose reify failed optional dependency D:\salepageclassicv2\node_modules\@img\sharp-libvips-linux-arm64
+206 silly reify mark deleted [
+206 silly reify   'D:\\salepageclassicv2\\node_modules\\@img\\sharp-libvips-linux-arm64'
+206 silly reify ]
+207 verbose reify failed optional dependency D:\salepageclassicv2\node_modules\@img\sharp-libvips-linux-arm
+208 silly reify mark deleted [
+208 silly reify   'D:\\salepageclassicv2\\node_modules\\@img\\sharp-libvips-linux-arm'
+208 silly reify ]
+209 verbose reify failed optional dependency D:\salepageclassicv2\node_modules\@img\sharp-libvips-darwin-x64
+210 silly reify mark deleted [
+210 silly reify   'D:\\salepageclassicv2\\node_modules\\@img\\sharp-libvips-darwin-x64'
+210 silly reify ]
+211 verbose reify failed optional dependency D:\salepageclassicv2\node_modules\@img\sharp-libvips-darwin-arm64
+212 silly reify mark deleted [
+212 silly reify   'D:\\salepageclassicv2\\node_modules\\@img\\sharp-libvips-darwin-arm64'
+212 silly reify ]
+213 verbose reify failed optional dependency D:\salepageclassicv2\node_modules\@img\sharp-darwin-x64
+214 silly reify mark deleted [ 'D:\\salepageclassicv2\\node_modules\\@img\\sharp-darwin-x64' ]
+215 verbose reify failed optional dependency D:\salepageclassicv2\node_modules\@img\sharp-darwin-arm64
+216 silly reify mark deleted [ 'D:\\salepageclassicv2\\node_modules\\@img\\sharp-darwin-arm64' ]
+217 http cache totalist@https://registry.npmjs.org/totalist/-/totalist-3.0.1.tgz 0ms (cache hit)
+218 http cache @polka/url@https://registry.npmjs.org/@polka/url/-/url-1.0.0-next.29.tgz 0ms (cache hit)
+219 http cache mrmime@https://registry.npmjs.org/mrmime/-/mrmime-2.0.1.tgz 0ms (cache hit)
+220 http cache duplexer@https://registry.npmjs.org/duplexer/-/duplexer-0.1.2.tgz 0ms (cache hit)
+221 http cache sirv@https://registry.npmjs.org/sirv/-/sirv-2.0.4.tgz 0ms (cache hit)
+222 http cache is-plain-object@https://registry.npmjs.org/is-plain-object/-/is-plain-object-5.0.0.tgz 0ms (cache hit)
+223 http cache opener@https://registry.npmjs.org/opener/-/opener-1.5.2.tgz 0ms (cache hit)
+224 http cache ws@https://registry.npmjs.org/ws/-/ws-7.5.10.tgz 0ms (cache hit)
+225 http cache html-escaper@https://registry.npmjs.org/html-escaper/-/html-escaper-2.0.2.tgz 0ms (cache hit)
+226 http cache gzip-size@https://registry.npmjs.org/gzip-size/-/gzip-size-6.0.0.tgz 0ms (cache hit)
+227 http cache escape-string-regexp@https://registry.npmjs.org/escape-string-regexp/-/escape-string-regexp-4.0.0.tgz 0ms (cache hit)
+228 http cache debounce@https://registry.npmjs.org/debounce/-/debounce-1.2.1.tgz 0ms (cache hit)
+229 http cache commander@https://registry.npmjs.org/commander/-/commander-7.2.0.tgz 0ms (cache hit)
+230 http cache acorn-walk@https://registry.npmjs.org/acorn-walk/-/acorn-walk-8.3.5.tgz 0ms (cache hit)
+231 http cache acorn@https://registry.npmjs.org/acorn/-/acorn-8.16.0.tgz 0ms (cache hit)
+232 http cache @discoveryjs/json-ext@https://registry.npmjs.org/@discoveryjs/json-ext/-/json-ext-0.5.7.tgz 0ms (cache hit)
+233 http cache webpack-bundle-analyzer@https://registry.npmjs.org/webpack-bundle-analyzer/-/webpack-bundle-analyzer-4.10.1.tgz 0ms (cache hit)
+234 http cache @next/bundle-analyzer@https://registry.npmjs.org/@next/bundle-analyzer/-/bundle-analyzer-16.2.6.tgz 0ms (cache hit)
+235 silly tarball no local data for totalist@https://registry.npmjs.org/totalist/-/totalist-3.0.1.tgz. Extracting by manifest.
+236 silly tarball no local data for @polka/url@https://registry.npmjs.org/@polka/url/-/url-1.0.0-next.29.tgz. Extracting by manifest.
+237 silly tarball no local data for mrmime@https://registry.npmjs.org/mrmime/-/mrmime-2.0.1.tgz. Extracting by manifest.
+238 silly tarball no local data for duplexer@https://registry.npmjs.org/duplexer/-/duplexer-0.1.2.tgz. Extracting by manifest.
+239 silly tarball no local data for sirv@https://registry.npmjs.org/sirv/-/sirv-2.0.4.tgz. Extracting by manifest.
+240 silly tarball no local data for is-plain-object@https://registry.npmjs.org/is-plain-object/-/is-plain-object-5.0.0.tgz. Extracting by manifest.
+241 silly tarball no local data for opener@https://registry.npmjs.org/opener/-/opener-1.5.2.tgz. Extracting by manifest.
+242 silly tarball no local data for ws@https://registry.npmjs.org/ws/-/ws-7.5.10.tgz. Extracting by manifest.
+243 silly tarball no local data for html-escaper@https://registry.npmjs.org/html-escaper/-/html-escaper-2.0.2.tgz. Extracting by manifest.
+244 silly tarball no local data for gzip-size@https://registry.npmjs.org/gzip-size/-/gzip-size-6.0.0.tgz. Extracting by manifest.
+245 silly tarball no local data for escape-string-regexp@https://registry.npmjs.org/escape-string-regexp/-/escape-string-regexp-4.0.0.tgz. Extracting by manifest.
+246 silly tarball no local data for debounce@https://registry.npmjs.org/debounce/-/debounce-1.2.1.tgz. Extracting by manifest.
+247 silly tarball no local data for commander@https://registry.npmjs.org/commander/-/commander-7.2.0.tgz. Extracting by manifest.
+248 silly tarball no local data for acorn-walk@https://registry.npmjs.org/acorn-walk/-/acorn-walk-8.3.5.tgz. Extracting by manifest.
+249 silly tarball no local data for acorn@https://registry.npmjs.org/acorn/-/acorn-8.16.0.tgz. Extracting by manifest.
+250 silly tarball no local data for @discoveryjs/json-ext@https://registry.npmjs.org/@discoveryjs/json-ext/-/json-ext-0.5.7.tgz. Extracting by manifest.
+251 silly tarball no local data for webpack-bundle-analyzer@https://registry.npmjs.org/webpack-bundle-analyzer/-/webpack-bundle-analyzer-4.10.1.tgz. Extracting by manifest.
+252 silly tarball no local data for @next/bundle-analyzer@https://registry.npmjs.org/@next/bundle-analyzer/-/bundle-analyzer-16.2.6.tgz. Extracting by manifest.
+253 http fetch GET 200 https://registry.npmjs.org/duplexer/-/duplexer-0.1.2.tgz 86ms (cache miss)
+254 http fetch GET 200 https://registry.npmjs.org/opener/-/opener-1.5.2.tgz 92ms (cache miss)
+255 http fetch GET 200 https://registry.npmjs.org/sirv/-/sirv-2.0.4.tgz 93ms (cache miss)
+256 http fetch GET 200 https://registry.npmjs.org/gzip-size/-/gzip-size-6.0.0.tgz 94ms (cache miss)
+257 http fetch GET 200 https://registry.npmjs.org/escape-string-regexp/-/escape-string-regexp-4.0.0.tgz 93ms (cache miss)
+258 http fetch GET 200 https://registry.npmjs.org/is-plain-object/-/is-plain-object-5.0.0.tgz 96ms (cache miss)
+259 http fetch GET 200 https://registry.npmjs.org/mrmime/-/mrmime-2.0.1.tgz 98ms (cache miss)
+260 http fetch GET 200 https://registry.npmjs.org/totalist/-/totalist-3.0.1.tgz 99ms (cache miss)
+261 http fetch GET 200 https://registry.npmjs.org/html-escaper/-/html-escaper-2.0.2.tgz 98ms (cache miss)
+262 http fetch GET 200 https://registry.npmjs.org/ws/-/ws-7.5.10.tgz 104ms (cache miss)
+263 http fetch GET 200 https://registry.npmjs.org/@polka/url/-/url-1.0.0-next.29.tgz 110ms (cache miss)
+264 http fetch GET 200 https://registry.npmjs.org/@discoveryjs/json-ext/-/json-ext-0.5.7.tgz 152ms (cache miss)
+265 http fetch GET 200 https://registry.npmjs.org/webpack-bundle-analyzer/-/webpack-bundle-analyzer-4.10.1.tgz 156ms (cache miss)
+266 http fetch GET 200 https://registry.npmjs.org/@next/bundle-analyzer/-/bundle-analyzer-16.2.6.tgz 157ms (cache miss)
+267 http fetch GET 200 https://registry.npmjs.org/acorn/-/acorn-8.16.0.tgz 172ms (cache miss)
+268 http fetch GET 200 https://registry.npmjs.org/commander/-/commander-7.2.0.tgz 206ms (cache miss)
+269 http fetch GET 200 https://registry.npmjs.org/debounce/-/debounce-1.2.1.tgz 207ms (cache miss)
+270 http fetch GET 200 https://registry.npmjs.org/acorn-walk/-/acorn-walk-8.3.5.tgz 208ms (cache miss)
+271 http fetch POST 200 https://registry.npmjs.org/-/npm/v1/security/advisories/bulk 232ms
+272 silly audit report {
+272 silly audit report   postcss: [
+272 silly audit report     {
+272 silly audit report       id: 1117015,
+272 silly audit report       url: 'https://github.com/advisories/GHSA-qx2v-qp2m-jg93',
+272 silly audit report       title: 'PostCSS has XSS via Unescaped </style> in its CSS Stringify Output',
+272 silly audit report       severity: 'moderate',
+272 silly audit report       vulnerable_versions: '<8.5.10',
+272 silly audit report       cwe: [Array],
+272 silly audit report       cvss: [Object]
+272 silly audit report     }
+272 silly audit report   ]
+272 silly audit report }
+273 silly packumentCache corgi:https://registry.npmjs.org/postcss cache-miss
+274 http fetch GET 200 https://registry.npmjs.org/postcss 103ms (cache revalidated)
+275 silly packumentCache corgi:https://registry.npmjs.org/postcss set size:343873 disposed:false
+276 silly packumentCache corgi:https://registry.npmjs.org/next cache-miss
+277 http fetch GET 200 https://registry.npmjs.org/next 96ms (cache revalidated)
+278 silly packumentCache corgi:https://registry.npmjs.org/next set size:24953692 disposed:false
+279 silly ADD node_modules/totalist
+280 silly ADD node_modules/mrmime
+281 silly ADD node_modules/@polka/url
+282 silly ADD node_modules/duplexer
+283 silly ADD node_modules/ws
+284 silly ADD node_modules/sirv
+285 silly ADD node_modules/opener
+286 silly ADD node_modules/is-plain-object
+287 silly ADD node_modules/html-escaper
+288 silly ADD node_modules/gzip-size
+289 silly ADD node_modules/escape-string-regexp
+290 silly ADD node_modules/debounce
+291 silly ADD node_modules/commander
+292 silly ADD node_modules/acorn-walk
+293 silly ADD node_modules/acorn
+294 silly ADD node_modules/@discoveryjs/json-ext
+295 silly ADD node_modules/webpack-bundle-analyzer
+296 silly ADD node_modules/@next/bundle-analyzer
+297 silly ADD
+298 silly ADD
+299 silly ADD
+300 silly ADD
+301 silly ADD
+302 silly ADD
+303 silly ADD
+304 silly ADD
+305 silly ADD
+306 silly ADD
+307 silly ADD
+308 silly ADD
+309 silly ADD
+310 silly ADD
+311 silly ADD
+312 silly ADD
+313 silly ADD
+314 silly ADD
+315 silly ADD
+316 silly ADD
+317 silly ADD
+318 silly ADD
+319 silly ADD
+320 silly ADD
+321 silly ADD
+322 silly ADD
+323 silly ADD
+324 silly ADD
+325 silly ADD
+326 silly ADD
+327 silly ADD
+328 silly ADD
+329 silly ADD
+330 silly ADD
+331 silly ADD
+332 silly ADD
+333 silly ADD
+334 silly ADD
+335 silly ADD
+336 silly ADD
+337 silly ADD
+338 silly ADD
+339 silly ADD
+340 silly ADD
+341 silly ADD
+342 silly ADD
+343 silly ADD
+344 silly ADD
+345 silly ADD
+346 silly ADD
+347 silly ADD
+348 verbose cwd D:\salepageclassicv2
+349 verbose os Windows_NT 10.0.19045
+350 verbose node v22.14.0
+351 verbose npm  v10.9.2
+352 verbose exit 0
+353 info ok
