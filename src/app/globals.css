@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+@theme inline {
+  /* Cream surface */
+  --color-cream-50: #f8f3e6;
+  --color-cream-100: #f2ecdd;
+  --color-cream-200: #e9e3d4;
+  --color-cream-300: #ddd5c0;
+
+  /* Beige borders */
+  --color-beige-200: #e0d9c5;
+  --color-beige-300: #d9d2bf;
+  --color-beige-400: #c9c1ab;
+
+  /* Charcoal text */
+  --color-charcoal-900: #3a3530;
+  --color-charcoal-700: #5a5048;
+  --color-charcoal-500: #7a6e62;
+
+  /* Coral accent */
+  --color-coral-400: #de8a6f;
+  --color-coral-500: #d27355;
+  --color-coral-600: #b85e42;
+  --color-coral-700: #9a4d36;
+
+  /* LINE green */
+  --color-line-green: #00b900;
+
+  /* Fonts */
+  --font-heading: var(--font-kanit);
+  --font-body: var(--font-bai-jamjuree);
+  --font-mono: var(--font-jetbrains-mono);
+
+  /* Shadows */
+  --shadow-soft: 0 1px 2px rgba(58, 53, 48, 0.06), 0 4px 12px rgba(58, 53, 48, 0.05);
+  --shadow-elev: 0 8px 24px rgba(58, 53, 48, 0.10);
+  --shadow-glow: 0 0 0 4px rgba(210, 115, 85, 0.15);
+
+  /* Radii */
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background: var(--color-cream-100);
+    color: var(--color-charcoal-900);
+    font-family: var(--font-body);
+    font-feature-settings: "ss01", "cv11";
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    font-family: var(--font-heading);
+    letter-spacing: -0.01em;
+  }
+
+  ::selection {
+    background: var(--color-coral-500);
+    color: var(--color-cream-50);
+  }
+}
