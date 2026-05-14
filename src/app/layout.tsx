@@ -25,14 +25,37 @@ const jetbrainsMono = JetBrains_Mono({
 
 const SITE_URL = process.env["NEXT_PUBLIC_SITE_URL"] ?? "https://phachara.com";
 
+const TITLE = "แค่เปลี่ยนคำ ก็ทำเงิน — สูตรเปลี่ยน 'คำ' 7 ภาค 24 บท | phachara.com";
+const DESCRIPTION =
+  "เขียน 1 ประโยค ขายได้มากกว่าเขียน 100 ประโยค — สูตรเปลี่ยน 'คำ' 7 ภาค 24 บท ที่คนไทย 1,200+ คนใช้แล้วยอดขายขึ้น";
+
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "แค่เปลี่ยนคำ ก็ทำเงิน — สูตรเปลี่ยน 'คำ' 7 ภาค 24 บท | phachara.com",
+    default: TITLE,
     template: "%s | phachara.com",
   },
-  description:
-    "เขียน 1 ประโยค ขายได้มากกว่าเขียน 100 ประโยค — สูตรเปลี่ยน 'คำ' 7 ภาค 24 บท ที่คนไทย 1,200+ คนใช้แล้วยอดขายขึ้น",
+  description: DESCRIPTION,
+  openGraph: {
+    type: "website",
+    url: SITE_URL,
+    title: TITLE,
+    description: DESCRIPTION,
+    siteName: "phachara.com",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: TITLE,
+    description: DESCRIPTION,
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true },
+  },
+  alternates: {
+    canonical: SITE_URL,
+  },
 };
 
 export const viewport: Viewport = {
