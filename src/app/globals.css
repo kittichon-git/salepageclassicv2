@@ -1,73 +1,101 @@
 @import "tailwindcss";
 
 @theme inline {
-  /* Cream surface */
-  --color-cream-50: #f8f3e6;
-  --color-cream-100: #f2ecdd;
-  --color-cream-200: #e9e3d4;
-  --color-cream-300: #ddd5c0;
+  /*=== Palette v3 (จาก S1 audit) ===*/
+  --color-paper: #fffdf7;
+  --color-cream: #fbf5e8;
+  --color-cream-tint: rgba(251, 245, 232, 0.6);
+  --color-navy-50: #eaecf1;
+  --color-navy-100: #d4d8e2;
+  --color-navy-500: #233149;
+  --color-navy-600: #253751;
+  --color-navy-700: #1c2740;
+  --color-navy-900: #141d33;
+  --color-teal-50: #e6f0f1;
+  --color-teal-500: #2f8588;
+  --color-teal-700: #246a6c;
+  --color-amber-400: #e5be63;
+  --color-amber-500: #ddb049;
+  --color-amber-600: #c89a3a;
+  --color-line: #00b900;
+  --color-line-dark: #009900;
+  --color-text: #233149;
+  --color-text-muted: #5a6478;
+  --color-border: #233149;
 
-  /* Beige borders */
-  --color-beige-200: #e0d9c5;
-  --color-beige-300: #d9d2bf;
-  --color-beige-400: #c9c1ab;
-
-  /* Charcoal text */
-  --color-charcoal-900: #3a3530;
-  --color-charcoal-700: #5a5048;
-  --color-charcoal-500: #7a6e62;
-
-  /* Coral accent */
-  --color-coral-400: #de8a6f;
-  --color-coral-500: #d27355;
-  --color-coral-600: #b85e42;
-  --color-coral-700: #9a4d36;
-
-  /* LINE green */
-  --color-line-green: #00b900;
-
-  /* Fonts */
+  /*=== Typography ===*/
   --font-heading: var(--font-kanit);
   --font-body: var(--font-bai-jamjuree);
   --font-mono: var(--font-jetbrains-mono);
 
-  /* Shadows */
-  --shadow-soft: 0 1px 2px rgba(58, 53, 48, 0.06), 0 4px 12px rgba(58, 53, 48, 0.05);
-  --shadow-elev: 0 8px 24px rgba(58, 53, 48, 0.10);
-  --shadow-glow: 0 0 0 4px rgba(210, 115, 85, 0.15);
+  /*=== Hard-offset shadows (brutalist, zero blur) ===*/
+  --shadow-hard-sm: 3px 3px 0 var(--color-navy-500);
+  --shadow-hard-md: 5px 5px 0 var(--color-navy-500);
+  --shadow-hard-lg: 8px 8px 0 var(--color-navy-500);
+  --shadow-hard-amber: 5px 5px 0 var(--color-amber-500);
 
-  /* Radii */
-  --radius-sm: 0.5rem;
-  --radius-md: 0.75rem;
-  --radius-lg: 1rem;
-  --radius-xl: 1.5rem;
+  /*=== Border widths ===*/
+  --border-frame: 1.5px;
+  --border-cta: 1.5px;
+
+  /*=== Zero border-radius ===*/
+  --radius-none: 0px;
 }
 
-@layer base {
-  html {
-    scroll-behavior: smooth;
-  }
+/*=== Base ===*/
+* {
+  border-color: var(--color-border);
+}
 
-  body {
-    background: var(--color-cream-100);
-    color: var(--color-charcoal-900);
-    font-family: var(--font-body);
-    font-feature-settings: "ss01", "cv11";
-    -webkit-font-smoothing: antialiased;
-    text-rendering: optimizeLegibility;
-  }
+html {
+  scroll-behavior: smooth;
+}
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5 {
-    font-family: var(--font-heading);
-    letter-spacing: -0.01em;
-  }
+body {
+  background-color: var(--color-paper);
+  color: var(--color-text);
+  font-family: var(--font-body), system-ui, sans-serif;
+  /*Grid paper background — 42x42px lines + radial accents*/
+  background-image:
+    linear-gradient(to right, rgba(35, 49, 73, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(35, 49, 73, 0.02) 1px, transparent 1px),
+    radial-gradient(circle at 20% 10%, rgba(47, 133, 136, 0.04), transparent 40%),
+    radial-gradient(circle at 80% 60%, rgba(221, 176, 73, 0.05), transparent 40%);
+  background-size: 42px 42px, 42px 42px, auto, auto;
+}
 
-  ::selection {
-    background: var(--color-coral-500);
-    color: var(--color-cream-50);
-  }
+h1, h2, h3, h4 {
+  font-family: var(--font-heading), system-ui, sans-serif;
+  color: var(--color-navy-500);
+}
+
+/*=== Selection ===*/
+::selection {
+  background-color: var(--color-teal-500);
+  color: var(--color-cream);
+}
+
+/*=== Focus ring (brutalist) ===*/
+:focus-visible {
+  outline: 2px solid var(--color-amber-500);
+  outline-offset: 2px;
+}
+
+/*=== Skip link ===*/
+.skip-link {
+  position: absolute;
+  left: -9999px;
+}
+
+.skip-link:focus {
+  position: fixed;
+  left: 1rem;
+  top: 1rem;
+  z-index: 100;
+  padding: 0.75rem 1rem;
+  background: var(--color-navy-500);
+  color: var(--color-cream);
+  font-weight: 600;
+  border: 1.5px solid var(--color-navy-500);
+  box-shadow: 3px 3px 0 var(--color-amber-500);
 }

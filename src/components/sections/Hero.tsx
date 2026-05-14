@@ -1,100 +1,90 @@
-import Image from "next/image";
-import { Play } from "lucide-react";
 import { Section } from "@/components/ui/Section";
-import { Container } from "@/components/ui/Container";
 import { CTAButton } from "@/components/ui/CTAButton";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { hero, cta } from "@/lib/data";
 
 export function Hero() {
   return (
-    <Section id="hero" tone="alt" className="pt-20 lg:pt-28">
-      <Container>
-        <div className="grid gap-10 lg:gap-12 lg:grid-cols-[0.93fr_1.07fr] lg:items-center">
-          {/* Left: copy + CTA */}
-          <ScrollReveal delay={0} y={16}>
-            <div className="flex flex-col items-start">
-              {/* Eyebrow */}
-              <p className="text-sm font-medium tracking-wider uppercase text-[var(--color-charcoal-700)] mb-4 font-mono">
-                หนังสือดิจิทัล · 7 ภาค 24 บท
-              </p>
-
-              {/* H1 */}
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.1] tracking-tight text-[var(--color-charcoal-900)]">
-                {hero.headline}
-              </h1>
-
-              {/* Sub */}
-              <p className="mt-5 text-lg lg:text-xl text-[var(--color-charcoal-700)] leading-relaxed max-w-xl">
-                {hero.sub}
-              </p>
-
-              {/* CTA group */}
-              <div className="mt-8 flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
-                <CTAButton variant="line" size="lg" href={cta.lineUrl}>
-                  {cta.primaryLabel}
-                </CTAButton>
-                <CTAButton variant="ghost" size="lg">
-                  {/* TODO: wire video player */}
-                  ดู VSL 60 วิ
-                </CTAButton>
-              </div>
-
-              {/* Trust strip */}
-              <div className="mt-6 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-[var(--color-charcoal-500)]">
-                {hero.trustStrip.map((item, i) => (
-                  <span key={i} className="flex items-center gap-2">
-                    {i > 0 && (
-                      <span aria-hidden="true" className="text-[var(--color-beige-400)]">
-                        ·
-                      </span>
-                    )}
-                    {item}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </ScrollReveal>
-
-          {/* Right: hero image — no ScrollReveal (LCP candidate) */}
-          <div className="relative">
-            <div
-              className="relative rounded-[var(--radius-xl)] overflow-hidden
-                shadow-[var(--shadow-elev)] ring-1 ring-[var(--color-beige-300)]
-                aspect-square lg:aspect-[4/5]"
+    <Section id="hero" tone="paper" tab={hero.eyebrow} className="pt-8 md:pt-10">
+      <div className="space-y-8">
+        {/* h1 + body */}
+        <ScrollReveal>
+          <div className="space-y-5">
+            <h1
+              className="font-[family-name:var(--font-kanit)] font-extrabold leading-[0.95] tracking-tight text-[var(--color-navy-500)]"
+              style={{ fontSize: "clamp(2.5rem, 6vw, 5.25rem)" }}
             >
-              <Image
-                src={hero.heroImage}
-                alt="ภาพประกอบหน้าขาย — บอร์ดสูตรเปลี่ยนคำที่ใช้ขายของออนไลน์"
-                fill
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-cover"
-                priority
-              />
+              {hero.headline.split("\n").map((line, i) => (
+                <span key={i}>
+                  {i > 0 && <br />}
+                  {line}
+                </span>
+              ))}
+            </h1>
 
-              {/* VSL play button overlay — TODO: wire video player */}
-              <button
-                type="button"
-                className="absolute inset-0 flex items-center justify-center
-                  bg-black/20 hover:bg-black/30 transition-colors group"
-                aria-label="ดู VSL 60 วินาที"
+            <p
+              className="max-w-[640px] font-[family-name:var(--font-bai-jamjuree)] leading-[1.55] text-[var(--color-text-muted)]"
+              style={{ fontSize: "clamp(1.0625rem, 2vw, 1.375rem)" }}
+            >
+              {hero.body}
+            </p>
+          </div>
+        </ScrollReveal>
+
+        {/* VSL Card */}
+        <ScrollReveal delay={0.1}>
+          <div className="relative">
+            {/* Amber accent strip right */}
+            <div
+              aria-hidden="true"
+              className="absolute -right-2 bottom-4 top-4 w-1.5 bg-[var(--color-amber-500)]"
+            />
+            <div
+              className={[
+                "relative border-[1.5px] border-[var(--color-navy-500)]",
+                "bg-[var(--color-navy-600)] p-8 md:p-10",
+                "shadow-[5px_5px_0_var(--color-amber-500)]",
+              ].join(" ")}
+            >
+              {/* VSL label */}
+              <div className="mb-5 font-[family-name:var(--font-jetbrains-mono)] text-xs font-extrabold uppercase tracking-[0.18em] text-[var(--color-amber-400)]">
+                ▶ {hero.vsl.label}
+              </div>
+              {/* Script */}
+              <p
+                className="font-[family-name:var(--font-bai-jamjuree)] leading-[1.55] text-[var(--color-cream)]"
+                style={{ fontSize: "clamp(1.0625rem, 2vw, 1.25rem)" }}
               >
-                <div
-                  className="flex items-center justify-center w-16 h-16 rounded-full
-                    bg-white/90 shadow-lg
-                    group-hover:scale-105 transition-transform duration-200"
-                >
-                  <Play
-                    size={24}
-                    className="text-[var(--color-charcoal-900)] ml-1"
-                    fill="currentColor"
-                  />
-                </div>
-              </button>
+                {hero.vsl.script}
+              </p>
             </div>
           </div>
-        </div>
-      </Container>
+        </ScrollReveal>
+
+        {/* CTA + Trust strip */}
+        <ScrollReveal delay={0.15}>
+          <div className="space-y-4">
+            <CTAButton
+              href={cta.lineUrl}
+              variant="line"
+              size="lg"
+              showIcon
+              className="w-full md:w-auto"
+            >
+              {cta.primaryLabel}
+            </CTAButton>
+
+            <div className="flex flex-wrap items-center gap-x-2 gap-y-1 font-[family-name:var(--font-jetbrains-mono)] text-[11px] uppercase tracking-[0.12em] text-[var(--color-text-muted)]">
+              {hero.trustStrip.map((item, i) => (
+                <span key={item} className="flex items-center gap-2">
+                  {i > 0 && <span aria-hidden="true">·</span>}
+                  {item}
+                </span>
+              ))}
+            </div>
+          </div>
+        </ScrollReveal>
+      </div>
     </Section>
   );
 }

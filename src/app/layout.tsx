@@ -3,27 +3,27 @@ import { Kanit, Bai_Jamjuree, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
 const kanit = Kanit({
-  subsets: ["thai", "latin"],
-  weight: ["400", "500", "600", "700", "800"],
   variable: "--font-kanit",
-  display: "swap",
-});
-
-const bai = Bai_Jamjuree({
   subsets: ["thai", "latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-bai-jamjuree",
+  weight: ["400", "500", "600", "700", "800", "900"],
   display: "swap",
 });
 
-const mono = JetBrains_Mono({
+const baiJamjuree = Bai_Jamjuree({
+  variable: "--font-bai-jamjuree",
+  subsets: ["thai", "latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  display: "swap",
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  variable: "--font-jetbrains-mono",
   subsets: ["latin"],
   weight: ["400", "500", "600"],
-  variable: "--font-jetbrains-mono",
   display: "swap",
 });
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://phachara.com";
+const SITE_URL = process.env["NEXT_PUBLIC_SITE_URL"] ?? "https://phachara.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -32,80 +32,27 @@ export const metadata: Metadata = {
     template: "%s | phachara.com",
   },
   description:
-    "เขียน 1 ประโยค ขายของได้มากกว่าเขียน 100 ประโยค — สูตรเปลี่ยน 'คำ' ที่คนไทย 1,200+ คนใช้แล้วยอดขายขึ้น เริ่มอ่านฟรี 2 บทแรกผ่าน LINE",
-  keywords: [
-    "copywriting ไทย",
-    "เขียนขายของออนไลน์",
-    "Hook สูตร",
-    "Sales page ภาษาไทย",
-    "เปลี่ยนคำ",
-    "phachara",
-  ],
-  authors: [{ name: "Kittichon" }],
-  creator: "Kittichon",
-  publisher: "phachara.com",
-  alternates: {
-    canonical: "/",
-  },
-  openGraph: {
-    type: "website",
-    locale: "th_TH",
-    url: "/",
-    siteName: "phachara.com",
-    title: "แค่เปลี่ยนคำ ก็ทำเงิน",
-    description:
-      "สูตรเปลี่ยนคำ 7 ภาค 24 บท — คนไทย 1,200+ คนใช้แล้วยอดขายขึ้น เริ่มอ่านฟรี 2 บทแรก",
-    // images auto-resolved from /opengraph-image route
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "แค่เปลี่ยนคำ ก็ทำเงิน",
-    description: "สูตรเปลี่ยนคำ 7 ภาค 24 บท — เริ่มอ่านฟรี 2 บทแรก",
-    // images auto-resolved from /opengraph-image route
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-      "max-video-preview": -1,
-    },
-  },
-  formatDetection: {
-    telephone: false,
-    email: false,
-    address: false,
-  },
+    "เขียน 1 ประโยค ขายได้มากกว่าเขียน 100 ประโยค — สูตรเปลี่ยน 'คำ' 7 ภาค 24 บท ที่คนไทย 1,200+ คนใช้แล้วยอดขายขึ้น",
 };
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#f2ecdd" },
-    { media: "(prefers-color-scheme: dark)", color: "#3a3530" },
+    { media: "(prefers-color-scheme: light)", color: "#fffdf7" },
+    { media: "(prefers-color-scheme: dark)", color: "#233149" },
   ],
   width: "device-width",
   initialScale: 1,
   maximumScale: 5,
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html
       lang="th"
-      className={`${kanit.variable} ${bai.variable} ${mono.variable}`}
+      className={`${kanit.variable} ${baiJamjuree.variable} ${jetbrainsMono.variable}`}
     >
-      <body className="antialiased">
-        <a
-          href="#hero"
-          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-md focus:bg-[var(--color-charcoal-900)] focus:px-4 focus:py-2 focus:text-[var(--color-cream-50)]"
-        >
+      <body>
+        <a href="#hero" className="skip-link">
           ข้ามไปยังเนื้อหา
         </a>
         {children}

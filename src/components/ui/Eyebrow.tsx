@@ -1,7 +1,15 @@
-export function Eyebrow({ children }: { children: React.ReactNode }) {
+import { cn } from "@/lib/cn";
+
+export function Eyebrow({ children, className }: { children: React.ReactNode; className?: string }) {
   return (
-    <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--color-charcoal-500)] mb-3">
+    <span
+      className={cn(
+        "inline-block bg-[var(--color-teal-500)] px-3 py-1.5",
+        "font-mono text-[11px] font-extrabold uppercase tracking-[0.16em] text-[var(--color-cream)]",
+        className,
+      )}
+    >
       {children}
-    </p>
+    </span>
   );
 }
