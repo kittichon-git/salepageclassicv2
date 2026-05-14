@@ -6,6 +6,11 @@ import { Outcome } from "@/components/sections/Outcome";
 import { Fit } from "@/components/sections/Fit";
 import { Curriculum } from "@/components/sections/Curriculum";
 import { Instructor } from "@/components/sections/Instructor";
+import { Offer } from "@/components/sections/Offer";
+import { FAQ } from "@/components/sections/FAQ";
+import { FinalCTA } from "@/components/sections/FinalCTA";
+import { StickyCTABar } from "@/components/sections/StickyCTABar";
+import { Footer } from "@/components/sections/Footer";
 
 export default function Page() {
   return (
@@ -19,8 +24,12 @@ export default function Page() {
         <Fit />
         <Curriculum />
         <Instructor />
-        {/* R-5+ sections */}
+        <Offer />
+        <FAQ />
+        <FinalCTA />
       </main>
+      <Footer />
+      <StickyCTABar />
     </>
   );
 }
