@@ -25,7 +25,7 @@ export function JsonLd() {
       },
       offers: {
         "@type": "Offer",
-        price: "990",
+        price: offer.priceToday,
         priceCurrency: "THB",
         availability: "https://schema.org/InStock",
         url: SITE_URL,

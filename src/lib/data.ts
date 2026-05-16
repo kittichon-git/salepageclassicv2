@@ -11,7 +11,7 @@ export const cta = {
   primaryLabel: "เริ่มอ่านฟรี",
   finalLabel: "อ่านฟรี 2 บทแรกผ่าน LINE",
   vslLabel: "ดู VSL 60 วินาที",
-  buyLabel: "จ่าย 990฿ ผ่าน LINE",
+  buyLabel: "จ่าย 890฿ ผ่าน LINE",
   inlineLabel: "อ่านบทนำ + บท 1 ฟรีใน LINE",
   stickyLabel: "เริ่มอ่านฟรี",
 } as const;
@@ -213,8 +213,8 @@ export const offer = {
     { label: "แผนลงมือทำ 30 วัน", value: "390 ฿" },
   ],
   totalValue: "4,260 ฿",
-  priceAnchor: "1,990",
-  priceToday: "990",
+  priceAnchor: "2,490",
+  priceToday: "890",
   priceSuffix: "฿",
   assurances: [
     "ครั้งเดียว",
