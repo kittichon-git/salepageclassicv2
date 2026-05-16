@@ -7,21 +7,42 @@ export function Hero() {
   return (
     <Section id="hero" tone="paper" tab={hero.eyebrow} className="pt-8 md:pt-10">
       <div className="space-y-8">
-        {/* h1 + body */}
+        {/* Pre-headline + Pain H2 + Solution H1 + Sub */}
         <ScrollReveal>
           <div className="space-y-5">
+            {/* Pre-headline (eyebrow) */}
+            <p className="font-[family-name:var(--font-jetbrains-mono)] text-xs font-extrabold uppercase tracking-[0.18em] text-[var(--color-teal-500)]">
+              {hero.preHeadline}
+            </p>
+
+            {/* Pain — H2 */}
+            <h2
+              className="font-[family-name:var(--font-kanit)] font-semibold leading-[1.15] tracking-tight text-[var(--color-text-muted)]"
+              style={{ fontSize: "clamp(1.375rem, 3vw, 2.25rem)" }}
+            >
+              {hero.painHeadline}
+            </h2>
+
+            {/* Solution — H1 */}
             <h1
               className="font-[family-name:var(--font-kanit)] font-extrabold leading-[0.95] tracking-tight text-[var(--color-navy-500)]"
               style={{ fontSize: "clamp(2.5rem, 6vw, 5.25rem)" }}
             >
-              {hero.headline.split("\n").map((line, i) => (
-                <span key={i}>
-                  {i > 0 && <br />}
-                  {line}
-                </span>
-              ))}
+              {hero.headline.split("\n").map((line, i) => {
+                const hw = hero.headlineAmber[i];
+                if (!hw) return <span key={i} className="block">{line}</span>;
+                const idx = line.indexOf(hw);
+                return (
+                  <span key={i} className="block">
+                    {line.slice(0, idx)}
+                    <span className="text-[var(--color-amber-500)]">{hw}</span>
+                    {line.slice(idx + hw.length)}
+                  </span>
+                );
+              })}
             </h1>
 
+            {/* Sub-headline */}
             <p
               className="max-w-[640px] font-[family-name:var(--font-bai-jamjuree)] leading-[1.55] text-[var(--color-text-muted)]"
               style={{ fontSize: "clamp(1.0625rem, 2vw, 1.375rem)" }}
