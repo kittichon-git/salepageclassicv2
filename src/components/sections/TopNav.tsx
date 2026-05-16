@@ -15,7 +15,7 @@ export function TopNav() {
         ].join(" ")}
       >
         <Link href="#hero" aria-label="กลับไปด้านบน">
-          <BrandPill className="text-sm uppercase tracking-[0.06em]">
+          <BrandPill className="whitespace-nowrap text-sm uppercase tracking-[0.06em]">
             {nav.brand}
           </BrandPill>
         </Link>
@@ -29,7 +29,8 @@ export function TopNav() {
                 "font-[family-name:var(--font-jetbrains-mono)] text-sm font-semibold",
                 "uppercase tracking-[0.12em] text-[var(--color-navy-500)]",
                 "transition-colors duration-150 hover:text-[var(--color-teal-500)]",
-              ].join(" ")}
+                link.id === "faq" ? "hidden min-[480px]:inline-flex" : "",
+              ].join(" ").trim()}
             >
               {link.label}
             </Link>

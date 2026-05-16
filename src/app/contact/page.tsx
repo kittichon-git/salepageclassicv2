@@ -19,12 +19,12 @@ export default function ContactPage() {
         <p className="mb-3 text-sm">
           คลิก:{" "}
           <a
-            href="https://lin.ee/oMmZLf7Z"
+            href="https://lin.ee/6rOdCZg"
             target="_blank"
             rel="noopener noreferrer"
             className="underline"
           >
-            https://lin.ee/oMmZLf7Z
+            https://lin.ee/6rOdCZg
           </a>
         </p>
         <p className="text-sm">

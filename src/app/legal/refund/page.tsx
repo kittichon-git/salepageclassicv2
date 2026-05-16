@@ -77,11 +77,11 @@ export default function RefundPage() {
         <li>
           ทักไลน์ OA <code>@049vlbwy</code> หรือคลิก{" "}
           <a
-            href="https://lin.ee/oMmZLf7Z"
+            href="https://lin.ee/6rOdCZg"
             target="_blank"
             rel="noopener noreferrer"
           >
-            https://lin.ee/oMmZLf7Z
+            https://lin.ee/6rOdCZg
           </a>
         </li>
         <li>

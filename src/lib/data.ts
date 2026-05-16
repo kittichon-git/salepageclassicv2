@@ -7,7 +7,7 @@ export const meta = {
 } as const;
 
 export const cta = {
-  lineUrl: "https://line.me/ti/p/@phachara", // TODO: confirm OA id
+  lineUrl: "https://lin.ee/6rOdCZg",
   primaryLabel: "เริ่มอ่านฟรี",
   finalLabel: "อ่านฟรี 2 บทแรกผ่าน LINE",
   vslLabel: "ดู VSL 60 วินาที",
@@ -17,7 +17,7 @@ export const cta = {
 } as const;
 
 export const nav = {
-  brand: "แค่เปลี่ยนคำ",
+  brand: "แค่เปลี่ยนคำ ก็ทำเงิน",
   links: [
     { id: "content", label: "เนื้อหา", href: "#inside" },
     { id: "price", label: "ราคา", href: "#offer" },
