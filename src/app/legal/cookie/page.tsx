@@ -11,7 +11,7 @@ export default function CookiePage() {
   return (
     <LegalLayout
       title="นโยบายคุกกี้"
-      lastUpdated="16 พฤษภาคม 2569"
+      lastUpdated="17 พฤษภาคม 2569"
     >
       <p>
         phachara.com (&quot;เรา&quot;)
@@ -27,68 +27,32 @@ export default function CookiePage() {
 
       <h2>2. ประเภทของคุกกี้ที่เราใช้</h2>
 
-      <table>
-        <thead>
-          <tr>
-            <th>คุกกี้</th>
-            <th>ประเภท</th>
-            <th>วัตถุประสงค์</th>
-            <th>อายุ</th>
-            <th>ต้องขอ consent?</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><code>session</code></td>
-            <td><strong>Essential</strong></td>
-            <td>รักษาการ login ผ่าน LINE</td>
-            <td>Session</td>
-            <td>❌</td>
-          </tr>
-          <tr>
-            <td><code>csrf_token</code></td>
-            <td><strong>Essential</strong></td>
-            <td>ป้องกัน CSRF attack</td>
-            <td>Session</td>
-            <td>❌</td>
-          </tr>
-          <tr>
-            <td><code>cookie_consent</code></td>
-            <td><strong>Essential</strong></td>
-            <td>จดจำการเลือก consent ของคุณ</td>
-            <td>1 ปี</td>
-            <td>❌</td>
-          </tr>
-          <tr>
-            <td><code>_ga, _ga_*</code></td>
-            <td><strong>Analytics</strong></td>
-            <td>Google Analytics 4 — วัด traffic + behavior</td>
-            <td>2 ปี</td>
-            <td>✅</td>
-          </tr>
-          <tr>
-            <td><code>_gid</code></td>
-            <td><strong>Analytics</strong></td>
-            <td>GA4 — distinguish users</td>
-            <td>24 ชม.</td>
-            <td>✅</td>
-          </tr>
-          <tr>
-            <td><code>_fbp</code></td>
-            <td><strong>Marketing</strong></td>
-            <td>Facebook Pixel — วัด ad conversion</td>
-            <td>90 วัน</td>
-            <td>✅</td>
-          </tr>
-          <tr>
-            <td><code>fr</code></td>
-            <td><strong>Marketing</strong></td>
-            <td>Facebook — ad targeting</td>
-            <td>90 วัน</td>
-            <td>✅</td>
-          </tr>
-        </tbody>
-      </table>
+      <aside className="not-prose my-4 rounded-lg border-l-4 border-blue-400 bg-blue-50 p-4 text-sm text-blue-900">
+        <p>
+          <strong>📢 หมายเหตุ</strong>:{" "}
+          เมื่อเริ่มใช้ analytics หรือ marketing cookies
+          เราจะแจ้งให้ทราบและขอความยินยอมจากคุณก่อนเสมอ
+        </p>
+      </aside>
+
+      <h3>🍪 Essential Cookies — จำเป็น (ไม่ต้องขอ consent)</h3>
+      <p>
+        ใช้สำหรับการทำงานพื้นฐานของเว็บไซต์ ได้แก่ session login ผ่าน LINE,
+        ป้องกัน CSRF attack และจดจำการตั้งค่า consent ของคุณ
+        ไม่สามารถปิดได้โดยไม่กระทบการใช้งาน
+      </p>
+
+      <h3>📊 Analytics Cookies — ยังไม่ active</h3>
+      <p>
+        ใช้วัด traffic และพฤติกรรมการใช้งานเพื่อปรับปรุงบริการ
+        ขณะนี้ยังไม่ได้เปิดใช้งาน — จะแจ้งและขอความยินยอมก่อนเปิดใช้
+      </p>
+
+      <h3>🎯 Marketing Cookies — ยังไม่ active</h3>
+      <p>
+        ใช้วัด ad conversion และปรับ targeting โฆษณา
+        ขณะนี้ยังไม่ได้เปิดใช้งาน — จะแจ้งและขอความยินยอมก่อนเปิดใช้
+      </p>
 
       <h2>3. Cookie Consent Banner</h2>
       <p>เมื่อคุณเข้าเว็บครั้งแรก คุณจะเห็น banner ขออนุญาตใช้คุกกี้:</p>

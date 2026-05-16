@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <LegalLayout title="ติดต่อเรา" lastUpdated="16 พฤษภาคม 2569">
+    <LegalLayout title="ติดต่อเรา" lastUpdated="17 พฤษภาคม 2569">
       <h2>💬 วิธีติดต่อเร็วที่สุด — LINE OA</h2>
 
       <p>ทักไลน์มาเลย — ตอบเร็วกว่าอีเมล + รับ 2 บทแรกฟรีทันที</p>
@@ -83,8 +83,12 @@ export default function ContactPage() {
             <td>กิตติชน สนิทเชื้อ บุคคลธรรมดา</td>
           </tr>
           <tr>
-            <td><strong>สถานะ</strong></td>
-            <td>ไม่ได้จดทะเบียนภาษีมูลค่าเพิ่ม Non-VAT</td>
+            <td><strong>สถานะภาษี</strong></td>
+            <td>บุคคลธรรมดา · Non-VAT (ไม่จดทะเบียนภาษีมูลค่าเพิ่ม)</td>
+          </tr>
+          <tr>
+            <td><strong>เลขทะเบียนพาณิชย์</strong></td>
+            <td>อยู่ระหว่างยื่นจดทะเบียน DBD</td>
           </tr>
           <tr>
             <td><strong>ที่อยู่</strong></td>
