@@ -27,15 +27,68 @@ export default function CookiePage() {
 
       <h2>2. ประเภทของคุกกี้ที่เราใช้</h2>
 
-      | คุกกี้ | ประเภท | วัตถุประสงค์ | อายุ | ต้องขอ? |
-      | --- | --- | --- | --- | --- |
-      | `session` | **Essential** | รักษาการ login ผ่าน LINE | Session | ❌ |
-      | `csrf_token` | **Essential** | ป้องกัน CSRF attack | Session | ❌ |
-      | `cookie_consent` | **Essential** | จดจำการเลือก consent ของคุณ | 1 ปี | ❌ |
-      | `*ga, _ga**` | **Analytics** | Google Analytics 4 — วัด traffic + behavior | 2 ปี | ✅ |
-      | `_gid` | **Analytics** | GA4 — distinguish users | 24 ชม. | ✅ |
-      | `_fbp` | **Marketing** | Facebook Pixel — วัด ad conversion | 90 วัน | ✅ |
-      | `fr` | **Marketing** | Facebook — ad targeting | 90 วัน | ✅ |
+      <table>
+        <thead>
+          <tr>
+            <th>คุกกี้</th>
+            <th>ประเภท</th>
+            <th>วัตถุประสงค์</th>
+            <th>อายุ</th>
+            <th>ต้องขอ consent?</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>session</code></td>
+            <td><strong>Essential</strong></td>
+            <td>รักษาการ login ผ่าน LINE</td>
+            <td>Session</td>
+            <td>❌</td>
+          </tr>
+          <tr>
+            <td><code>csrf_token</code></td>
+            <td><strong>Essential</strong></td>
+            <td>ป้องกัน CSRF attack</td>
+            <td>Session</td>
+            <td>❌</td>
+          </tr>
+          <tr>
+            <td><code>cookie_consent</code></td>
+            <td><strong>Essential</strong></td>
+            <td>จดจำการเลือก consent ของคุณ</td>
+            <td>1 ปี</td>
+            <td>❌</td>
+          </tr>
+          <tr>
+            <td><code>_ga, _ga_*</code></td>
+            <td><strong>Analytics</strong></td>
+            <td>Google Analytics 4 — วัด traffic + behavior</td>
+            <td>2 ปี</td>
+            <td>✅</td>
+          </tr>
+          <tr>
+            <td><code>_gid</code></td>
+            <td><strong>Analytics</strong></td>
+            <td>GA4 — distinguish users</td>
+            <td>24 ชม.</td>
+            <td>✅</td>
+          </tr>
+          <tr>
+            <td><code>_fbp</code></td>
+            <td><strong>Marketing</strong></td>
+            <td>Facebook Pixel — วัด ad conversion</td>
+            <td>90 วัน</td>
+            <td>✅</td>
+          </tr>
+          <tr>
+            <td><code>fr</code></td>
+            <td><strong>Marketing</strong></td>
+            <td>Facebook — ad targeting</td>
+            <td>90 วัน</td>
+            <td>✅</td>
+          </tr>
+        </tbody>
+      </table>
 
       <h2>3. Cookie Consent Banner</h2>
       <p>เมื่อคุณเข้าเว็บครั้งแรก คุณจะเห็น banner ขออนุญาตใช้คุกกี้:</p>

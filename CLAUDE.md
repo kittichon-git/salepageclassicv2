@@ -65,7 +65,7 @@ components/
 
 ## Business Facts (ห้ามแก้)
 - ผู้ให้บริการ: กิตติชน สนิทเชื้อ (บุคคลธรรมดา)
-- ที่อยู่: 999/58 หมู่ 9 pshome2 ต.บ้านเป้ด อ.เมือง จ.ขอนแก่น 40000
+- ที่อยู่: 999/58 หมู่ 9 pshome2 ต.บ้านเป็ด อ.เมือง จ.ขอนแก่น 40000
 - LINE OA: @049vlbwy (https://lin.ee/oMmZLf7Z)
 - Email: phachara.elearning@gmail.com
 - เวลาทำการ: จ-ศ 09:00-18:00 ICT

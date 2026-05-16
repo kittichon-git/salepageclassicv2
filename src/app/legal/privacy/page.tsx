@@ -26,7 +26,7 @@ export default function PrivacyPage() {
       <h2>1. ผู้ควบคุมข้อมูลส่วนบุคคล</h2>
       <p>
         <strong>กิตติชน สนิทเชื้อ</strong> (บุคคลธรรมดา)
-        ที่อยู่: 999/58 หมู่ 9 pshome2 ต.บ้านเป้ด อ.เมือง จ.ขอนแก่น 40000
+        ที่อยู่: 999/58 หมู่ 9 pshome2 ต.บ้านเป็ด อ.เมือง จ.ขอนแก่น 40000
       </p>
 
       <h2>2. ข้อมูลที่เราเก็บรวบรวม</h2>
@@ -100,14 +100,47 @@ export default function PrivacyPage() {
         เราเปิดเผยข้อมูลเฉพาะกับผู้ให้บริการที่จำเป็นเท่านั้น:
       </p>
 
-      | ผู้ให้บริการ | วัตถุประสงค์ | ข้อมูลที่ส่ง |
-      | --- | --- | --- |
-      | <strong>Stripe Payments</strong> (สหรัฐอเมริกา/ไทย) | ประมวลผลการชำระเงิน | จำนวนเงิน, รหัสคำสั่งซื้อ, อีเมล (ถ้ามี) |
-      | <strong>LINE Corporation</strong> (ญี่ปุ่น) | ส่งข้อความและยืนยันตัวตน | LINE User ID, ข้อความที่ส่ง |
-      | <strong>Supabase</strong> (สิงคโปร์) | โฮสต์ฐานข้อมูล | ทุกข้อมูลในระบบ (เข้ารหัส at-rest) |
-      | <strong>Vercel</strong> (สหรัฐอเมริกา) | โฮสต์เว็บไซต์ | request logs, IP address |
-      | <strong>Google Analytics 4</strong> | วิเคราะห์การใช้งาน | pseudonymized event data (ขอ consent ก่อน) |
-      | <strong>Meta</strong> (Facebook Pixel/CAPI) | วัดประสิทธิภาพโฆษณา | event data, hashed identifiers (ขอ consent ก่อน) |
+      <table>
+        <thead>
+          <tr>
+            <th>ผู้ให้บริการ</th>
+            <th>วัตถุประสงค์</th>
+            <th>ข้อมูลที่ส่ง</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Stripe Payments</strong> (สหรัฐอเมริกา/ไทย)</td>
+            <td>ประมวลผลการชำระเงิน</td>
+            <td>จำนวนเงิน, รหัสคำสั่งซื้อ, อีเมล (ถ้ามี)</td>
+          </tr>
+          <tr>
+            <td><strong>LINE Corporation</strong> (ญี่ปุ่น)</td>
+            <td>ส่งข้อความและยืนยันตัวตน</td>
+            <td>LINE User ID, ข้อความที่ส่ง</td>
+          </tr>
+          <tr>
+            <td><strong>Supabase</strong> (สิงคโปร์)</td>
+            <td>โฮสต์ฐานข้อมูล</td>
+            <td>ทุกข้อมูลในระบบ (เข้ารหัส at-rest)</td>
+          </tr>
+          <tr>
+            <td><strong>Vercel</strong> (สหรัฐอเมริกา)</td>
+            <td>โฮสต์เว็บไซต์</td>
+            <td>request logs, IP address</td>
+          </tr>
+          <tr>
+            <td><strong>Google Analytics 4</strong></td>
+            <td>วิเคราะห์การใช้งาน</td>
+            <td>pseudonymized event data (ขอ consent ก่อน)</td>
+          </tr>
+          <tr>
+            <td><strong>Meta</strong> (Facebook Pixel/CAPI)</td>
+            <td>วัดประสิทธิภาพโฆษณา</td>
+            <td>event data, hashed identifiers (ขอ consent ก่อน)</td>
+          </tr>
+        </tbody>
+      </table>
 
       <p className="text-sm text-slate-600">
         ผู้ให้บริการเหล่านี้มีนโยบายคุ้มครองข้อมูลของตัวเอง

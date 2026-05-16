@@ -63,7 +63,7 @@ export default function ContactPage() {
       <h2>⏰ เวลาทำการ</h2>
       <ul>
         <li>
-          <strong>จันทร์ – ศุกร์</strong>: 09:00 – 18:00 น. เวลาประเทศไทย ICT
+          <strong>จันทร์ – ศุกร์</strong>: 09:00 – 16:00 น. เวลาประเทศไทย ICT
         </li>
         <li>
           <strong>เสาร์ – อาทิตย์</strong>: ปิดทำการ
@@ -88,7 +88,7 @@ export default function ContactPage() {
           </tr>
           <tr>
             <td><strong>ที่อยู่</strong></td>
-            <td>999/58 หมู่ 9 pshome2 ต.บ้านเป้ด อ.เมือง จ.ขอนแก่น 40000</td>
+            <td>999/58 หมู่ 9 pshome2 ต.บ้านเป็ด อ.เมือง จ.ขอนแก่น 40000</td>
           </tr>
           <tr>
             <td><strong>อีเมล</strong></td>
