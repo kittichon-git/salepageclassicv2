@@ -11,23 +11,17 @@ export function Hero() {
         <ScrollReveal>
           <div className="space-y-5">
             {/* Pre-headline (eyebrow) */}
-            <p className="font-[family-name:var(--font-jetbrains-mono)] text-xs font-extrabold uppercase tracking-[0.18em] text-[var(--color-teal-500)]">
+            <p className="font-[family-name:var(--font-jetbrains-mono)] text-xs uppercase tracking-[0.08em] text-[var(--color-teal-500)] sm:text-sm">
               {hero.preHeadline}
             </p>
 
             {/* Pain — H2 */}
-            <h2
-              className="font-[family-name:var(--font-kanit)] font-semibold leading-[1.15] tracking-tight text-[var(--color-text-muted)]"
-              style={{ fontSize: "clamp(1.375rem, 3vw, 2.25rem)" }}
-            >
+            <h2 className="font-[family-name:var(--font-kanit)] text-xl font-medium leading-[1.3] text-balance text-[var(--color-text-muted)] sm:text-2xl lg:text-3xl">
               {hero.painHeadline}
             </h2>
 
             {/* Solution — H1 */}
-            <h1
-              className="font-[family-name:var(--font-kanit)] font-extrabold leading-[0.95] tracking-tight text-[var(--color-navy-500)]"
-              style={{ fontSize: "clamp(2.5rem, 6vw, 5.25rem)" }}
-            >
+            <h1 className="font-[family-name:var(--font-kanit)] font-extrabold leading-[1.15] tracking-normal text-balance text-[var(--color-navy-900)] text-[2.25rem] sm:text-5xl lg:text-[3.75rem] lg:leading-[1.1]">
               {hero.headline.split("\n").map((line, i) => {
                 const hw = hero.headlineAmber[i];
                 if (!hw) return <span key={i} className="block">{line}</span>;
@@ -43,10 +37,7 @@ export function Hero() {
             </h1>
 
             {/* Sub-headline */}
-            <p
-              className="max-w-[640px] font-[family-name:var(--font-bai-jamjuree)] leading-[1.55] text-[var(--color-text-muted)]"
-              style={{ fontSize: "clamp(1.0625rem, 2vw, 1.375rem)" }}
-            >
+            <p className="max-w-[640px] font-[family-name:var(--font-bai-jamjuree)] text-[15px] leading-[1.6] text-[var(--color-navy-600)] sm:text-base lg:text-lg">
               {hero.body}
             </p>
           </div>
