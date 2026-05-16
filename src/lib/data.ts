@@ -261,8 +261,10 @@ export const finalCta = {
 export const footer = {
   brand: "phachara.com",
   links: [
-    { label: "นโยบายความเป็นส่วนตัว", href: "#" },
-    { label: "ข้อกำหนด", href: "#" },
-    { label: "ติดต่อ", href: "#" },
+    { label: "นโยบายความเป็นส่วนตัว", href: "/legal/privacy" },
+    { label: "ข้อกำหนด", href: "/legal/terms" },
+    { label: "คืนเงิน", href: "/legal/refund" },
+    { label: "คุกกี้", href: "/legal/cookie" },
+    { label: "ติดต่อ", href: "/contact" },
   ],
 } as const;
