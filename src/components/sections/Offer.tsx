@@ -27,13 +27,26 @@ export function Offer() {
             </h2>
 
             <div className="divide-y divide-[rgba(35,49,73,0.24)]">
-              {offer.items.map((item, i) => (
-                <div key={i} className="flex justify-between gap-4 py-3">
-                  <span className="font-[family-name:var(--font-bai-jamjuree)] text-sm text-[var(--color-navy-500)]">
-                    {item.label}
+              {offer.valueStack.map((item, i) => (
+                <div key={i} className="flex items-start justify-between gap-3 py-3">
+                  <span className="flex items-center gap-1.5 font-[family-name:var(--font-bai-jamjuree)] text-sm text-[var(--color-navy-500)]">
+                    {item.icon && <span aria-hidden="true">{item.icon}</span>}
+                    {item.code && (
+                      <span className="font-[family-name:var(--font-jetbrains-mono)] text-xs font-bold text-[var(--color-teal-500)]">
+                        {item.code}
+                      </span>
+                    )}
+                    <span>
+                      {item.name}
+                      {item.sublabel && (
+                        <span className="ml-1 text-xs text-[var(--color-text-muted)]">
+                          — {item.sublabel}
+                        </span>
+                      )}
+                    </span>
                   </span>
                   <span className="shrink-0 font-[family-name:var(--font-jetbrains-mono)] text-sm font-bold text-[var(--color-text-muted)]">
-                    {item.value}
+                    {item.value.toLocaleString("en-US")} ฿
                   </span>
                 </div>
               ))}
@@ -42,10 +55,10 @@ export function Offer() {
             {/* Total row */}
             <div className="mt-0 flex justify-between gap-4 border-t-2 border-[var(--color-navy-500)] pt-3">
               <span className="font-[family-name:var(--font-bai-jamjuree)] font-bold text-[var(--color-navy-500)]">
-                รวมมูลค่า
+                รวมมูลค่าทั้งหมด
               </span>
               <span className="font-[family-name:var(--font-jetbrains-mono)] font-extrabold text-[var(--color-navy-500)]">
-                {offer.totalValue}
+                {offer.totalValue.toLocaleString("en-US")} ฿
               </span>
             </div>
           </div>

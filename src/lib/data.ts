@@ -175,13 +175,13 @@ export const curriculum = {
     },
   ],
   bonus: {
-    heading: "ภาคผนวก (รวมในเล่ม)",
+    heading: "โบนัส 5 ชุด (รวมอยู่ในแพ็คเกจ)",
     items: [
-      "100+ Template ครบทุกฟอร์แมต",
-      "50+ Hook Formulas พร้อมตัวอย่างไทย",
-      "Prompt Library 30 ชุด",
-      "ตาราง 200+ คำต้องห้าม vs คำควรใช้",
-      "แผนลงมือทำ 30 วัน",
+      "A · เช็กลิสต์ตรวจงานก่อนปล่อย (Hook / Proof / CTA)",
+      "B · 100+ Template ครบทุกฟอร์แมต กรอกคำได้ทันที",
+      "C · 50+ Hook Formulas พร้อมตัวอย่างไทย",
+      "D · Prompt Library 30 ชุด พร้อมตัวอย่างใช้จริง",
+      "E · ตารางคำต้องห้าม vs คำที่ควรใช้",
     ],
   },
   inlineCta: "อ่านบทนำ + บท 1 ฟรีใน LINE",
@@ -203,16 +203,18 @@ export const instructor = {
   ],
 } as const;
 
+// Math: 990 + 490 + 390 + 290 + 190 + 140 = 2,490
 export const offer = {
-  heading: "ทั้งหมดนี้ในราคาเดียว",
-  items: [
-    { label: "หนังสือ 7 ภาค 24 บท", value: "1,500 ฿" },
-    { label: "100+ Template กรอกคำ", value: "990 ฿" },
-    { label: "50+ Hook Formulas", value: "590 ฿" },
-    { label: "Prompt Library 30 ชุด", value: "790 ฿" },
-    { label: "แผนลงมือทำ 30 วัน", value: "390 ฿" },
+  heading: "ทั้งหมดในแพ็คเกจ",
+  valueStack: [
+    { icon: "📕" as string | null, code: null as string | null, name: "หนังสือ \u201cแค่เปลี่ยนคำ ก็ทำเงิน\u201d 7 ภาค 24 บท", sublabel: "เนื้อหาหลัก" as string | null, value: 990 },
+    { icon: null as string | null, code: "B" as string | null, name: "100+ Template ครบทุกฟอร์แมต กรอกคำได้ทันที", sublabel: null as string | null, value: 490 },
+    { icon: null as string | null, code: "C" as string | null, name: "50+ Hook Formulas พร้อมตัวอย่างไทย", sublabel: null as string | null, value: 390 },
+    { icon: null as string | null, code: "D" as string | null, name: "Prompt Library 30 ชุด พร้อมตัวอย่างใช้จริง", sublabel: null as string | null, value: 290 },
+    { icon: null as string | null, code: "A" as string | null, name: "เช็กลิสต์ตรวจงานก่อนปล่อย (Hook / Proof / CTA)", sublabel: null as string | null, value: 190 },
+    { icon: null as string | null, code: "E" as string | null, name: "ตารางคำต้องห้าม vs คำที่ควรใช้", sublabel: null as string | null, value: 140 },
   ],
-  totalValue: "4,260 ฿",
+  totalValue: 2490,
   priceAnchor: "2,490",
   priceToday: "890",
   priceSuffix: "฿",

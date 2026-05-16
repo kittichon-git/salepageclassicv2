@@ -5,7 +5,7 @@ import { finalCta, cta, hero } from "@/lib/data";
 
 export function FinalCTA() {
   return (
-    <Section id="final" tab="S10 · FINAL" tone="navy">
+    <Section id="final" tab="S10 · FINAL" tone="navy" className="pb-16 lg:pb-24">
       <div className="flex flex-col items-center gap-6 text-center">
         {/* Eyebrow */}
         <ScrollReveal>
