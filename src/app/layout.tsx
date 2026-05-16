@@ -25,9 +25,9 @@ const jetbrainsMono = JetBrains_Mono({
 
 const SITE_URL = process.env["NEXT_PUBLIC_SITE_URL"] ?? "https://phachara.com";
 
-const TITLE = "แค่เปลี่ยนคำ ก็ทำเงิน — สูตรเปลี่ยน 'คำ' 7 ภาค 24 บท | phachara.com";
+const TITLE = "เปลี่ยนคำให้คนหยุดดู เปลี่ยนคนดูให้เป็นคนซื้อ | แค่เปลี่ยนคำ ก็ทำเงิน";
 const DESCRIPTION =
-  "เขียน 1 ประโยค ขายได้มากกว่าเขียน 100 ประโยค — สูตรเปลี่ยน 'คำ' 7 ภาค 24 บท ที่คนไทย 1,200+ คนใช้แล้วยอดขายขึ้น";
+  "คู่มือ Copywriting ฉบับ 'แค่เปลี่ยนคำ ก็ทำเงิน' สำหรับคนที่ต้องใช้ social media หารายได้ — 7 ภาค 24 บท เริ่มอ่านฟรี 2 บทแรกผ่าน LINE";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
