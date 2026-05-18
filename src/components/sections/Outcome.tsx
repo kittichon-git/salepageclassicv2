@@ -1,6 +1,5 @@
 import { Section } from "@/components/ui/Section";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
-import { Quote } from "lucide-react";
 import { outcome } from "@/lib/data";
 
 export function Outcome() {
@@ -13,24 +12,55 @@ export function Outcome() {
           </h2>
         </ScrollReveal>
 
+        {/* Row 1: 3 placeholders */}
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {outcome.testimonials.map((t, i) => (
-            <ScrollReveal key={t.id} delay={i * 0.1}>
-              <figure
-                className={[
-                  "border-[1.5px] border-[var(--color-navy-500)]",
-                  "bg-[var(--color-navy-600)] p-6",
-                  "shadow-[3px_3px_0_rgba(221,176,73,0.90)]",
-                ].join(" ")}
-              >
-                <Quote
-                  className="mb-3 text-[var(--color-amber-500)]"
-                  size={20}
-                  aria-hidden="true"
-                />
-                <blockquote className="font-[family-name:var(--font-bai-jamjuree)] text-base leading-[1.55] text-[var(--color-cream)]">
-                  {t.quote}
-                </blockquote>
+          {outcome.testimonials.slice(0, 3).map((t, i) => (
+            <ScrollReveal key={t.id} delay={i * 0.08}>
+              <figure className="flex flex-col gap-3">
+                <div
+                  className={[
+                    "relative aspect-[4/5]",
+                    "border-[1.5px] border-dashed border-[var(--color-navy-500)]",
+                    "bg-[var(--color-cream)]",
+                    "flex items-center justify-center",
+                  ].join(" ")}
+                  role="img"
+                  aria-label={`ช่องสำหรับรูปลูกค้า #${t.id}`}
+                >
+                  <span className="font-[family-name:var(--font-jetbrains-mono)] text-xs text-[var(--color-text-muted)]">
+                    ช่องสำหรับรูปลูกค้า #{t.id}
+                  </span>
+                </div>
+                <figcaption className="font-[family-name:var(--font-bai-jamjuree)] text-[15px] leading-[1.6] text-balance text-[var(--color-navy-500)]">
+                  &ldquo;{t.quote}&rdquo;
+                </figcaption>
+              </figure>
+            </ScrollReveal>
+          ))}
+        </div>
+
+        {/* Row 2: 2 placeholders centered */}
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-2 lg:max-w-[66%] lg:mx-auto">
+          {outcome.testimonials.slice(3).map((t, i) => (
+            <ScrollReveal key={t.id} delay={(i + 3) * 0.08}>
+              <figure className="flex flex-col gap-3">
+                <div
+                  className={[
+                    "relative aspect-[4/5]",
+                    "border-[1.5px] border-dashed border-[var(--color-navy-500)]",
+                    "bg-[var(--color-cream)]",
+                    "flex items-center justify-center",
+                  ].join(" ")}
+                  role="img"
+                  aria-label={`ช่องสำหรับรูปลูกค้า #${t.id}`}
+                >
+                  <span className="font-[family-name:var(--font-jetbrains-mono)] text-xs text-[var(--color-text-muted)]">
+                    ช่องสำหรับรูปลูกค้า #{t.id}
+                  </span>
+                </div>
+                <figcaption className="font-[family-name:var(--font-bai-jamjuree)] text-[15px] leading-[1.6] text-balance text-[var(--color-navy-500)]">
+                  &ldquo;{t.quote}&rdquo;
+                </figcaption>
               </figure>
             </ScrollReveal>
           ))}
