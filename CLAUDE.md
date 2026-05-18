@@ -278,15 +278,46 @@ Deeplink: https://lin.ee/6rOdCZg   ← canonical URL for ALL CTAs
 
 ---
 
-## 9. Commit History Reference
+## 9. Phase Status
+
+### Phase 2 ✅ DONE (19 May 2026)
+
+Tasks 0–7: data.ts sync · VSL removed · Instructor removed · Outcome placeholders · R-MOTRA to data.ts · H2 style unified · CTA audit · build pass.
+
+### Phase 3 D — Lighthouse Audit ✅ PASS (19 May 2026)
+
+Localhost mobile (Chrome DevTools, 400×832 viewport):
+
+| Metric | Score | Target |
+|---|---|---|
+| Performance | 99 | ≥ 95 |
+| Accessibility | 96 | ≥ 95 |
+| Best Practices | 96 | ≥ 95 |
+| SEO | 100 | ≥ 95 |
+| FCP | 0.9s | < 1.8s |
+| LCP | 2.2s | < 2.5s |
+
+Commit chain: d12563c → 7b411ff → (hotfix)
+
+Outstanding for "Phase 3 Done":
+- Sub-task A — 5 proof images (waiting on user)
+- Sub-task B — GA4 + Meta Pixel IDs (waiting on user)
+- Production deploy + re-run Lighthouse on prod URL
+
+---
+
+## 10. Commit History Reference
 
 ```
+7b411ff  perf: phase 3 lighthouse pre-audit fixes
+d12563c  feat(seo): finalize metadata, OG image, JSON-LD schemas
+d3a8820  chore: phase 2 refactor complete
+f98d373  refactor(outcome): swap blockquotes for image placeholder slots
+0076264  refactor: remove instructor section (not in spec v2)
+42b455e  feat(data): sync all copy from Sales Page Spec V.2 (Task 0)
 bf6d977  fix(cta+header): LINE deeplink → lin.ee/6rOdCZg, brand label, FAQ hide
 89343f8  refactor(offer): value stack 2,490 (book + 5 bonuses), tighten spacing
 06c2a93  fix(hero): Thai typography redesign (leading-[1.15], text-balance)
 dafff48  chore(price): 990→890, anchor 1,990→2,490
-abacd29  feat(seo): update metadata to new headline
-257fb2a  feat(cta): FinalCTA PAS headline
-94981bf  feat(hero): PAS headline (pre-head + pain + solution)
 b8658b1  feat(legal): lawyer-reviewed v2 + rename บทเรียนออนไลน์
 ```
