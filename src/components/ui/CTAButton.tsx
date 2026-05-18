@@ -43,7 +43,19 @@ export function CTAButton({
     </>
   );
 
-  if (href) return <Link href={href} className={classes}>{content}</Link>;
+  const isExternal = href?.startsWith("http");
+  if (href)
+    return (
+      <Link
+        href={href}
+        className={classes}
+        {...(isExternal
+          ? { target: "_blank", rel: "noopener noreferrer" }
+          : {})}
+      >
+        {content}
+      </Link>
+    );
 
   return (
     <button type="button" onClick={onClick} className={classes}>
