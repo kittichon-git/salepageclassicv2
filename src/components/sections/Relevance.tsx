@@ -7,17 +7,9 @@ export function Relevance() {
     <Section id="relevance" tab="S2 · RELEVANCE" tone="cream">
       <div className="space-y-8">
         <ScrollReveal>
-          <div className="space-y-4">
-            <p className="font-[family-name:var(--font-bai-jamjuree)] text-base leading-[1.6] text-[var(--color-text-muted)]">
-              {relevance.intro}
-            </p>
-            <h2 className="font-[family-name:var(--font-kanit)] font-extrabold leading-[1.3] text-balance text-[var(--color-navy-500)] text-3xl sm:text-4xl lg:text-5xl">
-              {relevance.question}
-            </h2>
-            <p className="font-[family-name:var(--font-bai-jamjuree)] text-base leading-[1.6] text-[var(--color-navy-500)]">
-              {relevance.leadIn}
-            </p>
-          </div>
+          <h2 className="font-[family-name:var(--font-kanit)] font-extrabold leading-[1.3] text-balance text-[var(--color-navy-500)] text-3xl sm:text-4xl lg:text-5xl">
+            {relevance.leadIn}
+          </h2>
         </ScrollReveal>
 
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">

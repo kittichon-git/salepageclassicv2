@@ -65,9 +65,11 @@ body {
   background-size: 42px 42px, 42px 42px, auto, auto;
 }
 
-h1, h2, h3, h4 {
-  font-family: var(--font-heading), system-ui, sans-serif;
-  color: var(--color-navy-500);
+@layer base {
+  h1, h2, h3, h4 {
+    font-family: var(--font-heading), system-ui, sans-serif;
+    color: var(--color-navy-500);
+  }
 }
 
 /*=== Selection ===*/

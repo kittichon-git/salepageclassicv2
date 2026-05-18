@@ -21,14 +21,9 @@ export function Curriculum() {
       <div className="space-y-6">
         <div className="flex items-start justify-between gap-4">
           <ScrollReveal>
-            <div className="space-y-1">
-              <h2 className="font-[family-name:var(--font-kanit)] font-extrabold leading-[1.3] text-balance text-[var(--color-navy-500)] text-3xl sm:text-4xl lg:text-5xl">
-                {curriculum.title}
-              </h2>
-              <p className="font-[family-name:var(--font-bai-jamjuree)] text-sm text-[var(--color-text-muted)]">
-                {curriculum.subtitle}
-              </p>
-            </div>
+            <h2 className="font-[family-name:var(--font-kanit)] font-extrabold leading-[1.3] text-balance text-[var(--color-navy-500)] text-3xl sm:text-4xl lg:text-5xl">
+              {curriculum.title}
+            </h2>
           </ScrollReveal>
 
           {/* Arrow controls — desktop only */}

@@ -25,7 +25,7 @@ const jetbrainsMono = JetBrains_Mono({
 
 const SITE_URL = process.env["NEXT_PUBLIC_SITE_URL"] ?? "https://phachara.com";
 
-const TITLE = "แค่เปลี่ยนคำ ก็ทำเงิน — บทเรียนการใช้คำเพิ่มยอดขาย";
+const TITLE = "แค่เปลี่ยนคำ ก็ทำเงิน — หลักสูตรการใช้คำเพิ่มยอดขาย";
 const DESCRIPTION =
   "เปลี่ยนคำในโพสต์ขายของให้คนหยุดดูและตัดสินใจซื้อ — บทเรียน \"แค่เปลี่ยนคำ ก็ทำเงิน\" 7 ภาค 24 บท เพิ่มยอดขายบน Facebook, IG, TikTok, LINE โดยไม่ต้องเป็นนักเขียน";
 

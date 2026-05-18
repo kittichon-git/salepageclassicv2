@@ -82,7 +82,7 @@ export default async function OGImage() {
             แค่เปลี่ยนคำ ก็ทำเงิน
           </div>
           <div style={{ fontSize: 22, color: "#5a6478", lineHeight: 1.55, maxWidth: 680 }}>
-            บทเรียนการใช้คำเพื่อเพิ่มยอดขายบน Facebook, IG, TikTok และ LINE — โดยไม่ต้องเป็นนักเขียน
+            หลักสูตรการใช้คำเพื่อเพิ่มยอดขายบน Facebook, IG, TikTok และ LINE — โดยไม่ต้องเป็นนักเขียน
           </div>
           {/* Price badge */}
           <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
