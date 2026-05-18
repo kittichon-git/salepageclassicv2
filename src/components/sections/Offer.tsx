@@ -6,6 +6,10 @@ import { offer, cta } from "@/lib/data";
 export function Offer() {
   return (
     <Section id="offer" tab="S8 · OFFER" tone="cream">
+      <div className="space-y-8">
+      <p className="font-[family-name:var(--font-kanit)] text-xl font-bold leading-[1.3] text-[var(--color-navy-500)] sm:text-2xl">
+        {offer.tagline}
+      </p>
       <div className="grid grid-cols-1 gap-8 lg:grid-cols-[1.2fr_1fr]">
         {/* Left: Value table */}
         <ScrollReveal>
@@ -87,6 +91,7 @@ export function Offer() {
             </p>
           </div>
         </ScrollReveal>
+      </div>
       </div>
     </Section>
   );

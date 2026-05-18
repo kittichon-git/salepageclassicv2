@@ -24,14 +24,14 @@ export function Mechanism() {
               >
                 {/* Amber number badge */}
                 <div className="shrink-0 bg-[var(--color-amber-500)] px-3 py-1 font-[family-name:var(--font-jetbrains-mono)] text-sm font-extrabold text-[var(--color-navy-500)] self-start">
-                  {i + 1}
+                  {step.n}
                 </div>
                 <div>
                   <h3 className="font-[family-name:var(--font-kanit)] text-lg font-bold leading-[1.3] text-[var(--color-navy-500)]">
                     {step.title}
                   </h3>
                   <p className="mt-1 font-[family-name:var(--font-bai-jamjuree)] text-sm leading-[1.55] text-[var(--color-text-muted)]">
-                    {step.detail}
+                    {step.body}
                   </p>
                 </div>
               </div>

@@ -15,9 +15,11 @@ export function Hero() {
               {hero.preHeadline}
             </p>
 
-            {/* Pain — H2 */}
+            {/* Pain — H2 (2 lines) */}
             <h2 className="font-[family-name:var(--font-kanit)] text-xl font-medium leading-[1.3] text-balance text-[var(--color-text-muted)] sm:text-2xl lg:text-3xl">
-              {hero.painH2}
+              {hero.painH2[0]}
+              <br />
+              {hero.painH2[1]}
             </h2>
 
             {/* Solution — H1 */}
