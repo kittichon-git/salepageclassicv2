@@ -34,6 +34,13 @@ export function Relevance() {
             </ScrollReveal>
           ))}
         </div>
+
+        {/* Story close */}
+        <ScrollReveal delay={0.1}>
+          <p className="font-[family-name:var(--font-bai-jamjuree)] text-base leading-[1.6] text-[var(--color-text-muted)] border-l-4 border-[var(--color-amber-500)] pl-5">
+            {relevance.story}
+          </p>
+        </ScrollReveal>
       </div>
     </Section>
   );

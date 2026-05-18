@@ -28,6 +28,13 @@ export function FinalCTA() {
           </p>
         </ScrollReveal>
 
+        {/* Urgency */}
+        <ScrollReveal delay={0.13}>
+          <p className="max-w-[520px] font-[family-name:var(--font-bai-jamjuree)] text-base font-bold leading-[1.55] text-[var(--color-cream)]">
+            {finalCta.urgency}
+          </p>
+        </ScrollReveal>
+
         {/* CTA */}
         <ScrollReveal delay={0.14}>
           <CTAButton
