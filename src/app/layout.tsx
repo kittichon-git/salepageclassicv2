@@ -75,7 +75,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       lang="th"
       className={`${kanit.variable} ${baiJamjuree.variable} ${jetbrainsMono.variable}`}
     >
-      <body>
+      <body className="pt-16">
         <a href="#hero" className="skip-link">
           ข้ามไปยังเนื้อหา
         </a>
