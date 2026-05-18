@@ -183,22 +183,6 @@ export const curriculum = {
   ],
 } as const;
 
-export const instructor = {
-  heading: "จากคนที่เคยเขียนสวย แต่ไม่มีคนซื้อ",
-  name: "Kittichon",
-  initial: "KC",
-  story: [
-    "ผม Kittichon — ขายของออนไลน์มา X ปี เคยเขียนโพสต์สวยจนคนชม แต่ไม่มีคนซื้อ",
-    "วันที่เลิกเขียนเพื่อให้คน \u201cชม\u201d แล้วเริ่มเขียนเพื่อให้คน \u201cทำตาม\u201d — ทุกอย่างเปลี่ยน",
-    "หนังสือเล่มนี้คือสิ่งที่ผมอยากให้ตัวเอง 5 ปีก่อนได้อ่าน",
-  ],
-  credentials: [
-    "placeholder credential 1",
-    "placeholder credential 2",
-    "placeholder credential 3",
-  ],
-} as const;
-
 // Math: 990 + 490 + 390 + 290 + 190 + 140 = 2,490
 export const offer = {
   heading: "ความคุ้มค่าที่คุณจะได้รับ",

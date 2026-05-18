@@ -5,7 +5,6 @@ import { Mechanism } from "@/components/sections/Mechanism";
 import { Outcome } from "@/components/sections/Outcome";
 import { Fit } from "@/components/sections/Fit";
 import { Curriculum } from "@/components/sections/Curriculum";
-import { Instructor } from "@/components/sections/Instructor";
 import { Offer } from "@/components/sections/Offer";
 import { FAQ } from "@/components/sections/FAQ";
 import { FinalCTA } from "@/components/sections/FinalCTA";
@@ -24,7 +23,6 @@ export default function Page() {
         <Outcome />
         <Fit />
         <Curriculum />
-        <Instructor />
         <Offer />
         <FAQ />
         <FinalCTA />

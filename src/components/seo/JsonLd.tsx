@@ -44,13 +44,6 @@ export function JsonLd() {
         },
       })),
     },
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      name: "Kittichon",
-      url: SITE_URL,
-      jobTitle: "Author",
-    },
   ];
 
   return (
