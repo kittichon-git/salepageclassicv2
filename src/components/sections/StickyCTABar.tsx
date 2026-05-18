@@ -21,7 +21,7 @@ export function StickyCTABar() {
         "border-t-[1.5px] border-[var(--color-navy-500)]",
         "bg-[rgba(255,253,247,0.96)] backdrop-blur-sm",
         "shadow-[0_-3px_0_rgba(35,49,73,0.48)]",
-        "px-4 pt-3 safe-bottom",
+        "px-4 pt-3 pb-3",
         "transition-transform duration-300 ease-out motion-reduce:transition-none",
         isVisible ? "translate-y-0" : "translate-y-full",
       ].join(" ")}
