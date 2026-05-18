@@ -21,12 +21,14 @@ export function Curriculum() {
       <div className="space-y-6">
         <div className="flex items-start justify-between gap-4">
           <ScrollReveal>
-            <h2
-              className="font-[family-name:var(--font-kanit)] font-extrabold tracking-[-0.035em] text-[var(--color-navy-500)]"
-              style={{ fontSize: "clamp(1.875rem, 4vw, 3.375rem)" }}
-            >
-              {curriculum.heading}
-            </h2>
+            <div className="space-y-1">
+              <h2 className="font-[family-name:var(--font-kanit)] font-extrabold leading-[1.3] text-balance text-[var(--color-navy-500)] text-3xl sm:text-4xl lg:text-5xl">
+                {curriculum.title}
+              </h2>
+              <p className="font-[family-name:var(--font-bai-jamjuree)] text-sm text-[var(--color-text-muted)]">
+                {curriculum.subtitle}
+              </p>
+            </div>
           </ScrollReveal>
 
           {/* Arrow controls — desktop only */}
@@ -72,13 +74,13 @@ export function Curriculum() {
               >
                 {/* Chapter badge */}
                 <div className="mb-4 inline-block bg-[var(--color-teal-500)] px-3 py-1 font-[family-name:var(--font-jetbrains-mono)] text-xs font-extrabold uppercase tracking-[0.12em] text-[var(--color-cream)]">
-                  ภาค {ch.number}
+                  ภาค {ch.no}
                 </div>
-                <h3 className="mb-2 font-[family-name:var(--font-kanit)] text-lg font-bold tracking-[-0.035em] text-[var(--color-navy-500)]">
-                  {ch.title}
+                <h3 className="mb-2 font-[family-name:var(--font-kanit)] text-lg font-bold leading-[1.3] text-[var(--color-navy-500)]">
+                  {ch.name}
                 </h3>
                 <p className="font-[family-name:var(--font-bai-jamjuree)] text-sm leading-[1.55] text-[var(--color-text-muted)]">
-                  {ch.body}
+                  {ch.detail}
                 </p>
               </div>
             ))}
@@ -93,18 +95,22 @@ export function Curriculum() {
               ].join(" ")}
             >
               <div className="mb-4 flex items-center gap-2">
-                <Sparkles size={18} className="text-[var(--color-navy-500)]" aria-hidden="true" />
+                <Sparkles
+                  size={18}
+                  className="text-[var(--color-navy-500)]"
+                  aria-hidden="true"
+                />
                 <span className="font-[family-name:var(--font-jetbrains-mono)] text-xs font-extrabold uppercase tracking-[0.12em] text-[var(--color-navy-500)]">
                   ภาคผนวก
                 </span>
               </div>
               <ul className="space-y-2">
-                {curriculum.bonus.items.map((item, i) => (
+                {curriculum.bonuses.map((b, i) => (
                   <li
                     key={i}
                     className="font-[family-name:var(--font-bai-jamjuree)] text-sm leading-[1.55] text-[var(--color-navy-500)]"
                   >
-                    {item}
+                    {b.code} · {b.name}
                   </li>
                 ))}
               </ul>
@@ -121,13 +127,18 @@ export function Curriculum() {
           ].join(" ")}
         >
           <div className="flex items-center gap-3">
-            <Sparkles size={20} className="shrink-0 text-[var(--color-amber-400)]" aria-hidden="true" />
+            <Sparkles
+              size={20}
+              className="shrink-0 text-[var(--color-amber-400)]"
+              aria-hidden="true"
+            />
             <p className="font-[family-name:var(--font-bai-jamjuree)] text-sm leading-[1.55] text-[var(--color-cream)]">
-              {curriculum.bonus.heading} — {curriculum.bonus.items.join(" · ")}
+              {curriculum.bonusHeading}{" "}
+              {curriculum.bonuses.map((b) => `${b.code} · ${b.name}`).join("  ·  ")}
             </p>
           </div>
           <CTAButton href={cta.lineUrl} variant="line" size="md" showIcon className="shrink-0">
-            {curriculum.inlineCta}
+            {cta.finalLabel}
           </CTAButton>
         </div>
       </div>

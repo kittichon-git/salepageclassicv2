@@ -1,7 +1,7 @@
 import { Section } from "@/components/ui/Section";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { CTAButton } from "@/components/ui/CTAButton";
-import { finalCta, cta, hero } from "@/lib/data";
+import { finalCta } from "@/lib/data";
 
 export function FinalCTA() {
   return (
@@ -14,61 +14,38 @@ export function FinalCTA() {
           </div>
         </ScrollReveal>
 
-        {/* Pain */}
+        {/* Headline — H2 */}
         <ScrollReveal delay={0.06}>
-          <p
-            className="mx-auto max-w-[640px] font-[family-name:var(--font-kanit)] font-semibold tracking-tight text-[rgba(251,245,232,0.75)]"
-            style={{ fontSize: "clamp(1.125rem, 2.5vw, 1.625rem)" }}
-          >
-            {finalCta.painHeadline}
-          </p>
-        </ScrollReveal>
-
-        {/* Solution — H2 */}
-        <ScrollReveal delay={0.1}>
-          <h2
-            className="mx-auto max-w-[780px] font-[family-name:var(--font-kanit)] font-extrabold tracking-[-0.035em] text-[var(--color-cream)]"
-            style={{ fontSize: "clamp(1.875rem, 4vw, 3.375rem)" }}
-          >
-            {finalCta.heading.split("\n").map((line, i) => {
-              const hw = finalCta.headingAmber[i];
-              if (!hw) return <span key={i} className="block">{line}</span>;
-              const idx = line.indexOf(hw);
-              return (
-                <span key={i} className="block">
-                  {line.slice(0, idx)}
-                  <span className="text-[var(--color-amber-400)]">{hw}</span>
-                  {line.slice(idx + hw.length)}
-                </span>
-              );
-            })}
+          <h2 className="mx-auto max-w-[780px] font-[family-name:var(--font-kanit)] font-extrabold leading-[1.3] text-balance text-[var(--color-cream)] text-3xl sm:text-4xl lg:text-5xl">
+            {finalCta.headline}
           </h2>
         </ScrollReveal>
 
-        {/* Body */}
-        <ScrollReveal delay={0.14}>
+        {/* Subline */}
+        <ScrollReveal delay={0.1}>
           <p className="max-w-[520px] font-[family-name:var(--font-bai-jamjuree)] text-lg leading-[1.55] text-[rgba(251,245,232,0.80)]">
-            {finalCta.body}
+            {finalCta.subline}
           </p>
         </ScrollReveal>
 
         {/* CTA */}
-        <ScrollReveal delay={0.18}>
-          <CTAButton href={cta.lineUrl} variant="line" size="lg" showIcon className="w-full sm:w-auto">
-            {cta.finalLabel}
+        <ScrollReveal delay={0.14}>
+          <CTAButton
+            href={finalCta.ctaHref}
+            variant="line"
+            size="lg"
+            showIcon
+            className="w-full sm:w-auto"
+          >
+            {finalCta.ctaLabel}
           </CTAButton>
         </ScrollReveal>
 
-        {/* Trust strip */}
-        <ScrollReveal delay={0.22}>
-          <div className="flex flex-wrap items-center justify-center gap-x-2 gap-y-1 font-[family-name:var(--font-jetbrains-mono)] text-[11px] uppercase tracking-[0.12em] text-[rgba(251,245,232,0.60)]">
-            {hero.trustStrip.map((item, i) => (
-              <span key={item} className="flex items-center gap-2">
-                {i > 0 && <span aria-hidden="true">·</span>}
-                {item}
-              </span>
-            ))}
-          </div>
+        {/* Reassurance */}
+        <ScrollReveal delay={0.18}>
+          <p className="font-[family-name:var(--font-bai-jamjuree)] text-sm text-[rgba(251,245,232,0.60)]">
+            {finalCta.reassurance}
+          </p>
         </ScrollReveal>
       </div>
     </Section>

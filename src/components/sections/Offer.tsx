@@ -1,10 +1,7 @@
 import { Section } from "@/components/ui/Section";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { CTAButton } from "@/components/ui/CTAButton";
-import { ShieldCheck, Smartphone, Infinity } from "lucide-react";
 import { offer, cta } from "@/lib/data";
-
-const assuranceIcons = [ShieldCheck, Smartphone, Infinity] as const;
 
 export function Offer() {
   return (
@@ -19,31 +16,18 @@ export function Offer() {
               "shadow-[5px_5px_0_rgba(35,49,73,0.62)]",
             ].join(" ")}
           >
-            <h2
-              className="mb-6 font-[family-name:var(--font-kanit)] font-extrabold tracking-[-0.035em] text-[var(--color-navy-500)]"
-              style={{ fontSize: "clamp(1.875rem, 4vw, 3.375rem)" }}
-            >
+            <h2 className="mb-2 font-[family-name:var(--font-kanit)] font-extrabold leading-[1.3] text-balance text-[var(--color-navy-500)] text-3xl sm:text-4xl lg:text-5xl">
               {offer.heading}
             </h2>
+            <p className="mb-6 font-[family-name:var(--font-bai-jamjuree)] text-sm leading-[1.6] text-[var(--color-text-muted)]">
+              {offer.packageLine}
+            </p>
 
             <div className="divide-y divide-[rgba(35,49,73,0.24)]">
-              {offer.valueStack.map((item, i) => (
+              {offer.stack.map((item, i) => (
                 <div key={i} className="flex items-start justify-between gap-3 py-3">
-                  <span className="flex items-center gap-1.5 font-[family-name:var(--font-bai-jamjuree)] text-sm text-[var(--color-navy-500)]">
-                    {item.icon && <span aria-hidden="true">{item.icon}</span>}
-                    {item.code && (
-                      <span className="font-[family-name:var(--font-jetbrains-mono)] text-xs font-bold text-[var(--color-teal-500)]">
-                        {item.code}
-                      </span>
-                    )}
-                    <span>
-                      {item.name}
-                      {item.sublabel && (
-                        <span className="ml-1 text-xs text-[var(--color-text-muted)]">
-                          — {item.sublabel}
-                        </span>
-                      )}
-                    </span>
+                  <span className="font-[family-name:var(--font-bai-jamjuree)] text-sm text-[var(--color-navy-500)]">
+                    {item.item}
                   </span>
                   <span className="shrink-0 font-[family-name:var(--font-jetbrains-mono)] text-sm font-bold text-[var(--color-text-muted)]">
                     {item.value.toLocaleString("en-US")} ฿
@@ -76,7 +60,7 @@ export function Offer() {
           >
             {/* Anchor price */}
             <div className="font-[family-name:var(--font-jetbrains-mono)] text-lg font-bold text-[rgba(255,249,236,0.5)] line-through">
-              {offer.priceAnchor} ฿
+              {offer.anchorPrice.toLocaleString("en-US")} ฿
             </div>
 
             {/* Today price */}
@@ -85,7 +69,7 @@ export function Offer() {
                 className="font-[family-name:var(--font-jetbrains-mono)] font-extrabold leading-none text-[var(--color-amber-400)]"
                 style={{ fontSize: "clamp(3.25rem, 8vw, 5.125rem)" }}
               >
-                {offer.priceToday}
+                {offer.todayPrice}
               </span>
               <span className="mb-1 font-[family-name:var(--font-jetbrains-mono)] text-xl font-bold text-[var(--color-cream)]">
                 บาท
@@ -97,20 +81,10 @@ export function Offer() {
               {cta.buyLabel}
             </CTAButton>
 
-            {/* Assurances */}
-            <div className="flex flex-col gap-2 w-full text-left">
-              {offer.assurances.map((text, i) => {
-                const Icon = assuranceIcons[i] ?? ShieldCheck;
-                return (
-                  <div key={i} className="flex items-center gap-2">
-                    <Icon size={16} className="shrink-0 text-[var(--color-teal-500)]" aria-hidden="true" />
-                    <span className="font-[family-name:var(--font-bai-jamjuree)] text-sm text-[var(--color-cream)]">
-                      {text}
-                    </span>
-                  </div>
-                );
-              })}
-            </div>
+            {/* Price callout */}
+            <p className="font-[family-name:var(--font-bai-jamjuree)] text-sm leading-[1.6] text-[var(--color-cream)]">
+              {offer.priceCallout}
+            </p>
           </div>
         </ScrollReveal>
       </div>

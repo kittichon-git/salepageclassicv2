@@ -2,7 +2,7 @@ import { Section } from "@/components/ui/Section";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { mechanism } from "@/lib/data";
 
-const RMOTRA_STEPS = ["R", "M", "O", "T", "R", "A"];
+const RMOTRA_LETTERS = ["R", "M", "O", "T", "R", "A"];
 
 export function Mechanism() {
   return (
@@ -11,12 +11,14 @@ export function Mechanism() {
         {/* Left: heading + steps */}
         <div className="space-y-8">
           <ScrollReveal>
-            <h2
-              className="font-[family-name:var(--font-kanit)] font-extrabold tracking-[-0.035em] text-[var(--color-navy-500)]"
-              style={{ fontSize: "clamp(1.875rem, 4vw, 3.375rem)" }}
-            >
-              {mechanism.heading}
-            </h2>
+            <div className="space-y-3">
+              <h2 className="font-[family-name:var(--font-kanit)] font-extrabold leading-[1.3] text-balance text-[var(--color-navy-500)] text-3xl sm:text-4xl lg:text-5xl">
+                {mechanism.intro}
+              </h2>
+              <p className="font-[family-name:var(--font-bai-jamjuree)] text-base leading-[1.6] text-[var(--color-navy-500)]">
+                {mechanism.leadIn}
+              </p>
+            </div>
           </ScrollReveal>
 
           <div className="space-y-4">
@@ -31,29 +33,20 @@ export function Mechanism() {
                 >
                   {/* Amber number badge */}
                   <div className="shrink-0 bg-[var(--color-amber-500)] px-3 py-1 font-[family-name:var(--font-jetbrains-mono)] text-sm font-extrabold text-[var(--color-navy-500)] self-start">
-                    {step.number}
+                    {i + 1}
                   </div>
                   <div>
-                    <h3 className="font-[family-name:var(--font-kanit)] text-lg font-bold tracking-[-0.035em] text-[var(--color-navy-500)]">
+                    <h3 className="font-[family-name:var(--font-kanit)] text-lg font-bold leading-[1.3] text-[var(--color-navy-500)]">
                       {step.title}
                     </h3>
                     <p className="mt-1 font-[family-name:var(--font-bai-jamjuree)] text-sm leading-[1.55] text-[var(--color-text-muted)]">
-                      {step.body}
+                      {step.detail}
                     </p>
                   </div>
                 </div>
               </ScrollReveal>
             ))}
           </div>
-
-          {/* Tagline */}
-          <ScrollReveal delay={0.25}>
-            <div className="border-l-4 border-[var(--color-teal-500)] pl-4">
-              <p className="font-[family-name:var(--font-bai-jamjuree)] text-lg font-semibold italic leading-[1.55] text-[var(--color-navy-500)]">
-                {mechanism.tagline}
-              </p>
-            </div>
-          </ScrollReveal>
         </div>
 
         {/* Right: R-MOTRA brutalist diagram */}
@@ -70,7 +63,7 @@ export function Mechanism() {
               Framework R-MOTRA
             </div>
             <div className="flex flex-col items-center gap-1 w-full">
-              {RMOTRA_STEPS.map((letter, i) => (
+              {mechanism.framework.map((label, i) => (
                 <div key={i} className="flex flex-col items-center w-full">
                   <div
                     className={[
@@ -80,23 +73,16 @@ export function Mechanism() {
                     ].join(" ")}
                   >
                     <span className="font-[family-name:var(--font-jetbrains-mono)] text-xl font-extrabold text-[var(--color-amber-400)] w-8">
-                      {letter}
+                      {RMOTRA_LETTERS[i]}
                     </span>
                     <span className="font-[family-name:var(--font-bai-jamjuree)] text-xs text-[var(--color-cream)]">
-                      {
-                        [
-                          "Relevance",
-                          "Mechanism",
-                          "Outcome",
-                          "Trust",
-                          "Risk Reversal",
-                          "Action",
-                        ][i]
-                      }
+                      {label}
                     </span>
                   </div>
-                  {i < RMOTRA_STEPS.length - 1 && (
-                    <div className="text-[var(--color-amber-500)] font-bold leading-none py-0.5">↓</div>
+                  {i < mechanism.framework.length - 1 && (
+                    <div className="text-[var(--color-amber-500)] font-bold leading-none py-0.5">
+                      ↓
+                    </div>
                   )}
                 </div>
               ))}

@@ -1,4 +1,4 @@
-import { faq, meta, offer } from "@/lib/data";
+import { riskReversal, meta, offer } from "@/lib/data";
 
 const SITE_URL = process.env["NEXT_PUBLIC_SITE_URL"] ?? "https://phachara.com";
 
@@ -25,7 +25,7 @@ export function JsonLd() {
       },
       offers: {
         "@type": "Offer",
-        price: offer.priceToday,
+        price: String(offer.todayPrice),
         highPrice: String(offer.totalValue),
         priceCurrency: "THB",
         availability: "https://schema.org/InStock",
@@ -35,7 +35,7 @@ export function JsonLd() {
     {
       "@context": "https://schema.org",
       "@type": "FAQPage",
-      mainEntity: faq.items.map((item) => ({
+      mainEntity: riskReversal.items.map((item) => ({
         "@type": "Question",
         name: item.q,
         acceptedAnswer: {

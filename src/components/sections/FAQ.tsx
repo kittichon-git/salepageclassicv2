@@ -1,7 +1,7 @@
 import { Section } from "@/components/ui/Section";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { ShieldCheck, ChevronDown } from "lucide-react";
-import { faq } from "@/lib/data";
+import { riskReversal } from "@/lib/data";
 
 export function FAQ() {
   return (
@@ -11,17 +11,18 @@ export function FAQ() {
         <ScrollReveal>
           <div className="flex gap-4 border-l-4 border-[var(--color-teal-500)] pl-5">
             <div className="flex h-12 w-12 shrink-0 items-center justify-center bg-[rgba(47,133,136,0.15)]">
-              <ShieldCheck size={24} className="text-[var(--color-teal-500)]" aria-hidden="true" />
+              <ShieldCheck
+                size={24}
+                className="text-[var(--color-teal-500)]"
+                aria-hidden="true"
+              />
             </div>
             <div>
-              <h2
-                className="font-[family-name:var(--font-kanit)] font-extrabold tracking-[-0.035em] text-[var(--color-navy-500)]"
-                style={{ fontSize: "clamp(1.5rem, 3.5vw, 2.5rem)" }}
-              >
-                {faq.heading}
+              <h2 className="font-[family-name:var(--font-kanit)] font-extrabold leading-[1.3] text-balance text-[var(--color-navy-500)] text-2xl sm:text-3xl lg:text-4xl">
+                {riskReversal.heading}
               </h2>
               <p className="mt-1 font-[family-name:var(--font-bai-jamjuree)] text-base leading-[1.55] text-[var(--color-text-muted)]">
-                {faq.guarantee}
+                {riskReversal.body}
               </p>
             </div>
           </div>
@@ -29,7 +30,7 @@ export function FAQ() {
 
         {/* FAQ accordion */}
         <div className="space-y-2">
-          {faq.items.map((item, i) => (
+          {riskReversal.items.map((item, i) => (
             <ScrollReveal key={i} delay={i * 0.06}>
               <details className="group border-[1.5px] border-[var(--color-navy-500)] bg-[var(--color-cream)] shadow-[2px_2px_0_rgba(35,49,73,0.48)]">
                 <summary className="flex cursor-pointer list-none items-center justify-between gap-4 p-5 font-[family-name:var(--font-bai-jamjuree)] font-bold text-[var(--color-navy-500)]">
