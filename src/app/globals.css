@@ -87,7 +87,7 @@ body {
 /*=== iOS safe-area bottom padding ===*/
 @layer utilities {
   .safe-bottom {
-    padding-bottom: max(0.75rem, env(safe-area-inset-bottom));
+    padding-bottom: env(safe-area-inset-bottom);
   }
 }
 
