@@ -25,17 +25,24 @@ export const nav = {
 } as const;
 
 export const hero = {
-  eyebrow: "R-MOTRA SALE PAGE · MOBILE-FIRST",
-  preHeadline: "ยุคที่ใครๆ ก็ปักตะกร้าสินค้าตัวเดียวกัน... คนที่ชนะ คือคนที่ 'ใช้คำ' ได้โดนใจกว่าเท่านั้น",
-  painH2: [
-    "สินค้าดีแค่ไหน ก็ไร้ความหมาย...",
-    "ถ้าโพสต์ของคุณยัง 'ไม่มีคนอ่าน' (และนี่คือวิธีแก้)",
-  ] as const,
-  solutionH1: "หลักสูตรการใช้คำ \u201cแค่เปลี่ยนคำ ก็ทำเงิน\u201d",
-  subHeadline:
+  preHeadline:
+    "ยุคที่ใครๆ ก็ปักตะกร้าสินค้าตัวเดียวกัน... คนที่ชนะ คือคนที่ 'ใช้คำ' ได้โดนใจกว่าเท่านั้น",
+  painHook: {
+    before: "สินค้าดีแค่ไหน ก็ไร้ความหมาย... ถ้าโพสต์ของคุณยัง",
+    highlight: "ไม่มีคนอ่าน",
+  },
+  solutionPromise: "และนี่คือวิธีแก้",
+  productTitle: "หลักสูตรการใช้คำ \u201cแค่เปลี่ยนคำ ก็ทำเงิน\u201d",
+  description:
     "เปลี่ยนโพสต์เงียบ เป็นโพสต์ทำเงิน ไม่ต้องมีพื้นฐานนักเขียนหรือการตลาด ก็ทำตามได้ทันที",
-  ctaLabel: "เริ่มอ่านฟรี 2 บทแรก (ผ่าน LINE)",
-  ctaHref: "https://lin.ee/6rOdCZg",
+  cta: {
+    label: "เริ่มอ่านฟรี 2 บทแรก (ผ่าน LINE)",
+    href: "https://lin.ee/6rOdCZg",
+  },
+  microCopy: [
+    { icon: "lock" as const, text: "ไม่ต้องกรอกบัตร" },
+    { icon: "shield" as const, text: "รับประกัน 7 วัน คืน 100%" },
+  ],
 } as const;
 
 export const relevance = {

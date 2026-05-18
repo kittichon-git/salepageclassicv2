@@ -1,3 +1,4 @@
+import { ArrowDownRight, Lock, ShieldCheck } from "lucide-react";
 import { Section } from "@/components/ui/Section";
 import { CTAButton } from "@/components/ui/CTAButton";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
@@ -5,46 +6,81 @@ import { hero } from "@/lib/data";
 
 export function Hero() {
   return (
-    <Section id="hero" tone="paper" tab={hero.eyebrow} className="pt-8 md:pt-10">
-      <div className="space-y-8">
-        {/* Pre-headline + Pain H2 + Solution H1 + Sub */}
+    <Section id="hero" tone="paper" className="pt-8 md:pt-10">
+      <div className="mx-auto max-w-[640px] space-y-6">
+        {/* 1. Pre-headline */}
         <ScrollReveal>
-          <div className="space-y-5">
-            {/* Pre-headline */}
-            <p className="font-[family-name:var(--font-bai-jamjuree)] text-base leading-[1.6] text-[var(--color-text-muted)]">
-              {hero.preHeadline}
-            </p>
+          <p className="text-[15px] leading-[1.6] text-[var(--color-text-muted)] text-balance">
+            {hero.preHeadline}
+          </p>
+        </ScrollReveal>
 
-            {/* Pain — H2 (2 lines) */}
-            <h2 className="font-[family-name:var(--font-kanit)] text-xl font-medium leading-[1.3] text-balance text-[var(--color-text-muted)] sm:text-2xl lg:text-3xl">
-              {hero.painH2[0]}
-              <br />
-              {hero.painH2[1]}
-            </h2>
+        {/* 2. Pain Hook — dominant H2 */}
+        <ScrollReveal delay={0.05}>
+          <h2 className="font-[family-name:var(--font-kanit)] text-2xl font-extrabold leading-[1.3] text-balance text-[var(--color-navy-900)] sm:text-3xl md:text-4xl">
+            {hero.painHook.before}{" "}
+            <span
+              className="text-[var(--color-terracotta)] underline decoration-wavy decoration-[var(--color-terracotta-soft)]"
+            >
+              {hero.painHook.highlight}
+            </span>
+          </h2>
+        </ScrollReveal>
 
-            {/* Solution — H1 */}
-            <h1 className="font-[family-name:var(--font-kanit)] font-extrabold leading-[1.15] tracking-normal text-balance text-[var(--color-navy-900)] text-[2.25rem] sm:text-5xl lg:text-[3.75rem] lg:leading-[1.1]">
-              {hero.solutionH1}
-            </h1>
+        {/* 3. Solution promise */}
+        <ScrollReveal delay={0.1}>
+          <div className="flex items-center gap-2 text-lg font-semibold text-[var(--color-terracotta)] sm:text-xl">
+            <ArrowDownRight className="size-5 shrink-0" aria-hidden="true" />
+            <p>({hero.solutionPromise})</p>
+          </div>
+        </ScrollReveal>
 
-            {/* Sub-headline */}
-            <p className="max-w-[640px] font-[family-name:var(--font-bai-jamjuree)] text-base leading-[1.6] text-[var(--color-navy-600)] lg:text-lg">
-              {hero.subHeadline}
+        {/* 4. Product title — notebook frame */}
+        <ScrollReveal delay={0.13}>
+          <div className="mt-2 border-2 border-dashed border-[var(--color-terracotta-soft)] bg-[var(--color-paper)] px-5 py-6 sm:px-6 sm:py-7">
+            <p className="text-center text-xl font-bold leading-[1.4] text-balance text-[var(--color-navy-900)] sm:text-2xl font-[family-name:var(--font-kanit)]">
+              {hero.productTitle}
             </p>
           </div>
         </ScrollReveal>
 
-        {/* CTA */}
-        <ScrollReveal delay={0.1}>
-          <CTAButton
-            href={hero.ctaHref}
-            variant="line"
-            size="lg"
-            showIcon
-            className="w-full md:w-auto"
-          >
-            {hero.ctaLabel}
-          </CTAButton>
+        {/* 5. Description */}
+        <ScrollReveal delay={0.16}>
+          <p className="text-[17px] leading-[1.6] text-[var(--color-navy-600)] text-balance">
+            {hero.description}
+          </p>
+        </ScrollReveal>
+
+        {/* 6. CTA */}
+        <ScrollReveal delay={0.2}>
+          <div className="pt-2">
+            <CTAButton
+              href={hero.cta.href}
+              variant="line"
+              size="lg"
+              showIcon
+              className="w-full"
+            >
+              {hero.cta.label}
+            </CTAButton>
+          </div>
+        </ScrollReveal>
+
+        {/* 7. Micro-copy */}
+        <ScrollReveal delay={0.23}>
+          <ul className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 pt-2 text-sm text-[var(--color-text-muted)]">
+            {hero.microCopy.map((item) => (
+              <li key={item.text} className="flex items-center gap-1.5">
+                {item.icon === "lock" && (
+                  <Lock className="size-4" aria-hidden="true" />
+                )}
+                {item.icon === "shield" && (
+                  <ShieldCheck className="size-4" aria-hidden="true" />
+                )}
+                {item.text}
+              </li>
+            ))}
+          </ul>
         </ScrollReveal>
       </div>
     </Section>
