@@ -10,12 +10,14 @@ export function JsonLd() {
       name: "phachara.com",
       url: SITE_URL,
       logo: `${SITE_URL}/icon`,
+      sameAs: ["https://lin.ee/6rOdCZg"],
     },
     {
       "@context": "https://schema.org",
       "@type": "Product",
       name: meta.productName,
       description: `${meta.productTagline} ที่คนไทย ${meta.readers} คนใช้แล้วยอดขายขึ้น`,
+      image: `${SITE_URL}/opengraph-image`,
       url: SITE_URL,
       aggregateRating: {
         "@type": "AggregateRating",

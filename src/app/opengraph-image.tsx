@@ -48,20 +48,20 @@ export default async function OGImage() {
           </div>
           <div
             style={{
-              background: "#2f8588",
-              color: "#fffdf7",
+              border: "1.5px solid #233149",
+              color: "#233149",
               padding: "6px 12px",
-              fontWeight: 800,
+              fontWeight: 700,
               fontSize: 12,
               letterSpacing: "0.06em",
               textTransform: "uppercase",
             }}
           >
-            R-MOTRA SALE PAGE · MOBILE-FIRST
+            บทเรียนออนไลน์ · 7 ภาค 24 บท
           </div>
         </div>
 
-        {/* Center: headline */}
+        {/* Center: product name + subline + price */}
         <div
           style={{
             display: "flex",
@@ -72,18 +72,42 @@ export default async function OGImage() {
         >
           <div
             style={{
-              fontSize: 64,
+              fontSize: 68,
               fontWeight: 800,
-              lineHeight: 0.95,
-              letterSpacing: "-0.02em",
-              color: "#233149",
-              maxWidth: 900,
+              lineHeight: 1.1,
+              color: "#141d33",
+              maxWidth: 820,
             }}
           >
-            เขียน 1 ประโยค ขายของได้มากกว่าเขียน 100 ประโยค
+            แค่เปลี่ยนคำ ก็ทำเงิน
           </div>
-          <div style={{ fontSize: 22, color: "#5a6478", lineHeight: 1.55, maxWidth: 720 }}>
-            สูตรเปลี่ยน "คำ" 7 ภาค 24 บท ที่คนไทย 1,200+ คนใช้แล้วยอดขายขึ้น
+          <div style={{ fontSize: 22, color: "#5a6478", lineHeight: 1.55, maxWidth: 680 }}>
+            บทเรียนการใช้คำเพื่อเพิ่มยอดขายบน Facebook, IG, TikTok และ LINE — โดยไม่ต้องเป็นนักเขียน
+          </div>
+          {/* Price badge */}
+          <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
+            <div
+              style={{
+                background: "#141d33",
+                color: "#e5be63",
+                padding: "10px 24px",
+                fontWeight: 800,
+                fontSize: 28,
+                letterSpacing: "0.02em",
+              }}
+            >
+              890 ฿
+            </div>
+            <div
+              style={{
+                color: "#5a6478",
+                fontSize: 16,
+                fontWeight: 600,
+                textDecoration: "line-through",
+              }}
+            >
+              2,490 ฿
+            </div>
           </div>
         </div>
 
@@ -107,7 +131,7 @@ export default async function OGImage() {
               fontSize: 18,
             }}
           >
-            อ่านฟรี 2 บทแรก
+            เริ่มอ่านฟรี 2 บทแรก (ผ่าน LINE)
           </div>
           <div
             style={{

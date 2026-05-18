@@ -25,19 +25,20 @@ const jetbrainsMono = JetBrains_Mono({
 
 const SITE_URL = process.env["NEXT_PUBLIC_SITE_URL"] ?? "https://phachara.com";
 
-const TITLE = "เปลี่ยนคำให้คนหยุดดู เปลี่ยนคนดูให้เป็นคนซื้อ | แค่เปลี่ยนคำ ก็ทำเงิน";
+const TITLE = "แค่เปลี่ยนคำ ก็ทำเงิน — บทเรียนการใช้คำเพิ่มยอดขาย";
 const DESCRIPTION =
-  "คู่มือ Copywriting ฉบับ 'แค่เปลี่ยนคำ ก็ทำเงิน' สำหรับคนที่ต้องใช้ social media หารายได้ — 7 ภาค 24 บท เริ่มอ่านฟรี 2 บทแรกผ่าน LINE";
+  "เปลี่ยนคำในโพสต์ขายของให้คนหยุดดูและตัดสินใจซื้อ — บทเรียน \"แค่เปลี่ยนคำ ก็ทำเงิน\" 7 ภาค 24 บท เพิ่มยอดขายบน Facebook, IG, TikTok, LINE โดยไม่ต้องเป็นนักเขียน";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
     default: TITLE,
-    template: "%s | phachara.com",
+    template: "%s · phachara.com",
   },
   description: DESCRIPTION,
   openGraph: {
     type: "website",
+    locale: "th_TH",
     url: SITE_URL,
     title: TITLE,
     description: DESCRIPTION,
