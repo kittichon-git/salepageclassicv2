@@ -1,5 +1,6 @@
 import { Section } from "@/components/ui/Section";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
+import { SectionHeading } from "@/components/ui/SectionHeading";
 import { relevance } from "@/lib/data";
 
 export function Relevance() {
@@ -7,9 +8,9 @@ export function Relevance() {
     <Section id="relevance" tab="S2 · RELEVANCE" tone="cream">
       <div className="space-y-8">
         <ScrollReveal>
-          <h2 className="font-[family-name:var(--font-kanit)] font-extrabold leading-[1.3] text-balance text-[var(--color-navy-500)] text-3xl sm:text-4xl lg:text-5xl">
+          <SectionHeading as="h3" size="md">
             {relevance.leadIn}
-          </h2>
+          </SectionHeading>
         </ScrollReveal>
 
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">

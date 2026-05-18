@@ -25,7 +25,7 @@ export function Section({ id, tab, tone = "paper", className, children }: Props)
         )}
         <div
           className={cn(
-            "border-[1.5px] border-[var(--color-navy-500)] p-8 md:p-12",
+            "border-[1.5px] border-[var(--color-navy-500)] p-6 md:p-12",
             "shadow-[5px_5px_0_var(--color-navy-500)]",
             tone === "paper" && "bg-[var(--color-paper)]",
             tone === "cream" && "bg-[var(--color-cream)]",

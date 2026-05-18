@@ -1,5 +1,6 @@
 import { Section } from "@/components/ui/Section";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
+import { SectionHeading } from "@/components/ui/SectionHeading";
 import { outcome } from "@/lib/data";
 
 export function Outcome() {
@@ -7,9 +8,9 @@ export function Outcome() {
     <Section id="outcome" tab="S4 · OUTCOME" tone="cream">
       <div className="space-y-8">
         <ScrollReveal>
-          <h2 className="font-[family-name:var(--font-kanit)] font-extrabold leading-[1.3] text-balance text-[var(--color-navy-500)] text-3xl sm:text-4xl lg:text-5xl">
+          <SectionHeading size="lg">
             {outcome.intro}
-          </h2>
+          </SectionHeading>
         </ScrollReveal>
 
         {/* Row 1: 3 placeholders */}

@@ -1,15 +1,30 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { CTAButton } from "@/components/ui/CTAButton";
 import { cta } from "@/lib/data";
 import { useScrollDirection } from "@/hooks/useScrollDirection";
 
 export function StickyCTABar() {
   const { direction, scrollY } = useScrollDirection();
+  const [finalCtaVisible, setFinalCtaVisible] = useState(false);
 
-  // Hide: at top of page (Hero CTA still visible) | scrolling up (TopNav takes over)
-  // Show: scrolling down after 80px
-  const isVisible = scrollY >= 80 && direction === "down";
+  // Hide when S10 final CTA is ≥30% visible
+  useEffect(() => {
+    const el = document.querySelector("[data-final-cta]");
+    if (!el) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => setFinalCtaVisible(entry?.isIntersecting ?? false),
+      { threshold: 0.3 },
+    );
+
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  // Show: scrolled past hero AND scrolling down AND S10 not in view
+  const isVisible = scrollY >= 80 && direction === "down" && !finalCtaVisible;
 
   return (
     <div

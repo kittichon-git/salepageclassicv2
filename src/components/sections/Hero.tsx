@@ -17,10 +17,10 @@ export function Hero() {
 
         {/* 2. Pain Hook — dominant H2 */}
         <ScrollReveal delay={0.05}>
-          <h2 className="font-[family-name:var(--font-kanit)] text-2xl font-extrabold leading-[1.3] text-balance text-[var(--color-navy-900)] sm:text-3xl md:text-4xl">
+          <h2 className="font-[family-name:var(--font-kanit)] text-xl font-extrabold leading-[1.3] text-balance text-[var(--color-navy-900)] sm:text-2xl md:text-3xl">
             {hero.painHook.before}{" "}
             <span
-              className="text-[var(--color-terracotta)] underline decoration-wavy decoration-[var(--color-terracotta-soft)]"
+              className="text-[var(--color-terracotta)] underline decoration-wavy decoration-[var(--color-terracotta-soft)] decoration-[2px]"
             >
               {hero.painHook.highlight}
             </span>

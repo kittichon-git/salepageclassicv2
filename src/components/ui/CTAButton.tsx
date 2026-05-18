@@ -28,7 +28,7 @@ export function CTAButton({
     "border-[1.5px] border-[var(--color-navy-500)]",
     "transition-transform duration-150 hover:-translate-y-0.5 active:translate-y-0",
     size === "md" && "px-5 py-3 text-sm",
-    size === "lg" && "px-7 py-4 text-base md:text-lg",
+    size === "lg" && "px-6 py-4 text-base sm:text-lg",
     variant === "line" &&
       "bg-[var(--color-line)] text-white shadow-[3px_3px_0_var(--color-navy-500)] hover:bg-[var(--color-line-dark)]",
     variant === "outline" &&

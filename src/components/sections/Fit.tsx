@@ -1,5 +1,6 @@
 import { Section } from "@/components/ui/Section";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
+import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Check, Minus } from "lucide-react";
 import { fit } from "@/lib/data";
 
@@ -8,9 +9,9 @@ export function Fit() {
     <Section id="fit" tab="S5 · FIT" tone="paper">
       <div className="space-y-8">
         <ScrollReveal>
-          <h2 className="font-[family-name:var(--font-kanit)] font-extrabold leading-[1.3] text-balance text-[var(--color-navy-500)] text-3xl sm:text-4xl lg:text-5xl">
+          <SectionHeading as="h3" size="md">
             {fit.intro}
-          </h2>
+          </SectionHeading>
         </ScrollReveal>
 
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">

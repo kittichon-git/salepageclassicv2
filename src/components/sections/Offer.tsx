@@ -1,5 +1,6 @@
 import { Section } from "@/components/ui/Section";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
+import { SectionHeading } from "@/components/ui/SectionHeading";
 import { CTAButton } from "@/components/ui/CTAButton";
 import { offer, cta } from "@/lib/data";
 
@@ -20,9 +21,9 @@ export function Offer() {
               "shadow-[5px_5px_0_rgba(35,49,73,0.62)]",
             ].join(" ")}
           >
-            <h2 className="mb-2 font-[family-name:var(--font-kanit)] font-extrabold leading-[1.3] text-balance text-[var(--color-navy-500)] text-3xl sm:text-4xl lg:text-5xl">
+            <SectionHeading as="h2" size="sm" className="mb-2">
               {offer.heading}
-            </h2>
+            </SectionHeading>
             <p className="mb-6 font-[family-name:var(--font-bai-jamjuree)] text-sm leading-[1.6] text-[var(--color-text-muted)]">
               {offer.packageLine}
             </p>

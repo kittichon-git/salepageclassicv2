@@ -1,5 +1,6 @@
 import { Section } from "@/components/ui/Section";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
+import { SectionHeading } from "@/components/ui/SectionHeading";
 import { mechanism } from "@/lib/data";
 
 export function Mechanism() {
@@ -7,9 +8,9 @@ export function Mechanism() {
     <Section id="mechanism" tab="S3 · MECHANISM" tone="paper">
       <div className="space-y-8">
         <ScrollReveal>
-          <h2 className="font-[family-name:var(--font-kanit)] font-extrabold leading-[1.3] text-balance text-[var(--color-navy-500)] text-3xl sm:text-4xl lg:text-5xl">
+          <SectionHeading as="h3" size="md">
             {mechanism.leadIn}
-          </h2>
+          </SectionHeading>
         </ScrollReveal>
 
         <div className="space-y-4">
@@ -28,7 +29,9 @@ export function Mechanism() {
                 </div>
                 <div>
                   <h3 className="font-[family-name:var(--font-kanit)] text-lg font-bold leading-[1.3] text-[var(--color-navy-500)]">
-                    {step.title}
+                    {i === 0
+                      ? <>หยุดนิ้วคนดูให้ได้ภายใน <span className="whitespace-nowrap">3 วิ</span></>
+                      : step.title}
                   </h3>
                   <p className="mt-1 font-[family-name:var(--font-bai-jamjuree)] text-base leading-[1.6] text-[var(--color-text-muted)]">
                     {step.body}

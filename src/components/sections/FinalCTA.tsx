@@ -1,5 +1,6 @@
 import { Section } from "@/components/ui/Section";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
+import { SectionHeading } from "@/components/ui/SectionHeading";
 import { CTAButton } from "@/components/ui/CTAButton";
 import { finalCta } from "@/lib/data";
 
@@ -16,9 +17,13 @@ export function FinalCTA() {
 
         {/* Headline — H2 */}
         <ScrollReveal delay={0.06}>
-          <h2 className="mx-auto max-w-[780px] font-[family-name:var(--font-kanit)] font-extrabold leading-[1.3] text-balance text-[var(--color-cream)] text-3xl sm:text-4xl lg:text-5xl">
+          <SectionHeading
+            size="lg"
+            tone="light"
+            className="mx-auto max-w-[780px]"
+          >
             {finalCta.headline}
-          </h2>
+          </SectionHeading>
         </ScrollReveal>
 
         {/* Subline */}
@@ -37,15 +42,17 @@ export function FinalCTA() {
 
         {/* CTA */}
         <ScrollReveal delay={0.14}>
-          <CTAButton
-            href={finalCta.ctaHref}
-            variant="line"
-            size="lg"
-            showIcon
-            className="w-full sm:w-auto"
-          >
-            {finalCta.ctaLabel}
-          </CTAButton>
+          <div data-final-cta>
+            <CTAButton
+              href={finalCta.ctaHref}
+              variant="line"
+              size="lg"
+              showIcon
+              className="w-full sm:w-auto"
+            >
+              {finalCta.ctaLabel}
+            </CTAButton>
+          </div>
         </ScrollReveal>
 
         {/* Reassurance */}

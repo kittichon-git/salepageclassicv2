@@ -1,14 +1,46 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 import { Section } from "@/components/ui/Section";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
+import { SectionHeading } from "@/components/ui/SectionHeading";
 import { CTAButton } from "@/components/ui/CTAButton";
+import { cn } from "@/lib/cn";
 import { ChevronLeft, ChevronRight, Sparkles } from "lucide-react";
 import { curriculum, cta } from "@/lib/data";
 
+const TOTAL_CARDS = curriculum.chapters.length + 1; // +1 bonus card
+
 export function Curriculum() {
   const scrollRef = useRef<HTMLDivElement>(null);
+  const cardsRef = useRef<HTMLDivElement>(null);
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  useEffect(() => {
+    const container = scrollRef.current;
+    const cardsEl = cardsRef.current;
+    if (!container || !cardsEl) return;
+
+    const cardEls = Array.from(cardsEl.children) as HTMLElement[];
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        let maxRatio = 0;
+        let maxIdx = -1;
+        entries.forEach((entry) => {
+          if (entry.intersectionRatio > maxRatio) {
+            maxRatio = entry.intersectionRatio;
+            maxIdx = cardEls.indexOf(entry.target as HTMLElement);
+          }
+        });
+        if (maxIdx !== -1) setActiveIndex(maxIdx);
+      },
+      { root: container, threshold: [0, 0.25, 0.5, 0.75, 1] },
+    );
+
+    cardEls.forEach((card) => observer.observe(card));
+    return () => observer.disconnect();
+  }, []);
 
   function scroll(dir: "left" | "right") {
     const el = scrollRef.current;
@@ -16,14 +48,22 @@ export function Curriculum() {
     el.scrollBy({ left: dir === "left" ? -320 : 320, behavior: "smooth" });
   }
 
+  function scrollToIndex(i: number) {
+    const cardsEl = cardsRef.current;
+    if (!cardsEl) return;
+    const card = cardsEl.children[i] as HTMLElement | undefined;
+    if (!card) return;
+    card.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "start" });
+  }
+
   return (
     <Section id="inside" tab="S6 · CURRICULUM" tone="cream">
       <div className="space-y-6">
         <div className="flex items-start justify-between gap-4">
           <ScrollReveal>
-            <h2 className="font-[family-name:var(--font-kanit)] font-extrabold leading-[1.3] text-balance text-[var(--color-navy-500)] text-3xl sm:text-4xl lg:text-5xl">
+            <SectionHeading as="h2" size="sm">
               {curriculum.title}
-            </h2>
+            </SectionHeading>
           </ScrollReveal>
 
           {/* Arrow controls — desktop only */}
@@ -56,7 +96,7 @@ export function Curriculum() {
           className="-mx-4 overflow-x-auto px-4 pb-4 snap-x snap-mandatory"
           style={{ scrollbarWidth: "none" }}
         >
-          <div className="flex gap-4" style={{ width: "max-content" }}>
+          <div ref={cardsRef} className="flex gap-4" style={{ width: "max-content" }}>
             {curriculum.chapters.map((ch, i) => (
               <div
                 key={i}
@@ -105,12 +145,42 @@ export function Curriculum() {
                     key={i}
                     className="font-[family-name:var(--font-bai-jamjuree)] text-sm leading-[1.55] text-[var(--color-navy-500)]"
                   >
-                    {b.code} · {b.name}
+                    <span className="font-bold">{b.code}</span>
+                    {" · "}
+                    {b.name}
                   </li>
                 ))}
               </ul>
             </div>
           </div>
+        </div>
+
+        {/* Pagination dots */}
+        <div
+          className="flex items-center justify-center gap-2"
+          role="tablist"
+          aria-label="ภาคของหลักสูตร"
+        >
+          {Array.from({ length: TOTAL_CARDS }).map((_, i) => (
+            <button
+              key={i}
+              type="button"
+              role="tab"
+              onClick={() => scrollToIndex(i)}
+              aria-label={
+                i < curriculum.chapters.length
+                  ? (curriculum.chapters[i]?.n ?? `ภาค ${i + 1}`)
+                  : "ภาคผนวก"
+              }
+              aria-selected={activeIndex === i}
+              className={cn(
+                "h-2 transition-all duration-200",
+                activeIndex === i
+                  ? "w-6 bg-[var(--color-terracotta)] scale-125"
+                  : "w-2 bg-[var(--color-navy-100)]",
+              )}
+            />
+          ))}
         </div>
 
         {/* Bonus strip + inline CTA */}
@@ -121,16 +191,22 @@ export function Curriculum() {
             "flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between",
           ].join(" ")}
         >
-          <div className="flex items-center gap-3">
-            <Sparkles
-              size={20}
-              className="shrink-0 text-[var(--color-amber-400)]"
-              aria-hidden="true"
-            />
-            <p className="font-[family-name:var(--font-bai-jamjuree)] text-sm leading-[1.55] text-[var(--color-cream)]">
-              {curriculum.bonusHeading}{" "}
-              {curriculum.bonuses.map((b) => `${b.code} · ${b.name}`).join("  ·  ")}
+          <div className="flex flex-col gap-3">
+            <p className="font-[family-name:var(--font-bai-jamjuree)] text-sm font-bold leading-[1.55] text-[var(--color-amber-400)]">
+              {curriculum.bonusHeading}
             </p>
+            <ul className="space-y-1.5">
+              {curriculum.bonuses.map((b) => (
+                <li
+                  key={b.code}
+                  className="font-[family-name:var(--font-bai-jamjuree)] text-sm leading-[1.55] text-[var(--color-cream)]"
+                >
+                  <span className="font-bold text-[var(--color-amber-400)]">{b.code}</span>
+                  {" · "}
+                  {b.name}
+                </li>
+              ))}
+            </ul>
           </div>
           <CTAButton href={cta.lineUrl} variant="line" size="md" showIcon className="shrink-0">
             {cta.finalLabel}
