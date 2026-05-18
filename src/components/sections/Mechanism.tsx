@@ -30,7 +30,7 @@ export function Mechanism() {
                   <h3 className="font-[family-name:var(--font-kanit)] text-lg font-bold leading-[1.3] text-[var(--color-navy-500)]">
                     {step.title}
                   </h3>
-                  <p className="mt-1 font-[family-name:var(--font-bai-jamjuree)] text-sm leading-[1.55] text-[var(--color-text-muted)]">
+                  <p className="mt-1 font-[family-name:var(--font-bai-jamjuree)] text-base leading-[1.6] text-[var(--color-text-muted)]">
                     {step.body}
                   </p>
                 </div>

@@ -74,7 +74,7 @@ export function Curriculum() {
                 <h3 className="mb-2 font-[family-name:var(--font-kanit)] text-lg font-bold leading-[1.3] text-[var(--color-navy-500)]">
                   {ch.title}
                 </h3>
-                <p className="font-[family-name:var(--font-bai-jamjuree)] text-sm leading-[1.55] text-[var(--color-text-muted)]">
+                <p className="font-[family-name:var(--font-bai-jamjuree)] text-base leading-[1.6] text-[var(--color-text-muted)]">
                   {ch.body}
                 </p>
               </div>

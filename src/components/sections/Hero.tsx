@@ -11,7 +11,7 @@ export function Hero() {
         <ScrollReveal>
           <div className="space-y-5">
             {/* Pre-headline */}
-            <p className="font-[family-name:var(--font-bai-jamjuree)] text-sm leading-[1.6] text-[var(--color-text-muted)]">
+            <p className="font-[family-name:var(--font-bai-jamjuree)] text-base leading-[1.6] text-[var(--color-text-muted)]">
               {hero.preHeadline}
             </p>
 
@@ -28,7 +28,7 @@ export function Hero() {
             </h1>
 
             {/* Sub-headline */}
-            <p className="max-w-[640px] font-[family-name:var(--font-bai-jamjuree)] text-[15px] leading-[1.6] text-[var(--color-navy-600)] sm:text-base lg:text-lg">
+            <p className="max-w-[640px] font-[family-name:var(--font-bai-jamjuree)] text-base leading-[1.6] text-[var(--color-navy-600)] lg:text-lg">
               {hero.subHeadline}
             </p>
           </div>

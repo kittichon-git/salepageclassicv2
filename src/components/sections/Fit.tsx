@@ -34,7 +34,7 @@ export function Fit() {
                       aria-hidden="true"
                       strokeWidth={2.5}
                     />
-                    <span className="font-[family-name:var(--font-bai-jamjuree)] text-sm leading-[1.55] text-[var(--color-navy-500)]">
+                    <span className="font-[family-name:var(--font-bai-jamjuree)] text-base leading-[1.6] text-[var(--color-navy-500)]">
                       {item}
                     </span>
                   </li>
@@ -63,7 +63,7 @@ export function Fit() {
                       aria-hidden="true"
                       strokeWidth={2.5}
                     />
-                    <span className="font-[family-name:var(--font-bai-jamjuree)] text-sm leading-[1.55] text-[var(--color-text-muted)]">
+                    <span className="font-[family-name:var(--font-bai-jamjuree)] text-base leading-[1.6] text-[var(--color-text-muted)]">
                       {item}
                     </span>
                   </li>

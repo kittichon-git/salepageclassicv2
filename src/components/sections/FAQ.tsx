@@ -33,7 +33,7 @@ export function FAQ() {
           {riskReversal.items.map((item, i) => (
             <ScrollReveal key={i} delay={i * 0.06}>
               <details className="group border-[1.5px] border-[var(--color-navy-500)] bg-[var(--color-cream)] shadow-[2px_2px_0_rgba(35,49,73,0.48)]">
-                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 p-5 font-[family-name:var(--font-bai-jamjuree)] font-bold text-[var(--color-navy-500)]">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 p-5 font-[family-name:var(--font-bai-jamjuree)] text-base font-bold text-[var(--color-navy-500)]">
                   {item.q}
                   <ChevronDown
                     size={18}
