@@ -59,6 +59,7 @@ export function Hero() {
               variant="line"
               size="lg"
               showIcon
+              trackingLocation="hero"
               className="w-full"
             >
               {hero.cta.label}

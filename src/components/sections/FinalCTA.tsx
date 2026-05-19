@@ -48,6 +48,7 @@ export function FinalCTA() {
               variant="line"
               size="lg"
               showIcon
+              trackingLocation="final"
               className="w-full sm:w-auto"
             >
               {finalCta.ctaLabel}

@@ -11,7 +11,7 @@ export default function CookiePage() {
   return (
     <LegalLayout
       title="นโยบายคุกกี้"
-      lastUpdated="17 พฤษภาคม 2569"
+      lastUpdated="19 พฤษภาคม 2569"
     >
       <p>
         phachara.com (&quot;เรา&quot;)
@@ -30,8 +30,8 @@ export default function CookiePage() {
       <aside className="not-prose my-4 rounded-lg border-l-4 border-blue-400 bg-blue-50 p-4 text-sm text-blue-900">
         <p>
           <strong>📢 หมายเหตุ</strong>:{" "}
-          เมื่อเริ่มใช้ analytics หรือ marketing cookies
-          เราจะแจ้งให้ทราบและขอความยินยอมจากคุณก่อนเสมอ
+          เราใช้ Analytics และ Marketing cookies เพื่อปรับปรุงบริการและวัด
+          conversion โฆษณา คุณจัดการได้ผ่านการตั้งค่า browser
         </p>
       </aside>
 
@@ -42,17 +42,27 @@ export default function CookiePage() {
         ไม่สามารถปิดได้โดยไม่กระทบการใช้งาน
       </p>
 
-      <h3>📊 Analytics Cookies — ยังไม่ active</h3>
-      <p>
-        ใช้วัด traffic และพฤติกรรมการใช้งานเพื่อปรับปรุงบริการ
-        ขณะนี้ยังไม่ได้เปิดใช้งาน — จะแจ้งและขอความยินยอมก่อนเปิดใช้
-      </p>
+      <h3>📊 Analytics Cookies — active</h3>
+      <p>ใช้วัด traffic และพฤติกรรมการใช้งานเพื่อปรับปรุงบริการ</p>
+      <ul>
+        <li>
+          <strong>_clck, _clsk</strong> — Microsoft Clarity (session recording ·
+          heatmap) · อายุ 1 ปี / session
+        </li>
+        <li>
+          <strong>va_* (Vercel Analytics)</strong> — page view counter ·
+          ไม่ระบุตัวตน · session
+        </li>
+      </ul>
 
-      <h3>🎯 Marketing Cookies — ยังไม่ active</h3>
-      <p>
-        ใช้วัด ad conversion และปรับ targeting โฆษณา
-        ขณะนี้ยังไม่ได้เปิดใช้งาน — จะแจ้งและขอความยินยอมก่อนเปิดใช้
-      </p>
+      <h3>🎯 Marketing Cookies — active</h3>
+      <p>ใช้วัด ad conversion และสร้าง Custom Audience สำหรับโฆษณา</p>
+      <ul>
+        <li>
+          <strong>_fbp</strong> — Meta Platforms (Facebook Pixel) · retargeting
+          + conversion tracking · อายุ 90 วัน
+        </li>
+      </ul>
 
       <h2>3. Cookie Consent Banner</h2>
       <p>เมื่อคุณเข้าเว็บครั้งแรก คุณจะเห็น banner ขออนุญาตใช้คุกกี้:</p>

@@ -41,7 +41,7 @@ export function StickyCTABar() {
         isVisible ? "translate-y-0" : "translate-y-full",
       ].join(" ")}
     >
-      <CTAButton href={cta.lineUrl} variant="line" size="md" showIcon className="w-full">
+      <CTAButton href={cta.lineUrl} variant="line" size="md" showIcon trackingLocation="sticky" className="w-full">
         {cta.stickyLabel}
       </CTAButton>
     </div>

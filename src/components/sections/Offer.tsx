@@ -82,7 +82,7 @@ export function Offer() {
             </div>
 
             {/* CTA */}
-            <CTAButton href={cta.lineUrl} variant="line" size="lg" showIcon className="w-full">
+            <CTAButton href={cta.lineUrl} variant="line" size="lg" showIcon trackingLocation="offer" className="w-full">
               {cta.buyLabel}
             </CTAButton>
 

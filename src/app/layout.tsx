@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Kanit, Bai_Jamjuree, JetBrains_Mono } from "next/font/google";
 import { MicrosoftClarity } from "@/components/analytics/MicrosoftClarity";
+import { MetaPixel } from "@/components/analytics/MetaPixel";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
@@ -84,6 +85,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </a>
         {children}
         <MicrosoftClarity />
+        <MetaPixel />
         <Analytics />
         <SpeedInsights />
       </body>

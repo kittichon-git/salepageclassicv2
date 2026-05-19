@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { MessageCircle } from "lucide-react";
 import { cn } from "@/lib/cn";
+import { trackLead } from "@/lib/track";
 
 type Props = {
   href?: string;
@@ -10,6 +11,7 @@ type Props = {
   variant?: "line" | "outline";
   size?: "md" | "lg";
   showIcon?: boolean;
+  trackingLocation?: "hero" | "offer" | "final" | "sticky" | "mobile-bar";
   children: React.ReactNode;
   className?: string;
 };
@@ -20,9 +22,14 @@ export function CTAButton({
   variant = "line",
   size = "lg",
   showIcon = true,
+  trackingLocation,
   children,
   className,
 }: Props) {
+  const handleClick = () => {
+    if (trackingLocation) trackLead(trackingLocation);
+    onClick?.();
+  };
   const classes = cn(
     "inline-flex items-center justify-center gap-2 font-extrabold tracking-tight",
     "border-[1.5px] border-[var(--color-navy-500)]",
@@ -49,6 +56,7 @@ export function CTAButton({
       <Link
         href={href}
         className={classes}
+        onClick={handleClick}
         {...(isExternal
           ? { target: "_blank", rel: "noopener noreferrer" }
           : {})}
@@ -58,7 +66,7 @@ export function CTAButton({
     );
 
   return (
-    <button type="button" onClick={onClick} className={classes}>
+    <button type="button" onClick={handleClick} className={classes}>
       {content}
     </button>
   );
