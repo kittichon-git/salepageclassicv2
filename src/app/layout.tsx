@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Kanit, Bai_Jamjuree, JetBrains_Mono } from "next/font/google";
+import { MicrosoftClarity } from "@/components/analytics/MicrosoftClarity";
 import "./globals.css";
 
 const kanit = Kanit({
@@ -80,6 +81,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           ข้ามไปยังเนื้อหา
         </a>
         {children}
+        <MicrosoftClarity />
       </body>
     </html>
   );
