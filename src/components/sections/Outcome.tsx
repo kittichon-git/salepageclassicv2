@@ -19,13 +19,12 @@ export function Outcome() {
           {outcome.testimonials.slice(0, 3).map((t, i) => (
             <ScrollReveal key={t.id} delay={i * 0.08}>
               <figure className="flex flex-col gap-3">
-                <div className="relative overflow-hidden">
+                <div className="relative w-full aspect-[4/5] overflow-hidden">
                   <Image
                     src={t.image}
                     alt={t.imageAlt}
-                    width={400}
-                    height={500}
-                    className="w-full aspect-[4/5] object-cover"
+                    fill
+                    className="object-cover"
                     quality={85}
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 20vw"
                     {...(t.id === 1 ? { priority: true } : { loading: "lazy" })}
@@ -48,13 +47,12 @@ export function Outcome() {
           {outcome.testimonials.slice(3).map((t, i) => (
             <ScrollReveal key={t.id} delay={(i + 3) * 0.08}>
               <figure className="flex flex-col gap-3">
-                <div className="relative overflow-hidden">
+                <div className="relative w-full aspect-[4/5] overflow-hidden">
                   <Image
                     src={t.image}
                     alt={t.imageAlt}
-                    width={400}
-                    height={500}
-                    className="w-full aspect-[4/5] object-cover"
+                    fill
+                    className="object-cover"
                     quality={85}
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 20vw"
                     loading="lazy"

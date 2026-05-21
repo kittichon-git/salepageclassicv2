@@ -79,7 +79,7 @@ export const mechanism = {
 } as const;
 
 export const outcome = {
-  intro: "ผลลัพธ์จริงจากผู้ใช้งาน: แค่เปลี่ยนคำ ยอดก็เปลี่ยน",
+  intro: "ผลลัพธ์จริงจากผู้เรียน",
   testimonials: [
     {
       id: 1,
