@@ -12,5 +12,6 @@ declare global {
       version?: string;
     };
     _fbq?: Window["fbq"];
+    gtag?: (...args: unknown[]) => void;
   }
 }

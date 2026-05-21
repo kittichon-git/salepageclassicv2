@@ -46,6 +46,10 @@ export default function CookiePage() {
       <p>ใช้วัด traffic และพฤติกรรมการใช้งานเพื่อปรับปรุงบริการ</p>
       <ul>
         <li>
+          <strong>_ga, _gid</strong> — Google Analytics 4 · วัด page view,
+          scroll depth, conversion · อายุ 2 ปี / 24 ชม.
+        </li>
+        <li>
           <strong>_clck, _clsk</strong> — Microsoft Clarity (session recording ·
           heatmap) · อายุ 1 ปี / session
         </li>

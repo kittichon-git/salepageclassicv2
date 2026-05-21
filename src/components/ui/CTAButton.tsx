@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { MessageCircle } from "lucide-react";
 import { cn } from "@/lib/cn";
-import { trackLead } from "@/lib/track";
+import { trackLead, trackLineAdd, buildLineUrlWithUtm } from "@/lib/track";
 
 type Props = {
   href?: string;
@@ -26,10 +26,6 @@ export function CTAButton({
   children,
   className,
 }: Props) {
-  const handleClick = () => {
-    if (trackingLocation) trackLead(trackingLocation);
-    onClick?.();
-  };
   const classes = cn(
     "inline-flex items-center justify-center gap-2 font-extrabold tracking-tight",
     "border-[1.5px] border-[var(--color-navy-500)]",
@@ -51,20 +47,46 @@ export function CTAButton({
   );
 
   const isExternal = href?.startsWith("http");
-  if (href)
+
+  // External links: fire tracking → open via window.open after 300ms delay
+  if (href && isExternal) {
+    const handleExternalClick = () => {
+      if (trackingLocation) {
+        trackLead(trackingLocation);
+        trackLineAdd(trackingLocation);
+      }
+      onClick?.();
+      const finalUrl = buildLineUrlWithUtm(href);
+      setTimeout(() => window.open(finalUrl, "_blank", "noopener,noreferrer"), 300);
+    };
     return (
-      <Link
-        href={href}
-        className={classes}
-        onClick={handleClick}
-        {...(isExternal
-          ? { target: "_blank", rel: "noopener noreferrer" }
-          : {})}
-      >
+      <button type="button" onClick={handleExternalClick} className={classes}>
+        {content}
+      </button>
+    );
+  }
+
+  // Internal links: use Next.js Link (no tracking delay needed)
+  if (href) {
+    const handleClick = () => {
+      if (trackingLocation) trackLead(trackingLocation);
+      onClick?.();
+    };
+    return (
+      <Link href={href} className={classes} onClick={handleClick}>
         {content}
       </Link>
     );
+  }
 
+  // No href: plain button
+  const handleClick = () => {
+    if (trackingLocation) {
+      trackLead(trackingLocation);
+      trackLineAdd(trackingLocation);
+    }
+    onClick?.();
+  };
   return (
     <button type="button" onClick={handleClick} className={classes}>
       {content}
