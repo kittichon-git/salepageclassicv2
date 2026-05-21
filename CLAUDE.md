@@ -1,5 +1,5 @@
 # CLAUDE.md — salepageclassicv2
-> Last audited: 19 May 2026 · Commit `1c7b157`
+> Last audited: 21 May 2026 · Commits `556c31d` + `687812b`
 
 ---
 
@@ -97,8 +97,9 @@ Legal shared:
 | Var | Used in | Notes |
 |---|---|---|
 | `NEXT_PUBLIC_SITE_URL` | layout.tsx, JsonLd.tsx | Defaults to `https://phachara.com` |
-
-No Stripe, LINE LIFF, or analytics env vars are wired yet.
+| `NEXT_PUBLIC_GA4_ID` | GoogleAnalytics.tsx | GA4 Measurement ID (e.g. G-XXXXXXX) |
+| `NEXT_PUBLIC_META_PIXEL_ID` | MetaPixel.tsx | Meta Pixel ID |
+| `NEXT_PUBLIC_CLARITY_PROJECT_ID` | MicrosoftClarity.tsx | Clarity project ID |
 
 ---
 
@@ -186,7 +187,7 @@ tone="dark" → `text-navy-900` (default) · tone="light" → `text-cream` (S10 
 | S1 | Hero — preHeadline + painHook + solutionPromise + notebook frame + CTA + micro-copy | ✅ exists | Hero.tsx | Pain-first redesign · no VSL · no eyebrow · terracotta highlights |
 | S2 | Relevance — ปัญหา 4 cards | ✅ exists | Relevance.tsx | 4 pain cards with amber number badges |
 | S3 | Mechanism — R-MOTRA framework | ✅ exists | Mechanism.tsx | Steps list + brutalist diagram. Labels partially hardcoded in JSX |
-| S4 | Outcome & Proof — 5 chat screenshots | ⚠️ partial | Outcome.tsx | Text testimonials only. No real chat screenshot images |
+| S4 | Outcome & Proof — 5 chat screenshots | ✅ exists | Outcome.tsx | 5 real LINE chat screenshots via next/image (`556c31d`) |
 | S5 | Fit — who it's for / not for | ✅ exists | Fit.tsx | 2-col positive/negative callout cards |
 | S6 | What You Get — 7 ภาค 24 บท + โบนัส A–E | ✅ exists | Curriculum.tsx | Chapter carousel + bonus strip. No chapter thumbnails |
 | S7 | Instructor | ~~deprecated~~ | — | Removed per Spec V.2 (commit `0076264`) |
@@ -198,7 +199,7 @@ tone="dark" → `text-navy-900` (default) · tone="light" → `text-cream` (S10 
 | — | Legal pages | ✅ exists | legal/*/page.tsx | PDPA-compliant, lawyer-reviewed v2 (17 May 2026) |
 | — | Contact page | ✅ exists | contact/page.tsx | LINE OA + email + provider info |
 
-**Summary: 9/11 sections active · S7 deprecated · Outcome waiting on proof images**
+**Summary: 10/11 sections active · S7 deprecated · all proof images live**
 
 ---
 
@@ -206,8 +207,8 @@ tone="dark" → `text-navy-900` (default) · tone="light" → `text-cream` (S10 
 
 ### Missing / incomplete
 
-1. **Proof images (S4)** — `outcome.testimonials` are text quotes. Spec V.2 calls for 5 real LINE chat screenshots. Need actual images in `public/images/proof-*.webp`.
-2. **Analytics** — No GA4 / Meta Pixel wired. Env vars not defined.
+1. **Proof images (S4)** ✅ done — 5 `public/images/proof-*.webp` added `556c31d`
+2. **Analytics** ✅ done — GA4 + Meta Pixel + Clarity + Cookie Consent wired `556c31d` + `687812b`
 
 ### Assets needed
 
@@ -223,7 +224,50 @@ tone="dark" → `text-navy-900` (default) · tone="light" → `text-cream` (S10 
 
 ---
 
-## 6. Non-negotiable Quality Rules
+## 6. Analytics Stack (Production — verified 21 May 2026)
+
+### Tier 1 (Behavior + Performance)
+- **Microsoft Clarity** `2576ef0` — Project ID `vtacot6wz5`
+  - Component: `src/components/analytics/MicrosoftClarity.tsx`
+  - ENV: `NEXT_PUBLIC_CLARITY_PROJECT_ID`
+- **Vercel Web Analytics + Speed Insights** `f92f285`
+  - Packages: `@vercel/analytics`, `@vercel/speed-insights`
+  - No ENV needed (Vercel auto-detect)
+
+### Tier 2 (Attribution + Retargeting)
+- **Meta Pixel** `4141840` — Pixel ID `1693255701962812`
+  - Component: `src/components/analytics/MetaPixel.tsx`
+  - ENV: `NEXT_PUBLIC_META_PIXEL_ID`
+  - Events: PageView (auto), Lead (CTA click), LINE_ADD (custom), ViewContent (scroll 50%)
+- **Google Analytics 4** `556c31d` — Measurement ID `G-F4471H5WVN`
+  - Component: `src/components/analytics/GoogleAnalytics.tsx`
+  - ENV: `NEXT_PUBLIC_GA4_ID`
+  - Events: page_view (auto), generate_lead (CTA), line_add (CTA), scroll_50 (IO)
+
+### Tracking Infrastructure `556c31d`
+- `src/lib/track.ts` — `trackLead()`, `trackLineAdd()`, `buildLineUrlWithUtm()`
+- `src/components/analytics/ScrollTracker.tsx` — IntersectionObserver on `#fit`, fire once
+- `CTAButton.tsx` — onClick: trackLead + trackLineAdd + 300ms delay + `window.open(buildLineUrlWithUtm(href))`
+- UTM params forwarded: `utm_source`, `utm_medium`, `utm_campaign`, `utm_content`, `utm_term`, `fbclid` → `liff.state`
+
+### Cookie Consent `687812b`
+- `src/lib/consent.ts` — `getConsent()`, `hasAnalyticsConsent()`
+- `src/components/CookieBanner.tsx` — fixed bottom, z-60, implied consent model (null = load, 'essential' = block)
+- GA4 / Meta Pixel / Clarity: gated on `hasAnalyticsConsent()`
+- Vercel Analytics + Speed Insights: always loaded (essential, no PII)
+- `StickyCTABar`: hides when CookieBanner visible (z-order conflict)
+
+### layout.tsx analytics order
+`MicrosoftClarity → MetaPixel → GoogleAnalytics → Analytics → SpeedInsights → CookieBanner`
+
+### Pending (optional)
+- PostHog — funnel analytics + A/B test (ENV: `NEXT_PUBLIC_POSTHOG_KEY`, `NEXT_PUBLIC_POSTHOG_HOST`)
+- Sentry — error monitoring (ENV: `SENTRY_DSN`)
+- FB Conversions API (CAPI) — server-side dedup
+
+---
+
+## 7. Non-negotiable Quality Rules
 
 ```
 ❌ No `any` · No `@ts-ignore` · No `@ts-nocheck`
@@ -249,7 +293,7 @@ tone="dark" → `text-navy-900` (default) · tone="light" → `text-cream` (S10 
 
 ---
 
-## 7. Copy Source of Truth
+## 8. Copy Source of Truth
 
 - **Notion**: "Sales Page Spec V.2 — R-MOTRA" (parent spec, Thai copy)
 - **data.ts**: `src/lib/data.ts` — single source for all component copy
@@ -290,16 +334,15 @@ Deeplink: https://lin.ee/6rOdCZg   ← canonical URL for ALL CTAs
 
 ---
 
-## 8. Pending Assets
+## 9. Pending Assets
 
 | Asset | Status | Notes |
 |---|---|---|
-| Proof images (S4) | ⏳ waiting on owner | 5 LINE chat screenshots → `public/images/proof-*.webp` |
-| Analytics IDs | ⏳ waiting on owner | GA4 Measurement ID + Meta Pixel ID for production wiring |
+| Proof images (S4) | ✅ done `556c31d` | 5 LINE chat screenshots in `public/images/proof-*.webp` |
 
 ---
 
-## 9. Phase Status
+## 10. Phase Status
 
 ### Phase 2 ✅ DONE (19 May 2026)
 
@@ -327,15 +370,26 @@ Localhost mobile (Chrome DevTools, 400×832 viewport):
 Commit chain: d12563c → 7b411ff → (hotfix)
 
 Outstanding for "Phase 3 Done":
-- Sub-task A — 5 proof images (waiting on user)
-- Sub-task B — GA4 + Meta Pixel IDs (waiting on user)
+- ~~Sub-task A — 5 proof images~~ ✅ done `556c31d`
+- ~~Sub-task B — GA4 + Meta Pixel IDs~~ ✅ done `556c31d` + `687812b`
 - Production deploy + re-run Lighthouse on prod URL
+
+### Analytics + Cookie Consent ✅ DONE (21 May 2026)
+
+- **4141840** — Meta Pixel wired (consent-gated)
+- **2576ef0** — Microsoft Clarity wired (consent-gated)
+- **556c31d** — GA4 + LINE_ADD event + UTM Bridge + ScrollTracker (IO on #fit)
+- **687812b** — Cookie consent banner + consent-gated analytics + StickyCTABar hide
 
 ---
 
-## 10. Commit History Reference
+## 11. Commit History Reference
 
 ```
+687812b  feat(legal): cookie consent banner with conditional analytics loading
+556c31d  feat(analytics): GA4 + LINE_ADD event + UTM Bridge + ScrollTracker
+4141840  feat(analytics): Meta Pixel (consent-gated)
+2576ef0  feat(analytics): Microsoft Clarity (consent-gated)
 1c7b157  refactor(salepage): tighten hierarchy + introduce SectionHeading + fix sticky CTA
 b3a0b57  feat(hero): pain-first redesign + retro notebook frame
 a7f062d  copy: revision batch — 10 fixes from Spec V.2
