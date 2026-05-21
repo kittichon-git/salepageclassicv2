@@ -23,10 +23,9 @@ export function Outcome() {
                   src={t.image}
                   alt={t.imageAlt}
                   width={600}
-                  height={1}
+                  height={400}
+                  unoptimized
                   className="w-full h-auto"
-                  quality={85}
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   {...(t.id === 1 ? { priority: true } : { loading: "lazy" })}
                 />
                 <figcaption className="space-y-1">
@@ -50,11 +49,10 @@ export function Outcome() {
                   src={t.image}
                   alt={t.imageAlt}
                   width={600}
-                  height={1}
-                  className="w-full h-auto"
-                  quality={85}
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  height={400}
+                  unoptimized
                   loading="lazy"
+                  className="w-full h-auto"
                 />
                 <figcaption className="space-y-1">
                   <p className="font-[family-name:var(--font-heading)] font-bold text-[var(--color-navy-900)]">{t.name}</p>
