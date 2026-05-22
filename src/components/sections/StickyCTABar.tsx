@@ -4,20 +4,10 @@ import { useEffect, useState } from "react";
 import { CTAButton } from "@/components/ui/CTAButton";
 import { cta } from "@/lib/data";
 import { useScrollDirection } from "@/hooks/useScrollDirection";
-import { getConsent, CONSENT_EVENT } from "@/lib/consent";
 
 export function StickyCTABar() {
   const { direction, scrollY } = useScrollDirection();
   const [finalCtaVisible, setFinalCtaVisible] = useState(false);
-  const [bannerVisible, setBannerVisible] = useState(false);
-
-  // Hide when cookie banner is showing (consent not yet given)
-  useEffect(() => {
-    setBannerVisible(getConsent() === null);
-    const handler = () => setBannerVisible(getConsent() === null);
-    window.addEventListener(CONSENT_EVENT, handler);
-    return () => window.removeEventListener(CONSENT_EVENT, handler);
-  }, []);
 
   // Hide when S10 final CTA is ≥30% visible
   useEffect(() => {
@@ -33,8 +23,8 @@ export function StickyCTABar() {
     return () => observer.disconnect();
   }, []);
 
-  // Show: scrolled past hero AND scrolling down AND S10 not in view AND banner not showing
-  const isVisible = scrollY >= 80 && direction === "down" && !finalCtaVisible && !bannerVisible;
+  // Show: scrolled past hero AND scrolling down AND S10 not in view
+  const isVisible = scrollY >= 80 && direction === "down" && !finalCtaVisible;
 
   return (
     <div
