@@ -11,8 +11,8 @@ export function Hero() {
       className="pt-8 md:pt-10"
       innerClassName="shadow-[2px_2px_0_var(--color-navy-500)] border-[1px]"
     >
-      <div className="mx-auto max-w-[640px] space-y-5">
-        {/* 1. Pre-headline — 2 lines */}
+      <div className="mx-auto max-w-[640px] space-y-5 text-center">
+        {/* 1. Pre-headline — 2 lines, centered */}
         <ScrollReveal>
           <div className="space-y-0.5">
             {hero.preHeadline.map((line, i) => (
@@ -26,19 +26,17 @@ export function Hero() {
           </div>
         </ScrollReveal>
 
-        {/* 2. Headline — dominant, 2 explicit lines */}
+        {/* 2. Headline — line1 navy, line2 teal filled block */}
         <ScrollReveal delay={0.05}>
-          <h2 className="font-[family-name:var(--font-kanit)] text-xl font-extrabold leading-[1.3] text-[var(--color-navy-900)] sm:text-2xl md:text-3xl">
-            {hero.headline.line1}
-            <br />
-            {hero.headline.before}{" "}
-            <span className="text-[var(--color-terracotta)] underline decoration-wavy decoration-[2px] underline-offset-[6px]">
-              {hero.headline.highlight}
+          <h2 className="flex flex-col items-center gap-2 font-[family-name:var(--font-kanit)] text-xl font-extrabold text-[var(--color-navy-900)] sm:text-2xl md:text-3xl">
+            <span>{hero.headline.line1}</span>
+            <span className="bg-[var(--color-teal-500)] px-4 py-1.5 text-[var(--color-cream)] shadow-[2px_2px_0_rgba(35,49,73,0.48)]">
+              {hero.headline.line2}
             </span>
           </h2>
         </ScrollReveal>
 
-        {/* 3. Sub-headline — 3 lines */}
+        {/* 3. Sub-headline — centered */}
         <ScrollReveal delay={0.09}>
           <div className="space-y-1">
             {hero.subHeadline.map((line, i) => (
@@ -52,9 +50,9 @@ export function Hero() {
           </div>
         </ScrollReveal>
 
-        {/* 4. Offer Box — compact */}
+        {/* 4. Offer Box — lighter, bullets left-aligned */}
         <ScrollReveal delay={0.12}>
-          <div className="border border-dashed border-[var(--color-terracotta-soft)] bg-[var(--color-paper)] px-4 py-4">
+          <div className="border border-[rgba(35,49,73,0.18)] bg-[rgba(35,49,73,0.03)] px-4 py-4 text-left">
             <p className="mb-2 font-[family-name:var(--font-kanit)] text-sm font-bold text-[var(--color-navy-900)]">
               {hero.offerBox.title}
             </p>
@@ -62,7 +60,7 @@ export function Hero() {
               {hero.offerBox.items.map((item, i) => (
                 <li
                   key={i}
-                  className="font-[family-name:var(--font-bai-jamjuree)] text-sm leading-[1.55] text-[var(--color-navy-900)]"
+                  className="font-[family-name:var(--font-bai-jamjuree)] text-sm leading-[1.55] text-[var(--color-navy-500)]"
                 >
                   {item}
                 </li>
@@ -71,7 +69,7 @@ export function Hero() {
           </div>
         </ScrollReveal>
 
-        {/* 5. CTA */}
+        {/* 5. CTA — full width */}
         <ScrollReveal delay={0.16}>
           <CTAButton
             href={hero.cta.href}
@@ -85,9 +83,9 @@ export function Hero() {
           </CTAButton>
         </ScrollReveal>
 
-        {/* 6. Micro-copy */}
+        {/* 6. Micro-copy — centered */}
         <ScrollReveal delay={0.19}>
-          <p className="text-center text-sm text-[var(--color-text-muted)]">
+          <p className="text-sm text-[var(--color-text-muted)]">
             {hero.microCopy.join(" · ")}
           </p>
         </ScrollReveal>
