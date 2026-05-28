@@ -26,23 +26,23 @@ export function Hero() {
           </div>
         </ScrollReveal>
 
-        {/* 2. Headline — line1 navy, line2 teal filled block */}
+        {/* 2. Headline — line1 navy large, line2 teal filled block large */}
         <ScrollReveal delay={0.05}>
-          <h2 className="flex flex-col items-center gap-2 font-[family-name:var(--font-kanit)] text-xl font-extrabold text-[var(--color-navy-900)] sm:text-2xl md:text-3xl">
+          <h2 className="flex flex-col items-center gap-3 font-[family-name:var(--font-kanit)] text-4xl font-black leading-tight text-[var(--color-navy-900)] md:text-5xl">
             <span>{hero.headline.line1}</span>
-            <span className="bg-[var(--color-teal-500)] px-4 py-1.5 text-[var(--color-cream)] shadow-[2px_2px_0_rgba(35,49,73,0.48)]">
+            <span className="bg-[var(--color-teal-500)] px-6 py-3 text-[var(--color-cream)] shadow-[3px_3px_0_rgba(35,49,73,0.48)]">
               {hero.headline.line2}
             </span>
           </h2>
         </ScrollReveal>
 
-        {/* 3. Sub-headline — centered */}
+        {/* 3. Sub-headline — centered, visually secondary */}
         <ScrollReveal delay={0.09}>
           <div className="space-y-0.5">
             {hero.subHeadline.map((line, i) => (
               <p
                 key={i}
-                className="text-[16px] leading-[1.65] text-[var(--color-navy-500)]"
+                className="text-[15px] leading-[1.65] text-[var(--color-text-muted)]"
               >
                 {line}
               </p>
