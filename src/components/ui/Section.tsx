@@ -7,10 +7,12 @@ type Props = {
   /** Background variant */
   tone?: "paper" | "cream" | "navy";
   className?: string;
+  /** Override classes on the inner content frame (border/shadow) */
+  innerClassName?: string;
   children: React.ReactNode;
 };
 
-export function Section({ id, tab, tone = "paper", className, children }: Props) {
+export function Section({ id, tab, tone = "paper", className, innerClassName, children }: Props) {
   return (
     <section
       id={id}
@@ -30,6 +32,7 @@ export function Section({ id, tab, tone = "paper", className, children }: Props)
             tone === "paper" && "bg-[var(--color-paper)]",
             tone === "cream" && "bg-[var(--color-cream)]",
             tone === "navy" && "bg-[var(--color-navy-500)] text-[var(--color-cream)]",
+            innerClassName,
           )}
         >
           {children}
