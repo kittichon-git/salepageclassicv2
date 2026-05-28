@@ -8,9 +8,14 @@ export function Offer() {
   return (
     <Section id="offer" tab="S8 · OFFER" tone="cream">
       <div className="space-y-8">
-      <p className="font-[family-name:var(--font-kanit)] text-xl font-bold leading-[1.3] text-[var(--color-navy-500)] sm:text-2xl">
-        {offer.tagline}
-      </p>
+      <div className="space-y-2">
+        <SectionHeading as="h2" size="md">
+          {offer.heading}
+        </SectionHeading>
+        <p className="font-[family-name:var(--font-bai-jamjuree)] text-base leading-[1.6] text-[var(--color-text-muted)]">
+          {offer.intro}
+        </p>
+      </div>
       <div className="grid grid-cols-1 gap-8 lg:grid-cols-[1.2fr_1fr]">
         {/* Left: Value table */}
         <ScrollReveal>
@@ -21,11 +26,8 @@ export function Offer() {
               "shadow-[5px_5px_0_rgba(35,49,73,0.62)]",
             ].join(" ")}
           >
-            <SectionHeading as="h2" size="sm" className="mb-2">
-              {offer.heading}
-            </SectionHeading>
-            <p className="mb-6 font-[family-name:var(--font-bai-jamjuree)] text-sm leading-[1.6] text-[var(--color-text-muted)]">
-              {offer.packageLine}
+            <p className="mb-6 font-[family-name:var(--font-bai-jamjuree)] text-sm font-bold leading-[1.6] text-[var(--color-navy-500)]">
+              รายการ
             </p>
 
             <div className="divide-y divide-[rgba(35,49,73,0.24)]">
@@ -83,7 +85,7 @@ export function Offer() {
 
             {/* CTA */}
             <CTAButton href={cta.lineUrl} variant="line" size="lg" showIcon trackingLocation="offer" className="w-full">
-              {cta.buyLabel}
+              {cta.finalLabel}
             </CTAButton>
 
             {/* Price callout */}

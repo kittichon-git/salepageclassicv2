@@ -61,9 +61,14 @@ export function Curriculum() {
       <div className="space-y-6">
         <div className="flex items-start justify-between gap-4">
           <ScrollReveal>
-            <SectionHeading as="h2" size="sm">
-              {curriculum.title}
-            </SectionHeading>
+            <div className="space-y-2">
+              <SectionHeading as="h2" size="sm">
+                {curriculum.title}
+              </SectionHeading>
+              <p className="font-[family-name:var(--font-bai-jamjuree)] text-sm leading-[1.6] text-[var(--color-text-muted)]">
+                {curriculum.intro}
+              </p>
+            </div>
           </ScrollReveal>
 
           {/* Arrow controls — desktop only */}
@@ -208,7 +213,7 @@ export function Curriculum() {
               ))}
             </ul>
           </div>
-          <CTAButton href={cta.lineUrl} variant="line" size="md" showIcon className="shrink-0">
+          <CTAButton href={cta.lineUrl} variant="line" size="md" showIcon trackingLocation="offer" className="shrink-0">
             {cta.finalLabel}
           </CTAButton>
         </div>

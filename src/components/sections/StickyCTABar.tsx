@@ -42,7 +42,8 @@ export function StickyCTABar() {
       ].join(" ")}
     >
       <CTAButton href={cta.lineUrl} variant="line" size="md" showIcon trackingLocation="sticky" className="w-full">
-        {cta.stickyLabel}
+        <span className="hidden min-[400px]:inline">{cta.stickyLabelFull}</span>
+        <span className="min-[400px]:hidden">{cta.stickyLabel}</span>
       </CTAButton>
     </div>
   );

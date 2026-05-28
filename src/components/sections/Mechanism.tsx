@@ -29,9 +29,7 @@ export function Mechanism() {
                 </div>
                 <div>
                   <h3 className="font-[family-name:var(--font-kanit)] text-lg font-bold leading-[1.3] text-[var(--color-navy-500)]">
-                    {i === 0
-                      ? <>หยุดนิ้วคนดูให้ได้ภายใน <span className="whitespace-nowrap">3 วิ</span></>
-                      : step.title}
+                    {step.title}
                   </h3>
                   <p className="mt-1 font-[family-name:var(--font-bai-jamjuree)] text-base leading-[1.6] text-[var(--color-text-muted)]">
                     {step.body}

@@ -8,9 +8,14 @@ export function Relevance() {
     <Section id="relevance" tab="S2 · RELEVANCE" tone="cream">
       <div className="space-y-8">
         <ScrollReveal>
-          <SectionHeading as="h3" size="md">
-            {relevance.leadIn}
-          </SectionHeading>
+          <div className="space-y-3">
+            <SectionHeading as="h3" size="md">
+              {relevance.heading}
+            </SectionHeading>
+            <p className="font-[family-name:var(--font-bai-jamjuree)] text-base leading-[1.6] text-[var(--color-text-muted)]">
+              {relevance.intro}
+            </p>
+          </div>
         </ScrollReveal>
 
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
@@ -24,7 +29,6 @@ export function Relevance() {
                   "transition-transform duration-150 hover:-translate-y-0.5",
                 ].join(" ")}
               >
-                {/* Number badge */}
                 <div className="mb-4 inline-block bg-[var(--color-amber-500)] px-2.5 py-1 font-[family-name:var(--font-jetbrains-mono)] text-xs font-extrabold text-[var(--color-navy-500)]">
                   {String(i + 1).padStart(2, "0")}
                 </div>
@@ -35,13 +39,6 @@ export function Relevance() {
             </ScrollReveal>
           ))}
         </div>
-
-        {/* Story close */}
-        <ScrollReveal delay={0.1}>
-          <p className="font-[family-name:var(--font-bai-jamjuree)] text-base leading-[1.6] text-[var(--color-text-muted)] border-l-4 border-[var(--color-amber-500)] pl-5">
-            {relevance.story}
-          </p>
-        </ScrollReveal>
       </div>
     </Section>
   );

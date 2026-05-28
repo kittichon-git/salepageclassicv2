@@ -9,11 +9,11 @@ export function FAQ() {
       <div className="space-y-8">
         {/* Guarantee callout */}
         <ScrollReveal>
-          <div className="flex gap-4 border-l-4 border-[var(--color-teal-500)] pl-5">
-            <div className="flex h-12 w-12 shrink-0 items-center justify-center bg-[rgba(47,133,136,0.15)]">
+          <div className="flex gap-4 border-[1.5px] border-[var(--color-navy-500)] bg-[rgba(219,234,254,0.5)] p-5 shadow-[3px_3px_0_rgba(35,49,73,0.48)]">
+            <div className="flex h-12 w-12 shrink-0 items-center justify-center bg-[rgba(59,130,246,0.15)]">
               <ShieldCheck
                 size={24}
-                className="text-[var(--color-teal-500)]"
+                className="text-[rgba(59,130,246,0.9)]"
                 aria-hidden="true"
               />
             </div>
