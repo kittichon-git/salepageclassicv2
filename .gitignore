@@ -45,3 +45,5 @@ next-env.d.ts
 
 # npm cache (local dev artifact)
 /npm-cache
+
+.vercel
