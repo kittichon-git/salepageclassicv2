@@ -12,6 +12,7 @@ import { FinalCTA } from "@/components/sections/FinalCTA";
 import { StickyCTABar } from "@/components/sections/StickyCTABar";
 import { Footer } from "@/components/sections/Footer";
 import { JsonLd } from "@/components/seo/JsonLd";
+import { SalesPageTracker } from "@/components/analytics/SalesPageTracker";
 
 export default function Page() {
   return (
@@ -32,6 +33,7 @@ export default function Page() {
       <Footer />
       <StickyCTABar />
       <JsonLd />
+      <SalesPageTracker />
     </>
   );
 }
