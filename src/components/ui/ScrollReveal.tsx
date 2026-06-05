@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { motion, useReducedMotion, type Variants } from "framer-motion";
 
 type Props = {
@@ -14,13 +15,23 @@ const variants: Variants = {
   visible: { opacity: 1, y: 0 },
 };
 
-const variantsReduced: Variants = {
+// Both states visible — used on mobile and when motion is reduced
+const variantsStatic: Variants = {
   hidden: { opacity: 1, y: 0 },
   visible: { opacity: 1, y: 0 },
 };
 
 export function ScrollReveal({ children, delay = 0, className }: Props) {
   const prefersReduced = useReducedMotion();
+  // Default true (mobile-first) so SSR + initial hydration never renders opacity:0
+  const [isMobile, setIsMobile] = useState(true);
+
+  useEffect(() => {
+    // Only true desktop pointer devices (mouse) get the scroll animation
+    setIsMobile(!window.matchMedia("(hover: hover) and (pointer: fine)").matches);
+  }, []);
+
+  const isStatic = prefersReduced || isMobile;
 
   return (
     <motion.div
@@ -28,9 +39,9 @@ export function ScrollReveal({ children, delay = 0, className }: Props) {
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, margin: "-80px" }}
-      variants={prefersReduced ? variantsReduced : variants}
+      variants={isStatic ? variantsStatic : variants}
       transition={
-        prefersReduced
+        isStatic
           ? { duration: 0, delay: 0 }
           : { duration: 0.6, delay, ease: [0.21, 0.47, 0.32, 0.98] }
       }

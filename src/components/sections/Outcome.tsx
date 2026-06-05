@@ -24,7 +24,7 @@ export function Outcome() {
                   alt={t.imageAlt}
                   width={600}
                   height={400}
-                  unoptimized
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   className="w-full h-auto"
                   {...(t.id === 1 ? { priority: true } : { loading: "lazy" })}
                 />
@@ -50,7 +50,7 @@ export function Outcome() {
                   alt={t.imageAlt}
                   width={600}
                   height={400}
-                  unoptimized
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   loading="lazy"
                   className="w-full h-auto"
                 />
