@@ -70,6 +70,7 @@ export function Curriculum() {
     <Section id="inside" tab="S6 · CURRICULUM" tone="cream">
       <div className="space-y-6">
         <div className="flex items-start justify-between gap-4">
+          <div className="min-w-0 flex-1">
           <ScrollReveal>
             <div className="space-y-2">
               <SectionHeading as="h2" size="sm">
@@ -102,6 +103,7 @@ export function Curriculum() {
               </div>
             </div>
           </ScrollReveal>
+          </div>
 
           {/* Arrow controls — desktop only */}
           <div className="hidden shrink-0 items-center gap-2 lg:flex">
