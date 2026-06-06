@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState, useEffect } from "react";
+import { Fragment, useRef, useState, useEffect } from "react";
 import { Section } from "@/components/ui/Section";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { SectionHeading } from "@/components/ui/SectionHeading";
@@ -8,6 +8,16 @@ import { CTAButton } from "@/components/ui/CTAButton";
 import { cn } from "@/lib/cn";
 import { ChevronLeft, ChevronRight, Sparkles } from "lucide-react";
 import { curriculum, cta } from "@/lib/data";
+
+const ARC_LABELS = [
+  "เข้าใจลูกค้า",
+  "วัดผลคำ",
+  "เปิดให้หยุด",
+  "วางโครงให้อ่านจบ",
+  "เลือกคำให้อยากได้",
+  "ปิดการขาย",
+  "เร่งด้วย AI",
+] as const;
 
 const TOTAL_CARDS = curriculum.chapters.length + 1; // +1 bonus card
 
@@ -68,6 +78,28 @@ export function Curriculum() {
               <p className="font-[family-name:var(--font-bai-jamjuree)] text-sm leading-[1.6] text-[var(--color-text-muted)]">
                 {curriculum.intro}
               </p>
+
+              {/* Arc bar — learning path */}
+              <div
+                className="overflow-x-auto pt-1"
+                style={{ scrollbarWidth: "none" }}
+              >
+                <div className="flex items-center gap-1 whitespace-nowrap">
+                  {ARC_LABELS.map((label, i) => (
+                    <Fragment key={label}>
+                      <span className="font-[family-name:var(--font-bai-jamjuree)] text-[11px] text-[var(--color-text-muted)] opacity-60">
+                        {label}
+                      </span>
+                      {i < ARC_LABELS.length - 1 && (
+                        <ChevronRight
+                          className="h-2.5 w-2.5 flex-shrink-0 text-[var(--color-text-muted)] opacity-40"
+                          aria-hidden="true"
+                        />
+                      )}
+                    </Fragment>
+                  ))}
+                </div>
+              </div>
             </div>
           </ScrollReveal>
 
@@ -119,7 +151,7 @@ export function Curriculum() {
                 <h3 className="mb-2 font-[family-name:var(--font-kanit)] text-lg font-bold leading-[1.3] text-[var(--color-navy-500)]">
                   {ch.title}
                 </h3>
-                <p className="font-[family-name:var(--font-bai-jamjuree)] text-base leading-[1.6] text-[var(--color-text-muted)]">
+                <p className="font-[family-name:var(--font-bai-jamjuree)] text-sm leading-[1.6] text-[var(--color-text-muted)]">
                   {ch.body}
                 </p>
               </div>
