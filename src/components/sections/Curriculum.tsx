@@ -222,6 +222,11 @@ export function Curriculum() {
           ))}
         </div>
 
+        {/* Template payoff — bridges carousel to bonus strip */}
+        <p className="text-center font-[family-name:var(--font-bai-jamjuree)] text-sm leading-[1.6] text-[var(--color-text-muted)]">
+          {curriculum.curriculumPayoff}
+        </p>
+
         {/* Bonus strip + inline CTA */}
         <div
           className={[
