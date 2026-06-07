@@ -4,6 +4,9 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { relevance } from "@/lib/data";
 import { thaiWrap } from "@/lib/thaiWrap";
 
+// Phrase split for S2 heading — prevents break between [ถ้าโพสต์ยังเงียบ] and [ปัญหาอาจไม่ใช่สินค้า]
+const RELEVANCE_HEADING_PHRASES = ["ถ้าโพสต์ยังเงียบ", "ปัญหาอาจไม่ใช่สินค้า"] as const;
+
 export function Relevance() {
   return (
     <Section id="relevance" tab="S2 · RELEVANCE" tone="cream">
@@ -11,7 +14,8 @@ export function Relevance() {
         <ScrollReveal>
           <div className="space-y-3">
             <SectionHeading as="h3" size="md" className="th-heading">
-              {thaiWrap(relevance.heading)}
+              <span className="th-phrase">{RELEVANCE_HEADING_PHRASES[0]}</span>{" "}
+              <span className="th-phrase">{RELEVANCE_HEADING_PHRASES[1]}</span>
             </SectionHeading>
             <p className="th-text font-[family-name:var(--font-bai-jamjuree)] text-base leading-[1.6] text-[var(--color-text-muted)]">
               {thaiWrap(relevance.intro)}

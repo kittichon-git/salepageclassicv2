@@ -74,7 +74,9 @@ export function Curriculum() {
           <ScrollReveal>
             <div className="space-y-2">
               <SectionHeading as="h2" size="sm">
-                {curriculum.title}
+                {curriculum.title
+                  .replace("7 ภาค", "7\u00A0ภาค")
+                  .replace("24 บท", "24\u00A0บท")}
               </SectionHeading>
               <p className="font-[family-name:var(--font-bai-jamjuree)] text-sm leading-[1.6] text-[var(--color-text-muted)]">
                 {curriculum.intro}

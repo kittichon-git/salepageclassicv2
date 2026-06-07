@@ -10,7 +10,7 @@ export function Offer() {
       <div className="space-y-8">
       <div className="space-y-2">
         <SectionHeading as="h2" size="md">
-          {offer.heading}
+          {offer.heading.replace("890 บาท", "890\u00A0บาท")}
         </SectionHeading>
         <p className="font-[family-name:var(--font-bai-jamjuree)] text-base leading-[1.6] text-[var(--color-text-muted)]">
           {offer.intro}

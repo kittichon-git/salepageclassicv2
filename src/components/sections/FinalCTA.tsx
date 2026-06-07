@@ -15,7 +15,7 @@ export function FinalCTA() {
             tone="light"
             className="mx-auto max-w-[640px]"
           >
-            {finalCta.headline}
+            {finalCta.headline.replace("2 บทแรก", "2\u00A0บทแรก")}
           </SectionHeading>
         </ScrollReveal>
 

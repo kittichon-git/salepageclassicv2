@@ -104,6 +104,12 @@ body {
     overflow-wrap: normal;
     text-wrap: balance;
   }
+
+  /* Phrase-level no-break — use on <span> to keep a Thai phrase together.
+     nowrap overrides ZWSP injected by thaiWrap() inside the span. */
+  .th-phrase {
+    white-space: nowrap;
+  }
 }
 
 /*=== Skip link ===*/
