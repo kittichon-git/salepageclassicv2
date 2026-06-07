@@ -14,57 +14,48 @@ export function Outcome() {
           </SectionHeading>
         </ScrollReveal>
 
-        {/* Row 1: 3 testimonials */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 items-start">
-          {outcome.testimonials.slice(0, 3).map((t, i) => (
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {outcome.testimonials.map((t, i) => (
             <ScrollReveal key={t.id} delay={i * 0.08}>
-              <figure className="flex flex-col gap-3">
+              <figure className="flex h-full flex-col gap-4 border-[1.5px] border-[var(--color-navy-500)] bg-[var(--color-paper)] p-5 shadow-[3px_3px_0_rgba(35,49,73,0.48)]">
+                {/* Pull-quote first */}
+                <blockquote className="font-[family-name:var(--font-bai-jamjuree)] text-base font-bold leading-[1.55] text-[var(--color-navy-900)] [overflow-wrap:break-word]">
+                  &ldquo;{t.pullQuote}&rdquo;
+                </blockquote>
+
+                {/* Identity */}
+                <figcaption className="space-y-1">
+                  <p className="font-[family-name:var(--font-kanit)] font-bold text-[var(--color-navy-500)] [overflow-wrap:break-word]">
+                    {t.name}
+                  </p>
+                  <p className="text-sm text-[var(--color-text-muted)] [overflow-wrap:break-word]">
+                    {t.bio}
+                  </p>
+                  <p className="text-sm text-[var(--color-text-muted)] [overflow-wrap:break-word]">
+                    ▼ {t.changePoint}
+                  </p>
+                </figcaption>
+
+                {/* Proof image — last */}
                 <Image
                   src={t.image}
                   alt={t.imageAlt}
                   width={600}
                   height={400}
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  className="w-full h-auto"
+                  className="mt-auto w-full h-auto"
                   {...(t.id === 1 ? { priority: true } : { loading: "lazy" })}
                 />
-                <figcaption className="space-y-1">
-                  <p className="font-[family-name:var(--font-heading)] font-bold text-[var(--color-navy-900)]">{t.name}</p>
-                  <p className="text-sm text-[var(--color-text-muted)]">{t.bio}</p>
-                  <blockquote className="font-[family-name:var(--font-bai-jamjuree)] text-[15px] leading-[1.6] text-[var(--color-navy-500)] italic">
-                    &ldquo;{t.quote}&rdquo;
-                  </blockquote>
-                </figcaption>
               </figure>
             </ScrollReveal>
           ))}
         </div>
 
-        {/* Row 2: 2 testimonials centered */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 lg:max-w-[66%] lg:mx-auto gap-6 items-start">
-          {outcome.testimonials.slice(3).map((t, i) => (
-            <ScrollReveal key={t.id} delay={(i + 3) * 0.08}>
-              <figure className="flex flex-col gap-3">
-                <Image
-                  src={t.image}
-                  alt={t.imageAlt}
-                  width={600}
-                  height={400}
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  loading="lazy"
-                  className="w-full h-auto"
-                />
-                <figcaption className="space-y-1">
-                  <p className="font-[family-name:var(--font-heading)] font-bold text-[var(--color-navy-900)]">{t.name}</p>
-                  <p className="text-sm text-[var(--color-text-muted)]">{t.bio}</p>
-                  <blockquote className="font-[family-name:var(--font-bai-jamjuree)] text-[15px] leading-[1.6] text-[var(--color-navy-500)] italic">
-                    &ldquo;{t.quote}&rdquo;
-                  </blockquote>
-                </figcaption>
-              </figure>
-            </ScrollReveal>
-          ))}
-        </div>
+        <ScrollReveal delay={0.45}>
+          <p className="text-center font-[family-name:var(--font-bai-jamjuree)] text-base italic text-[var(--color-text-muted)] [overflow-wrap:break-word]">
+            {outcome.bridge}
+          </p>
+        </ScrollReveal>
       </div>
     </Section>
   );

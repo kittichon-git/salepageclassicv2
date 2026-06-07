@@ -1,5 +1,6 @@
 import { TopNav } from "@/components/sections/TopNav";
 import { Hero } from "@/components/sections/Hero";
+import { Example } from "@/components/sections/Example";
 import { ContextBlock } from "@/components/sections/ContextBlock";
 import { Relevance } from "@/components/sections/Relevance";
 import { Mechanism } from "@/components/sections/Mechanism";
@@ -20,6 +21,7 @@ export default function Page() {
       <TopNav />
       <main>
         <Hero />
+        <Example />
         <ContextBlock />
         <Relevance />
         <Mechanism />

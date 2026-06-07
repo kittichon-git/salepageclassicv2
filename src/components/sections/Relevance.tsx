@@ -18,6 +18,12 @@ export function Relevance() {
           </div>
         </ScrollReveal>
 
+        <ScrollReveal delay={0.05}>
+          <p className="font-[family-name:var(--font-bai-jamjuree)] text-base font-bold leading-[1.6] text-[var(--color-navy-500)] [overflow-wrap:break-word]">
+            {relevance.cardsLead}
+          </p>
+        </ScrollReveal>
+
         <div className="grid grid-cols-1 items-stretch gap-4 md:grid-cols-2 lg:grid-cols-4">
           {relevance.pains.map((pain, i) => (
             <ScrollReveal key={i} delay={i * 0.08} className="h-full">
@@ -44,7 +50,7 @@ export function Relevance() {
         </div>
 
         <ScrollReveal delay={0.35}>
-          <p className="mt-6 text-center font-[family-name:var(--font-bai-jamjuree)] text-base font-bold text-[var(--color-navy-500)] [overflow-wrap:break-word]">
+          <p className="mt-6 text-center font-[family-name:var(--font-bai-jamjuree)] text-base italic text-[var(--color-text-muted)] [overflow-wrap:break-word]">
             {relevance.closing}
           </p>
         </ScrollReveal>
