@@ -150,10 +150,10 @@ export function Curriculum() {
                 <div className="mb-4 inline-block bg-[var(--color-teal-500)] px-3 py-1 font-[family-name:var(--font-jetbrains-mono)] text-xs font-extrabold uppercase tracking-[0.12em] text-[var(--color-cream)]">
                   {ch.n}
                 </div>
-                <h3 className="mb-2 break-words font-[family-name:var(--font-kanit)] text-lg font-bold leading-[1.3] text-[var(--color-navy-500)] [overflow-wrap:anywhere]">
+                <h3 className="mb-2 th-heading font-[family-name:var(--font-kanit)] text-lg font-bold leading-[1.3] text-[var(--color-navy-500)]">
                   {ch.title}
                 </h3>
-                <p className="break-words font-[family-name:var(--font-bai-jamjuree)] text-sm leading-[1.6] text-[var(--color-text-muted)] [overflow-wrap:anywhere]">
+                <p className="th-text font-[family-name:var(--font-bai-jamjuree)] text-sm leading-[1.6] text-[var(--color-text-muted)]">
                   {ch.body}
                 </p>
               </div>
@@ -182,7 +182,7 @@ export function Curriculum() {
                 {curriculum.bonuses.map((b, i) => (
                   <li
                     key={i}
-                    className="break-words font-[family-name:var(--font-bai-jamjuree)] text-sm leading-[1.55] text-[var(--color-navy-500)] [overflow-wrap:anywhere]"
+                    className="th-text font-[family-name:var(--font-bai-jamjuree)] text-sm leading-[1.55] text-[var(--color-navy-500)]"
                   >
                     <span className="font-bold">{b.code}</span>
                     {" · "}

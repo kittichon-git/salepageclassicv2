@@ -91,6 +91,19 @@ body {
   .safe-bottom {
     padding-bottom: env(safe-area-inset-bottom);
   }
+
+  /* Thai-safe text wrapping — pair with thaiWrap() ZWSP for full coverage */
+  .th-text {
+    word-break: keep-all;
+    overflow-wrap: normal;
+    text-wrap: pretty;
+  }
+
+  .th-heading {
+    word-break: keep-all;
+    overflow-wrap: normal;
+    text-wrap: balance;
+  }
 }
 
 /*=== Skip link ===*/

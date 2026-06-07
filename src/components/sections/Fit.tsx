@@ -3,14 +3,15 @@ import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Check, Minus } from "lucide-react";
 import { fit } from "@/lib/data";
+import { thaiWrap } from "@/lib/thaiWrap";
 
 export function Fit() {
   return (
     <Section id="fit" tab="S5 · FIT" tone="paper">
       <div className="space-y-8">
         <ScrollReveal>
-          <SectionHeading as="h3" size="md">
-            {fit.intro}
+          <SectionHeading as="h3" size="md" className="th-heading">
+            {thaiWrap(fit.intro)}
           </SectionHeading>
         </ScrollReveal>
 
@@ -23,7 +24,7 @@ export function Fit() {
                 "bg-[var(--color-teal-50)]",
               ].join(" ")}
             >
-              <h3 className="mb-4 font-[family-name:var(--font-kanit)] text-lg font-bold text-[var(--color-navy-500)]">
+              <h3 className="th-heading mb-4 font-[family-name:var(--font-kanit)] text-lg font-bold text-[var(--color-navy-500)]">
                 ✅ {fit.for.heading}
               </h3>
               <ul className="space-y-3">
@@ -35,8 +36,8 @@ export function Fit() {
                       aria-hidden="true"
                       strokeWidth={2.5}
                     />
-                    <span className="font-[family-name:var(--font-bai-jamjuree)] text-base leading-[1.6] text-[var(--color-navy-500)]">
-                      {item}
+                    <span className="th-text font-[family-name:var(--font-bai-jamjuree)] text-base leading-[1.6] text-[var(--color-navy-500)]">
+                      {thaiWrap(item)}
                     </span>
                   </li>
                 ))}
@@ -52,7 +53,7 @@ export function Fit() {
                 "bg-[var(--color-cream)]",
               ].join(" ")}
             >
-              <h3 className="mb-4 font-[family-name:var(--font-kanit)] text-lg font-bold text-[var(--color-navy-500)]">
+              <h3 className="th-heading mb-4 font-[family-name:var(--font-kanit)] text-lg font-bold text-[var(--color-navy-500)]">
                 ❌ {fit.notFor.heading}
               </h3>
               <ul className="space-y-3">
@@ -64,8 +65,8 @@ export function Fit() {
                       aria-hidden="true"
                       strokeWidth={2.5}
                     />
-                    <span className="font-[family-name:var(--font-bai-jamjuree)] text-base leading-[1.6] text-[var(--color-text-muted)]">
-                      {item}
+                    <span className="th-text font-[family-name:var(--font-bai-jamjuree)] text-base leading-[1.6] text-[var(--color-text-muted)]">
+                      {thaiWrap(item)}
                     </span>
                   </li>
                 ))}
