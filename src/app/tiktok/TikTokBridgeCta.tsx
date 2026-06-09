@@ -1,6 +1,6 @@
 "use client";
 
-import { trackLineAdd, trackSpEvent } from "@/lib/track";
+import { trackSpEvent } from "@/lib/track";
 
 // LINE oaMessage พร้อม prefill text "อ่านฟรีจาก TikTok" (static, ไม่มี per-click token)
 const LINE_URL =
@@ -37,10 +37,7 @@ export function TikTokBridgeCta({
       cta_location: "tiktok_bridge",
     });
 
-    // 2. Meta Pixel LINE_ADD custom event
-    trackLineAdd("hero");
-
-    // 3. TikTok base pixel ClickButton
+    // 2. TikTok base pixel ClickButton
     if (typeof window.ttq?.track === "function") {
       window.ttq.track("ClickButton", {
         content_name: "LINE CTA — อ่านฟรีจาก TikTok",
@@ -48,7 +45,7 @@ export function TikTokBridgeCta({
       });
     }
 
-    // 4. เปิด LINE OA พร้อม prefill text
+    // 3. เปิด LINE OA พร้อม prefill text
     window.open(LINE_URL, "_blank", "noopener,noreferrer");
   }
 
