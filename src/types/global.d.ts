@@ -13,5 +13,10 @@ declare global {
     };
     _fbq?: Window["fbq"];
     gtag?: (...args: unknown[]) => void;
+    ttq?: {
+      track: (event: string, params?: Record<string, unknown>) => void;
+      page: () => void;
+      load: (pixelId: string) => void;
+    };
   }
 }
