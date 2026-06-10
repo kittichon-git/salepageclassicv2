@@ -76,9 +76,9 @@ export default async function TikTokBridgePage({ searchParams }: Props) {
                 &ldquo;
               </span>
               <p className="relative font-heading text-[22px] font-semibold leading-[1.46] text-white">
-                ปัญหาไม่ใช่ว่าสินค้าคุณไม่ดี &mdash; แต่อยู่ที่{" "}
+                ไม่ใช่ว่าสินค้าคุณไม่น่าสนใจ &mdash; แต่อยู่ที่{" "}
                 <span className="text-[#efa766]">&ldquo;คำขาย&rdquo;</span>{" "}
-                ที่ยังไม่ทำให้ลูกค้าอยากทัก
+                ที่ยังไม่ดึงดูดพอ
               </p>
               <p className="mt-[15px] text-[15.5px] leading-[1.55] text-[#c9d2e0]">
                 <strong className="font-semibold text-white">ลองอ่านฟรี 2 บทแรก</strong>{" "}
