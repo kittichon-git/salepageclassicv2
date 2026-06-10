@@ -5,9 +5,9 @@ import { TikTokBridgeCta } from "./TikTokBridgeCta";
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
-  title: "แค่เปลี่ยนคำ ก็ทำเงิน | phachara.com",
+  title: "ขยันโพสต์ทุกวัน แต่ยอดขายยังนิ่ง? | phachara.com",
   description:
-    "อ่านฟรี 2 บทแรก แล้วดูว่า \u201cคำขาย\u201d เปลี่ยนความรู้สึกลูกค้าได้ยังไง",
+    "ลองอ่านฟรี 2 บทแรก แล้วดูวิธีเปลี่ยนคำขายธรรมดา ให้ลูกค้าเห็นคุณค่าและอยากซื้อมากขึ้น",
   robots: { index: false, follow: false },
 };
 
@@ -36,18 +36,26 @@ export default async function TikTokBridgePage({ searchParams }: Props) {
         {/* ── Copy ── */}
         <div className="w-full max-w-md space-y-6 text-center">
           <h1 className="text-3xl font-bold leading-tight tracking-tight text-white">
-            โพสต์เหมือนกัน
+            ขยันโพสต์ทุกวัน
             <br />
-            แต่ทำไมบางร้านขายได้มากกว่า?
+            แต่ยอดขายยังนิ่ง?
           </h1>
 
           <p className="text-base leading-relaxed text-white/75">
-            อ่านฟรี 2 บทแรก แล้วดูว่า &ldquo;คำขาย&rdquo;
-            เปลี่ยนความรู้สึกลูกค้าได้ยังไง
+            ปัญหาไม่ใช่ว่าสินค้าคุณไม่ดี &mdash; แต่อยู่ที่ &ldquo;คำขาย&rdquo; ที่ยังไม่ทำให้ลูกค้าอยากทัก
+          </p>
+
+          <p className="text-base leading-relaxed text-white/60">
+            ลองอ่านฟรี 2 บทแรก แล้วดูวิธีเปลี่ยนคำขายธรรมดา
+            ให้ลูกค้าเห็นคุณค่าและอยากซื้อมากขึ้น
+          </p>
+
+          <p className="text-sm text-white/40">
+            เหมาะกับคนขายของออนไลน์ / เจ้าของเพจ / ฟรีแลนซ์
           </p>
 
           <p className="text-sm text-white/45">
-            ไม่ต้องกรอกบัตร &middot; อ่านฟรีก่อน &middot; ถ้าไม่ใช่ค่อยปิดได้
+            ไม่ต้องกรอกบัตร &middot; อ่านฟรีก่อน &middot; ไม่ใช่แนวคุณ ปิดได้เลย
           </p>
 
           {/* ── CTA ── */}
