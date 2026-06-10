@@ -76,8 +76,10 @@ export default async function TikTokBridgePage({ searchParams }: Props) {
                 &ldquo;
               </span>
               <p className="relative font-heading text-[22px] font-semibold leading-[1.46] text-white">
-                ไม่ใช่ว่าสินค้าคุณไม่น่าสนใจ &mdash; แต่อยู่ที่{" "}
-                <span className="text-[#efa766]">&ldquo;คำขาย&rdquo;</span>{" "}
+                ไม่ใช่ว่าสินค้าคุณไม่น่าสนใจ &mdash;
+                <br />
+                แต่อยู่ที่{" "}
+                <span className="whitespace-nowrap text-[#efa766]">&ldquo;คำขาย&rdquo;</span>{" "}
                 ที่ยังไม่ดึงดูดพอ
               </p>
               <p className="mt-[15px] text-[15.5px] leading-[1.55] text-[#c9d2e0]">
