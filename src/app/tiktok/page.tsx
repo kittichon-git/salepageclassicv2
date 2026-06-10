@@ -132,21 +132,6 @@ export default async function TikTokBridgePage({ searchParams }: Props) {
 
         </div>
       </div>
-
-      {/* ── Debug panel (dev only) ── */}
-      {process.env.NODE_ENV === "development" && (
-        <aside className="fixed bottom-4 right-4 z-50 max-w-xs rounded-lg border border-[#2a3f5e]/20 bg-[#efe3c8] p-3 font-mono text-xs text-[#5b687a]">
-          <p className="mb-1 font-semibold text-[#243650]">🔍 Query params</p>
-          <ul className="space-y-0.5">
-            <li>ttclid = <span className="text-[#c0552c]">{ttclid ?? "(none)"}</span></li>
-            <li>utm_source = <span className="text-[#c0552c]">{utm_source ?? "(none)"}</span></li>
-            <li>utm_medium = <span className="text-[#c0552c]">{utm_medium ?? "(none)"}</span></li>
-            <li>utm_campaign = <span className="text-[#c0552c]">{utm_campaign ?? "(none)"}</span></li>
-            <li>utm_content = <span className="text-[#c0552c]">{utm_content ?? "(none)"}</span></li>
-            <li>utm_term = <span className="text-[#c0552c]">{utm_term ?? "(none)"}</span></li>
-          </ul>
-        </aside>
-      )}
     </>
   );
 }
