@@ -4,7 +4,10 @@ import { useEffect, useRef, useState } from "react";
 import { trackSpEvent } from "@/lib/track";
 
 const LINE_ID = "@phachara";
-const LINE_DIRECT_URL = "https://line.me/R/ti/p/@phachara";
+// oaMessage URL with prefill keeps LINE-side acq_source tagging working
+const LINE_OA_URL =
+  "https://line.me/R/oaMessage/%40049vlbwy/?" +
+  encodeURIComponent("อ่านฟรีจาก TikTok");
 
 const STEPS = [
   "ก๊อป @phachara (ปุ่มด้านบน)",
@@ -32,6 +35,8 @@ export function TikTokBridgeContent({
 }: Props) {
   const [copied, setCopied] = useState(false);
   const qrRef = useRef<HTMLDivElement>(null);
+  // Guard: TikTok ClickButton fires at most once per session
+  const ttqFiredRef = useRef(false);
 
   useEffect(() => {
     // Persist attribution to localStorage (once)
@@ -80,16 +85,40 @@ export function TikTokBridgeContent({
     return () => observer.disconnect();
   }, []);
 
+  function fireTtqClickButton(contentName: string) {
+    if (typeof window === "undefined") return;
+    const SESSION_KEY = "ttq_cb_fired";
+    if (ttqFiredRef.current) return;
+    try {
+      if (sessionStorage.getItem(SESSION_KEY)) {
+        ttqFiredRef.current = true;
+        return;
+      }
+    } catch { /* sessionStorage unavailable */ }
+    ttqFiredRef.current = true;
+    try { sessionStorage.setItem(SESSION_KEY, "1"); } catch { /* ignore */ }
+    window.ttq?.track?.("ClickButton", {
+      content_category: "tiktok_bridge",
+      content_name: contentName,
+    });
+  }
+
   function handleCopy() {
     navigator.clipboard.writeText(LINE_ID).then(() => {
       setCopied(true);
-      trackSpEvent("copy_line_id");
+      // GA4
+      trackSpEvent("copy_line_id", { source: "tiktok_bridge" });
+      // TikTok Pixel — once per session
+      fireTtqClickButton("copy_line_id");
       setTimeout(() => setCopied(false), 3000);
     });
   }
 
   function handleOpenLine() {
-    trackSpEvent("click_open_line");
+    // GA4
+    trackSpEvent("click_open_line", { source: "tiktok_bridge" });
+    // TikTok Pixel — once per session
+    fireTtqClickButton("click_open_line");
   }
 
   return (
@@ -177,7 +206,7 @@ export function TikTokBridgeContent({
           <p className="text-center text-[13.5px] text-[#5b687a]">
             เครื่องคุณเปิด LINE ได้อยู่แล้ว?{" "}
             <a
-              href={LINE_DIRECT_URL}
+              href={LINE_OA_URL}
               onClick={handleOpenLine}
               className="font-semibold text-[#243650] underline underline-offset-2"
             >
