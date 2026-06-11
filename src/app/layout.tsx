@@ -1,5 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Kanit, Bai_Jamjuree, JetBrains_Mono } from "next/font/google";
+
+const GA_ID = process.env.NEXT_PUBLIC_GA4_ID;
 import { MicrosoftClarity } from "@/components/analytics/MicrosoftClarity";
 import { MetaPixel } from "@/components/analytics/MetaPixel";
 import { GoogleAnalytics } from "@/components/analytics/GoogleAnalytics";
@@ -81,6 +83,18 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       lang="th"
       className={`${kanit.variable} ${baiJamjuree.variable} ${jetbrainsMono.variable}`}
     >
+      <head>
+        {/* GA4 stub — inline, runs synchronously before hydration.
+            Guarantees window.gtag is defined before any useEffect fires.
+            gtag('config') is called ONLY here — not repeated in GoogleAnalytics component. */}
+        {GA_ID && (
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `window.dataLayer=window.dataLayer||[];function gtag(){window.dataLayer.push(arguments);}gtag('js',new Date());gtag('config','${GA_ID}');`,
+            }}
+          />
+        )}
+      </head>
       <body className="pt-16">
         <a href="#hero" className="skip-link">
           ข้ามไปยังเนื้อหา
