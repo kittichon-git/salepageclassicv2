@@ -23,7 +23,7 @@ export function trackLead(location: LeadLocation) {
       {
         content_name: "add_line",
         content_category: location,
-        value: 890,
+        value: 0,
         currency: "THB",
       },
       { eventID: eventId }
@@ -62,7 +62,7 @@ export function trackLineAdd(location: LeadLocation) {
       {
         content_name: "แค่เปลี่ยนคำ ก็ทำเงิน",
         content_category: "line_oa_add",
-        value: 890,
+        value: 0,
         currency: "THB",
         cta_location: location,
       },
