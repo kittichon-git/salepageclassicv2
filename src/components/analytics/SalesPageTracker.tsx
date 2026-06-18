@@ -9,18 +9,20 @@ function toSpPosition(loc: string): string {
 
 export function SalesPageTracker() {
   useEffect(() => {
-    // ── Time-active timers ──────────────────────────────────────────────────
-    const t3 = setTimeout(() => {
+    // ── Time-active timers (visibility-aware accumulator) ───────────────────
+    let activeMs = 0;
+    let prevTick = Date.now();
+    let t3Fired = false, t10Fired = false;
+    const engagementInterval = setInterval(() => {
+      const now = Date.now();
       if (document.visibilityState === "visible") {
-        trackSpEvent("sp_3s_active");
+        activeMs += now - prevTick;
+        if (!t3Fired && activeMs >= 3000) { t3Fired = true; trackSpEvent("sp_3s_active"); }
+        if (!t10Fired && activeMs >= 10000) { t10Fired = true; trackSpEvent("sp_10s_active"); }
+        if (t3Fired && t10Fired) clearInterval(engagementInterval);
       }
-    }, 3000);
-
-    const t10 = setTimeout(() => {
-      if (document.visibilityState === "visible") {
-        trackSpEvent("sp_10s_active");
-      }
-    }, 10000);
+      prevTick = now;
+    }, 500);
 
     // ── Scroll depth ────────────────────────────────────────────────────────
     const firedScroll = new Set<number>();
@@ -37,6 +39,10 @@ export function SalesPageTracker() {
       if (pct >= 50 && !firedScroll.has(50)) {
         firedScroll.add(50);
         trackSpEvent("sp_scroll_50", { scroll_percent: 50 });
+      }
+      if (pct >= 90 && !firedScroll.has(90)) {
+        firedScroll.add(90);
+        trackSpEvent("sp_scroll_90", { scroll_percent: 90 });
       }
     }
 
@@ -59,7 +65,7 @@ export function SalesPageTracker() {
             if (entry?.isIntersecting && !firedPosition.has(position)) {
               firedPosition.add(position);
               trackSpEvent("sp_cta_visible", {
-                position,
+                cta_location: position,
                 cta_text: el.textContent?.trim().slice(0, 80) ?? "",
               });
               obs.disconnect();
@@ -75,8 +81,7 @@ export function SalesPageTracker() {
     const rafId = requestAnimationFrame(observeCtas);
 
     return () => {
-      clearTimeout(t3);
-      clearTimeout(t10);
+      clearInterval(engagementInterval);
       window.removeEventListener("scroll", onScroll);
       cancelAnimationFrame(rafId);
       observers.forEach((o) => o.disconnect());

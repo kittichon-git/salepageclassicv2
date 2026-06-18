@@ -254,7 +254,7 @@ export function Curriculum() {
               ))}
             </ul>
           </div>
-          <CTAButton href={cta.lineUrl} variant="line" size="md" showIcon trackingLocation="offer" className="shrink-0">
+          <CTAButton href={cta.lineUrl} variant="line" size="md" showIcon trackingLocation="curriculum" className="shrink-0">
             {cta.finalLabel}
           </CTAButton>
         </div>

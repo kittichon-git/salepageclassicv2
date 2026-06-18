@@ -11,7 +11,7 @@ type Props = {
   variant?: "line" | "outline";
   size?: "md" | "lg";
   showIcon?: boolean;
-  trackingLocation?: "hero" | "offer" | "final" | "sticky" | "mobile-bar";
+  trackingLocation?: "hero" | "offer" | "curriculum" | "final" | "sticky" | "mobile-bar";
   children: React.ReactNode;
   className?: string;
 };
@@ -58,7 +58,7 @@ export function CTAButton({
         trackLead(trackingLocation);
         trackLineAdd(trackingLocation);
       }
-      trackSpEvent("sp_cta_click", { position: spPos, cta_text: ctaText, destination_url: href }, true);
+      trackSpEvent("sp_cta_click", { cta_location: spPos, cta_text: ctaText, destination_url: href }, true);
       onClick?.();
       const finalUrl = buildLineUrlWithUtm(href);
       setTimeout(() => window.open(finalUrl, "_blank", "noopener,noreferrer"), 300);
@@ -75,7 +75,7 @@ export function CTAButton({
     const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
       const ctaText = e.currentTarget.textContent?.trim().slice(0, 80) ?? "";
       if (trackingLocation) trackLead(trackingLocation);
-      trackSpEvent("sp_cta_click", { position: spPos, cta_text: ctaText, destination_url: href }, true);
+      trackSpEvent("sp_cta_click", { cta_location: spPos, cta_text: ctaText, destination_url: href }, true);
       onClick?.();
     };
     return (
@@ -92,7 +92,7 @@ export function CTAButton({
       trackLead(trackingLocation);
       trackLineAdd(trackingLocation);
     }
-    trackSpEvent("sp_cta_click", { position: spPos, cta_text: ctaText, destination_url: "" }, true);
+    trackSpEvent("sp_cta_click", { cta_location: spPos, cta_text: ctaText, destination_url: "" }, true);
     onClick?.();
   };
   return (

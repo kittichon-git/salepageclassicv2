@@ -2,7 +2,7 @@
 
 import { getFbp, getFbc } from "./fb-cookies";
 
-type LeadLocation = "hero" | "offer" | "final" | "sticky" | "mobile-bar";
+type LeadLocation = "hero" | "offer" | "curriculum" | "final" | "sticky" | "mobile-bar";
 
 const CAPI_LEAD_URL =
   (process.env.NEXT_PUBLIC_PHACHARA_APP_URL ?? "https://app.phachara.com") +
@@ -74,14 +74,14 @@ export function trackLineAdd(location: LeadLocation) {
   if (typeof window.gtag === "function") {
     window.gtag("event", "line_add", {
       event_category: "conversion",
-      event_label: location,
-      value: 890,
+      cta_location: location,
+      value: 0,
     });
     window.gtag("event", "generate_lead", {
-      value: 890,
+      value: 0,
       currency: "THB",
       event_category: "cta_click",
-      event_label: location,
+      cta_location: location,
     });
   }
 }
