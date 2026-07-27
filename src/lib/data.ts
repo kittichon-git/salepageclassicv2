@@ -261,7 +261,7 @@ export const curriculum = {
 
 // Math: 990 + 490 + 390 + 290 + 190 + 140 = 2,490
 export const offer = {
-  heading: "ทั้งหมดที่ได้ใน 890 บาท",
+  heading: "ทั้งหมดที่ได้ใน 590 บาท",
   intro: "ไม่ใช่แค่บทเรียนอ่านอย่างเดียว แต่เป็นชุดสูตร + template + prompt ที่หยิบไปใช้ตอนเขียนโพสต์จริงได้",
   stack: [
     {
@@ -276,9 +276,9 @@ export const offer = {
   ],
   totalValue: 2490,
   anchorPrice: 2490,
-  todayPrice: 890,
+  todayPrice: 590,
   priceCallout:
-    "วันนี้: 890 ฿ · จ่ายครั้งเดียว · เข้าถึงตลอดชีพ · เปิดอ่านบน LINE ได้ทุกที่",
+    "วันนี้: 590 ฿ · จ่ายครั้งเดียว · เข้าถึงตลอดชีพ · เปิดอ่านบน LINE ได้ทุกที่",
 } as const;
 
 export const riskReversal = {

@@ -96,7 +96,7 @@ export default async function OGImage() {
                 letterSpacing: "0.02em",
               }}
             >
-              890 ฿
+              590 ฿
             </div>
             <div
               style={{
